@@ -10,7 +10,7 @@ const msgPersonUpdatedSuccessfully = { msg: 'Person updated successfully' }
 class PersonsDTO {
 
     private async findPerson(Person: IPerson) {
-        const user = await new PersonDAO().selectOne(Person.id, table, 'id')
+        const user = await new PersonDAO().selectOne(Person.id, table, 'id_person')
         return user
     };
 
