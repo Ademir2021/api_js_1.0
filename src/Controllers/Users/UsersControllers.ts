@@ -1,4 +1,4 @@
-import { Request, Response, response } from "express"
+import { Request, Response } from "express"
 import { IUser } from "../../Interfaces/User/User"
 import { User } from "../../Entities/User/User"
 import { UsersDTO } from "../../Dtos/Users/UsersDTO"

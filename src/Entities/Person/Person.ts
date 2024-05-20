@@ -8,16 +8,16 @@ class Person extends PersonDAO implements IPerson {
     fkAddress = 0
     fkFilial = 0
     fkIdUser = 0
-    fkCep = 0
-    constructor(id: number, name: string, cpf: string, phone: string, fkaddress: number, fkidFilial: number, fkIdUser: number, fkCep: number) {
+    constructor(id: number, name: string, cpf: string, phone: string, fkiFilial: number, fkIdUser: number, fkAddress:number) {
         super()
         this.id = id
         this.name = name
         this.cpf = cpf
-        this.fkAddress = fkaddress
-        this.fkFilial = fkidFilial
+        this.phone = phone
+        this.fkFilial = fkiFilial
         this.fkIdUser = fkIdUser
-        this.fkCep = fkCep
+        this.fkAddress = fkAddress
+    
     }
 }
 
@@ -29,13 +29,13 @@ class Address extends PersonDAO implements IAddress {
     uf = ''
     cep = ''
     fkPerson = 0
-    constructor(name:string ,  bairro:string, fkCep:number) {
+    constructor(id:number, name:string ,  bairro:string, fkCep:number) {
         super()
+        this.id = id
         this.name = name //publicPlace
         this.bairro = bairro
         this.fkCep = fkCep
     }
 }
 
-new Person(0,"Ademir","888","888",0,0,0,0)
-new Address("Rua","centro",0)
+export {Person, Address}

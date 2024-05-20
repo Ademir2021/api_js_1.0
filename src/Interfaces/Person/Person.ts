@@ -9,7 +9,6 @@ export type IPerson = {
     fkAddress: number
     fkFilial: number
     fkIdUser: number
-    fkCep: number
 }
 
 export type IAddress = {
