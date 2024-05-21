@@ -10,6 +10,7 @@ import { routeBrands } from './Routes/RouteBrands';
 import { routeSectors } from './Routes/RouteSectors';
 import { routeCeps } from './Routes/RouteCeps';
 import { routeCities } from './Routes/RouteCities';
+import { routePagSeguro } from './Routes/RoutePagSeguro';
 
 const cors = require('cors');
 const app = express();
@@ -28,6 +29,7 @@ app.use(routeBrands)
 app.use(routeSectors)
 app.use(routeCeps)
 app.use(routeCities)
+app.use(routePagSeguro)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {
