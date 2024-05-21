@@ -5,6 +5,7 @@ import { routeRefreshToken } from './Authenticate/refreshTokenUser/RouteRefreshT
 import { routerPersons } from './Routes/RoutePersons';
 import { routerProducts } from './Routes/RouteProducts';
 import { routerSales } from './Routes/RouteSales';
+import { routeNotes } from './Routes/RouteNotes';
 
 const cors = require('cors');
 const app = express();
@@ -18,6 +19,7 @@ app.use(routeUsers)
 app.use(routerPersons)
 app.use(routerProducts)
 app.use(routerSales)
+app.use(routeNotes)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {
