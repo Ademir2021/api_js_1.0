@@ -42,7 +42,7 @@ class PersonsDTO {
 
     public async handleUpdatePerson(Person: IPerson, Address: IAddress) {
         const person: any = await this.findPerson(Person)
-        if (person[0].id === Person.id) {
+        if (person[0].id_person === Person.id) {
             const res = await this.updatePerson(Person, Address)
             return ([msgPersonUpdatedSuccessfully, "Find:", person, "Resp:", res])
         } else {
