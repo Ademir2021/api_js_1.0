@@ -3,7 +3,7 @@ import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL"
 abstract class DAO {
 
     public id: number = 0
-    public name:string = ''
+    public name:string = ""
 
     protected errors(err: unknown) {
         return "Error occurred ! " + err
