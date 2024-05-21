@@ -10,14 +10,14 @@
 |-- Services `Business rules`
 
 ## Entities Definition
-- Brand             []
-- Cep               []
-- City              []
+- Brand             [X]
+- Cep               [X]
+- City              [X]
 - Contact           []
-- Note              [] `Gerar nota pdf`
-- PaymentPagSeguro  []
+- Note              [X] `Gerar nota pdf`
+- PaymentPagSeguro  [X]
 - Person            [X] and Address
-- Product           []
-- Sale              []
-- Sector            []
+- Product           [X]
+- Sale              [X]
+- Sector            [X]
 - User              [X]
