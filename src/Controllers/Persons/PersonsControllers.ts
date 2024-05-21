@@ -4,7 +4,7 @@ import { Person, Address } from "../../Entities/Person/Person"
 import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
-const table = 'persons'
+const table = PersonDAO.table
 const msgUnsuccessful = { msg: "End unsuccessful - Passed by PersonsControlles" }
 const msgSuccessfully = { msg: "End successfully - Passed by PersonsControlles" }
 
