@@ -16,7 +16,7 @@
 - Contact           []
 - Note              [] `Gerar nota pdf`
 - PaymentPagSeguro  []
-- Person            []
+- Person            [X] and Address
 - Product           []
 - Sale              []
 - Sector            []
