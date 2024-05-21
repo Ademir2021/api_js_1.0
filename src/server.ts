@@ -8,6 +8,8 @@ import { routerSales } from './Routes/RouteSales';
 import { routeNotes } from './Routes/RouteNotes';
 import { routeBrands } from './Routes/RouteBrands';
 import { routeSectors } from './Routes/RouteSectors';
+import { routeCeps } from './Routes/RouteCeps';
+import { routeCities } from './Routes/RouteCities';
 
 const cors = require('cors');
 const app = express();
@@ -24,6 +26,8 @@ app.use(routerSales)
 app.use(routeNotes)
 app.use(routeBrands)
 app.use(routeSectors)
+app.use(routeCeps)
+app.use(routeCities)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {
