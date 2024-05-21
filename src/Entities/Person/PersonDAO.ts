@@ -22,9 +22,9 @@ class PersonDAO extends DAO {
         }
     };
 
-    async selectOnePerson(name: string) {
+    async selectOnePerson(Person:IPerson) {
         try {
-            const res = await postgreSQL.query("SELECT * FROM " + PersonDAO.table + " WHERE name_pers = '" + name + "'")
+            const res = await postgreSQL.query("SELECT * FROM " + PersonDAO.table + " WHERE name_pers = '" + Person.name + "'")
             return (res.rows);
         } catch (err) {
             return (new PersonDAO().errors(err))

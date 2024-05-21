@@ -3,6 +3,8 @@ import { routeUsers } from './Routes/RouteUsers';
 import { routerAutheticate } from './Routes/RouteAuthenticate';
 import { routeRefreshToken } from './Authenticate/refreshTokenUser/RouteRefreshToken';
 import { routerPersons } from './Routes/RoutePersons';
+import { routerProducts } from './Routes/RouteProducts';
+import { routerSales } from './Routes/RouteSales';
 
 const cors = require('cors');
 const app = express();
@@ -14,6 +16,8 @@ app.use(routerAutheticate)
 app.use(routeRefreshToken)
 app.use(routeUsers)
 app.use(routerPersons)
+app.use(routerProducts)
+app.use(routerSales)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {

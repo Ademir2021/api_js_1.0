@@ -1,5 +1,5 @@
 import { IPerson, IAddress } from "../../Interfaces/Person/Person"
-import { PersonDAO, } from "../../Entities/Person/PersonDAO"
+import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = "persons"
 const msgAlreadyExists = { msg: 'Person already exists - Passed by DTO' }
@@ -10,12 +10,12 @@ const msgPersonUpdatedSuccessfully = { msg: 'Person updated successfully' }
 class PersonsDTO {
 
     private async findPerson(Person: IPerson) {
-        const user = await new PersonDAO().selectOne(Person.id, table, 'id_person')
-        return user
+        const person = await new PersonDAO().selectOne(Person.id, table, 'id_person')
+        return person
     };
 
     private async findPersonName(Person: IPerson, Address: IAddress) {
-        const person = await new PersonDAO().selectOnePerson(Person.name)
+        const person = await new PersonDAO().selectOnePerson(Person)
         return person
     };
 

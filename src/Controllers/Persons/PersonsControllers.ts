@@ -4,7 +4,7 @@ import { Person, Address } from "../../Entities/Person/Person"
 import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
-const table = PersonDAO.table
+const table = Person.table
 const msg = { msg: "Passed by PersonsControllers" }
 
 class PersonsControlles {
