@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import { ISale, IItens } from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
 import { salesDTO } from "../../Dtos/Sales/SalesDTO"
+import { SaleDAO } from "../../Entities/Sale/SaleDAO"
 
 class SalesControllers {
 
@@ -14,6 +15,17 @@ class SalesControllers {
         const registerSaleDTO = await new salesDTO().handleRegisterSale(sale)
         response.json([registerSaleDTO])
     };
+
+  async findUserSale(request: Request, response:Response){
+    const {fkUserId}:ISale = <ISale>request.body.user
+    const findUserSale = await new salesDTO().handleFindUserSales(fkUserId)
+    response.json(findUserSale)
+  };
+
+  async findSale(request: Request, response:Response){
+    const findUserSale = await new SaleDAO().select("sales","id_sale")
+    response.json(findUserSale)
+  };
 
 }
 

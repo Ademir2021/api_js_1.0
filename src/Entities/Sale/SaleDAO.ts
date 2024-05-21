@@ -4,29 +4,8 @@ import { DAO } from "../DAO/DAO";
 
 class SaleDAO extends DAO {
 
-    private static table = "sales"
-    private static tableItens = "itens_sale"
-
-    async select() {
-        try {
-            const sales = await postgreSQL.query("SELECT * FROM " + SaleDAO.table + "  ORDER BY id_sale")
-            return sales.rows
-        } catch (err) {
-            return new SaleDAO().errors(err);
-
-        }
-    };
-
-    async selectOneSale(Sales: ISale) {
-        try {
-            const itens = await postgreSQL.query("SELECT * FROM " + SaleDAO.tableItens + " WHERE fk_sale = '" + Sales.id + "'")
-            for (let i = 0; itens.rows.length > i; i++) {
-                return (itens.rows[i])
-            }
-        } catch (err) {
-            return new SaleDAO().errors(err);
-        }
-    };
+     static table = "sales"
+     static tableItens = "itens_sale"
 
     async insert(Sales: ISale) {
         try {
