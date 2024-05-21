@@ -5,8 +5,7 @@ import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = PersonDAO.table
-const msgUnsuccessful = { msg: "End unsuccessful - Passed by PersonsControlles" }
-const msgSuccessfully = { msg: "End successfully - Passed by PersonsControlles" }
+const msg = { msg: "Passed by PersonsControllers" }
 
 class PersonsControlles {
 
@@ -16,11 +15,7 @@ class PersonsControlles {
         const { id: idAddress, name: publicPlace, bairro, fkCep }: IAddress = <IAddress>request.body.address
         const address: Address = new Address(idAddress, publicPlace, bairro, fkCep)
         const personDTOSave = await new PersonsDTO().handleSavePerson(person, address)
-        if (personDTOSave) {
-            response.json([personDTOSave, msgUnsuccessful, person, address])
-        } else {
-            response.json([msgSuccessfully, person, address])
-        }
+        response.json([personDTOSave, msg, person, address])
     };
 
     async listPerson(request: Request, response: Response) {
@@ -40,7 +35,7 @@ class PersonsControlles {
         const { id: idAddress, name: publicPlace, bairro, fkCep }: IAddress = <IAddress>request.body.address
         const address: Address = new Address(idAddress, publicPlace, bairro, fkCep)
         const personDTOUpdate = await new PersonsDTO().handleUpdatePerson(person, address)
-        response.json([personDTOUpdate, person, address])
+        response.json([personDTOUpdate, msg, person, address])
     };
 
     async deletePerson(request: Request, response: Response) {

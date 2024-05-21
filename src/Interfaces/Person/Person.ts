@@ -22,5 +22,4 @@ export type IAddress = {
     city: string
     uf: string
     cep: string
-    fkPerson: number
 }

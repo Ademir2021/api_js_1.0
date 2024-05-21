@@ -21,7 +21,7 @@ class UserDAO extends DAO {
         } catch (err) {
             return (new UserDAO().errors(err))
         }
-    }
+    };
 
     async selectUsername(User: IUser) {
         try {

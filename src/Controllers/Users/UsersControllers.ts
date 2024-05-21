@@ -6,8 +6,7 @@ import { UsersServices } from "../../Services/Users/UsersServices"
 import { UserDAO } from "../../Entities/User/UserDAO"
 
 const table = UserDAO.table
-const msgUnsuccessful = { msg: "End unsuccessful - Passed by UsersControlles" }
-const msgSuccessfully = { msg: "End successfully - Passed by UsersControlles" }
+const msg = { msg: "Passed by UsersControllers" }
 
 class UsersControllers {
 
@@ -16,11 +15,7 @@ class UsersControllers {
         const user: User = new User(id, name, username, password, privilege)
         user.setName(name)
         const userDTOSave = await new UsersDTO().handleSaveUser(user)
-        if (userDTOSave) {
-            response.json([user.getName(), userDTOSave, msgUnsuccessful, user])
-        } else {
-            response.json([msgSuccessfully, user])
-        }
+            response.json([user.getName(), userDTOSave, msg, user])
     };
 
     async listUsers(request: Request, response: Response) {
@@ -38,7 +33,7 @@ class UsersControllers {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
         const userDTOUpdate = await new UsersDTO().handleUpdateUser(user)
-        response.json([userDTOUpdate, user])
+        response.json([userDTOUpdate, msg, user])
     };
 
     async deleteUser(request: Request, response: Response) {
