@@ -10,12 +10,12 @@ export type ISale = {
 }
 
 export type IItens = {
-    id: number;
-    item?: number;
-    name: string; //descric
+    id?: number;
+    item: number;
+    name?: string; //descric
     amount: number;
     valor: number;
-    tItem: number;
+    tItem?: number;
     image?: string;
 
 };

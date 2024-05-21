@@ -6,7 +6,7 @@ class Sale extends SaleDAO implements ISale{
     diskSale = 0
     fkFilial = 0
     fkUserId = 0
-    itens?: IItens[] | undefined = []
+    itens?: IItens[] = []
     constructor(fkPerson:number, diskSale:number, fkFilial:number, fkUserId:number, itens:IItens[] ){
         super()
         this.fkPerson = fkPerson
