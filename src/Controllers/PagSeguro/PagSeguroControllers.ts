@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+require('dotenv').config()
 import fetch from 'node-fetch';
-// const authorization_sandbox = '4D1D1C943B1B49468F2D0B00F5EE914E'
-const authorization = 'ceb042ab-4491-4258-9e76-bd8e43cd4104764a613f400f95b4014dca1eaa88995b77bb-292a-499c-b941-70f6e5ba0518'
+// const authorization_sandbox:any = process.env.AUTH_PAGSEGURO_SANDOX
+const authorization:any = process.env.AUTH_PAGSEGURO
 const urlPagseguroPix = 'https://api.pagseguro.com/orders'
 const urlPagseguroCard = 'https://api.pagseguro.com/orders'
 const urlPagseguroBoleto = 'https://api.pagseguro.com/orders'

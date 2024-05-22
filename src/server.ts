@@ -16,7 +16,7 @@ import { routeContact } from './Routes/RouteContacts';
 const cors = require('cors');
 const app = express();
 app.use(cors())
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use(routerAutheticate)

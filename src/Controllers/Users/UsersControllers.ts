@@ -15,7 +15,7 @@ class UsersControllers {
         const user: User = new User(id, name, username, password, privilege)
         user.setName(name)
         const userDTOSave = await new UsersDTO().handleSaveUser(user)
-            response.json([user.getName(), userDTOSave, msg, user])
+        response.json([user.getName(), userDTOSave, msg, user])
     };
 
     async listUsers(request: Request, response: Response) {
