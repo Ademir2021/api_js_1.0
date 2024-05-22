@@ -13,14 +13,19 @@ class UsersControllers {
     async saveUser(request: Request, response: Response) {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
-        user.setName(name)
         const userDTOSave = await new UsersDTO().handleSaveUser(user)
-        response.json([user.getName(), userDTOSave, msg, user])
+        response.json(userDTOSave)
     };
 
     async listUsers(request: Request, response: Response) {
-        const users = await new UserDAO().select(table, 'id')
-        response.json(users)
+        const { id, privilege }: IUser = <IUser>request.body[0]
+        if (privilege == 2) {
+            const users = await new UserDAO().select(table, 'id')
+            response.json(users)
+        } else {
+            const user = await new UserDAO().selectOne(id, table, 'id')
+            response.json(user)
+        }
     };
 
     async listUser(request: Request, response: Response) {

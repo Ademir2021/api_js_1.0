@@ -25,7 +25,7 @@ class UserDAO extends DAO {
 
     async selectUsername(User: IUser) {
         try {
-            const res = await postgreSQL.query("SELECT id, name, username, password FROM " + UserDAO.table + " WHERE username = '" + User.username + "'")
+            const res = await postgreSQL.query("SELECT id, name, username, password, privilege FROM " + UserDAO.table + " WHERE username = '" + User.username + "'")
             return res.rows
         } catch (err) {
             return (new UserDAO().errors(err))

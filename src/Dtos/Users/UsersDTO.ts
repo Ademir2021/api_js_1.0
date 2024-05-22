@@ -2,10 +2,10 @@ import { IUser } from "../../Interfaces/User/User"
 import { UserDAO } from "../../Entities/User/UserDAO"
 
 const table = "users"
-const msgAlreadyExists = { msg: 'Username already exists - Passed by DTO' }
-const msgRecordSucess = { msg: 'Record com sucess - Passed by DTO' }
-const msgUserNotFound = { msg: 'User not found' }
-const msgUserUpdatedSuccessfully = { msg: 'User updated successfully' }
+const msgAlreadyExists = { msg: 'Email já existe' }
+const msgRecordSucess = { msg: 'Usuário cadastrado com sucesso' }
+const msgUserNotFound = { msg: 'User não Localizado' }
+const msgUserUpdatedSuccessfully = { msg: 'Usuário Atualizado com Sucesso' }
 
 class UsersDTO {
 
@@ -31,10 +31,10 @@ class UsersDTO {
     public async handleSaveUser(User: IUser) {
         const user: any = await this.findUserName(User)
         if (user[0]) {
-            return ([msgAlreadyExists, user])
+            return ([msgAlreadyExists])
         } else {
             this.saveUser(User)
-            return ([msgRecordSucess, user])
+            return ([msgRecordSucess])
 
         }
     };
@@ -43,9 +43,9 @@ class UsersDTO {
         const user: any = await this.findUser(User)
         if (user[0].id === User.id) {
             const res = await this.updateUser(User)
-            return ([msgUserUpdatedSuccessfully, "Find:", user, "Resp:", res])
+            return (msgUserUpdatedSuccessfully)
         } else {
-            return ([msgUserNotFound, user])
+            return (msgUserNotFound)
         }
     };
 }

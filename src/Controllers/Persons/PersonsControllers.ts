@@ -1,11 +1,13 @@
 import { Request, Response } from "express"
 import { IPerson, IAddress } from "../../Interfaces/Person/Person"
+import { IUser } from "../../Interfaces/User/User"
 import { Person, Address } from "../../Entities/Person/Person"
 import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = Person.table
 const msg = { msg: "Passed by PersonsControllers" }
+
 
 class PersonsControlles {
 
@@ -15,7 +17,7 @@ class PersonsControlles {
         const { id: idAddress, name: publicPlace, bairro, fkCep }: IAddress = <IAddress>request.body.address
         const address: Address = new Address(idAddress, publicPlace, bairro, fkCep)
         const personDTOSave = await new PersonsDTO().handleSavePerson(person, address)
-        response.json([personDTOSave, msg, person, address])
+        response.json(personDTOSave)
     };
 
     async listPerson(request: Request, response: Response) {
@@ -27,6 +29,13 @@ class PersonsControlles {
         const { id }: IPerson = <IPerson>request.body.person
         const persons = await new PersonDAO().selectOne(id, table, 'id_person')
         response.json(persons)
+    };
+
+    async listUserPersons(request: Request, response: Response) {
+        const  user:IUser[] = <IUser[]>request.body
+        const id:number = user[0].id
+        const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
+         response.json(persons)
     };
 
     async updatePerson(request: Request, response: Response) {

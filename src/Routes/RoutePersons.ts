@@ -5,6 +5,7 @@ const routerPersons = Router()
 const personsControlles = new PersonsControlles()
 
 routerPersons.post('/persons_list', personsControlles.listPerson)
+routerPersons.post('/persons_user', personsControlles.listUserPersons)
 routerPersons.post('/person_list', personsControlles.listPersons)
 routerPersons.post('/person', personsControlles.savePerson)
 routerPersons.put('/person_update', personsControlles.updatePerson)
