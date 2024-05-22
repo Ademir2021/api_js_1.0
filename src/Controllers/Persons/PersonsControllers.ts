@@ -8,43 +8,60 @@ import { PersonDAO } from "../../Entities/Person/PersonDAO"
 const table = Person.table
 const msg = { msg: "Passed by PersonsControllers" }
 
+type TPerson = {
+    id_person: number //nao usa
+    name_pers: string
+    cpf_pers: string
+    phone_pers: string
+    address_pers: string
+    bairro_pers: string
+    fk_cep: number
+    name_city?: string
+    uf?: string
+    num_cep?: string
+    fk_name_filial: number
+    fk_id_user: number
+    fk_address: number
+}
 
 class PersonsControlles {
 
     async savePerson(request: Request, response: Response) {
-        const { id, name, cpf, phone, fkFilial, fkIdUser, fkAddress }: IPerson = <IPerson>request.body.person
-        const person: Person = new Person(id, name, cpf, phone, fkFilial, fkIdUser, fkAddress)
-        const { id: idAddress, name: publicPlace, bairro, fkCep }: IAddress = <IAddress>request.body.address
-        const address: Address = new Address(idAddress, publicPlace, bairro, fkCep)
+        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
+        const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
+        const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
         const personDTOSave = await new PersonsDTO().handleSavePerson(person, address)
         response.json(personDTOSave)
     };
 
-    async listPerson(request: Request, response: Response) {
+    async listPersons(request: Request, response: Response) {
         const person = await new PersonDAO().select(table, 'id_person')
         response.json(person)
     };
 
-    async listPersons(request: Request, response: Response) {
+    async listPerson(request: Request, response: Response) {
         const { id }: IPerson = <IPerson>request.body.person
         const persons = await new PersonDAO().selectOne(id, table, 'id_person')
         response.json(persons)
     };
 
     async listUserPersons(request: Request, response: Response) {
-        const  user:IUser[] = <IUser[]>request.body
-        const id:number = user[0].id
-        const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
-         response.json(persons)
+        const { id, privilege }: IUser = <IUser>request.body[0]
+        if (privilege == 2) {
+            const persons = await new PersonDAO().select(table, 'id_person')
+            response.json(persons)
+        } else {
+            const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
+            response.json(persons)
+        }
     };
 
     async updatePerson(request: Request, response: Response) {
-        const { id, name, cpf, phone, fkFilial, fkIdUser, fkAddress }: IPerson = <IPerson>request.body.person
-        const person: Person = new Person(id, name, cpf, phone, fkFilial, fkIdUser, fkAddress)
-        const { id: idAddress, name: publicPlace, bairro, fkCep }: IAddress = <IAddress>request.body.address
-        const address: Address = new Address(idAddress, publicPlace, bairro, fkCep)
+        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
+        const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
+        const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
         const personDTOUpdate = await new PersonsDTO().handleUpdatePerson(person, address)
-        response.json([personDTOUpdate, msg, person, address])
+        response.json(personDTOUpdate)
     };
 
     async deletePerson(request: Request, response: Response) {

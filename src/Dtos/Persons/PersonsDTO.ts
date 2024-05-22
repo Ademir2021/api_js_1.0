@@ -2,10 +2,10 @@ import { IPerson, IAddress } from "../../Interfaces/Person/Person"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = "persons"
-const msgAlreadyExists = { msg: 'Person already exists - Passed by DTO' }
-const msgRecordSucess = { msg: 'Record com sucess - Passed by DTO' }
-const msgPersonNotFound = { msg: 'Person not found' }
-const msgPersonUpdatedSuccessfully = { msg: 'Person updated successfully' }
+const msgAlreadyExists = 'Está pessoa já existe'
+const msgRecordSucess = 'Cliente Gravado com sucesso'
+const msgPersonNotFound = 'Cliente não localizada'
+const msgPersonUpdatedSuccessfully = 'Cliente Atualizado com sucesso'
 
 class PersonsDTO {
 
@@ -32,10 +32,10 @@ class PersonsDTO {
     async handleSavePerson(Person: IPerson, Address: IAddress) {
         const person: any = await this.findPersonName(Person, Address)
         if (person[0]) {
-            return ([msgAlreadyExists, person])
+            return (msgAlreadyExists)
         } else {
             const res = await this.savePerson(Person, Address)
-            return ([msgRecordSucess, person, res])
+            return (msgRecordSucess)
 
         }
     };
@@ -44,9 +44,9 @@ class PersonsDTO {
         const person: any = await this.findPerson(Person)
         if (person[0].id_person === Person.id) {
             const res = await this.updatePerson(Person, Address)
-            return ([msgPersonUpdatedSuccessfully, "Find:", person, "Resp:", res])
+            return (msgPersonUpdatedSuccessfully)
         } else {
-            return ([msgPersonNotFound, person])
+            return (msgPersonNotFound)
         }
     };
 }
