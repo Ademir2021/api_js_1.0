@@ -5,7 +5,7 @@ import { ProductDAO } from "../../Entities/Product/ProductDAO"
 import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
 
 const table = Product.table
-const msg = { msg: "Passed by ProductsControllers" }
+// const msg = { msg: "Passed by ProductsControllers" }
 
 type TProduct = {
   id_product: number

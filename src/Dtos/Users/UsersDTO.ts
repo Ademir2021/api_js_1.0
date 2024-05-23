@@ -19,10 +19,6 @@ class UsersDTO {
         return userName
     };
 
-    private async updateUser(User: IUser) {
-        const userUpdate = await new UserDAO().updateUSer(User)
-        return userUpdate
-    };
 
     public async saveUser(User: IUser) {
         const user: any = await this.findUserName(User)
@@ -34,10 +30,10 @@ class UsersDTO {
         }
     };
 
-    public async UpdateUser(User: IUser) {
+    public async updateUser(User: IUser) {
         const user: any = await this.findUser(User)
         if (user[0].id === User.id) {
-            const res = await this.updateUser(User)
+            const user = await new UserDAO().updateUSer(User)
             return (msgUserUpdatedSuccessfully)
         } else {
             return (msgUserNotFound)

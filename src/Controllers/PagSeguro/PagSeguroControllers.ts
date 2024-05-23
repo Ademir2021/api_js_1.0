@@ -95,5 +95,5 @@ export class ConttrollersPagSeguro {
         } catch (err) {
             console.log("Error Occurred ! " + err)
         }
-    }
+    };
 }

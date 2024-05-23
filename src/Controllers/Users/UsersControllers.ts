@@ -32,7 +32,7 @@ class UsersControllers {
     async updateUser(request: Request, response: Response) {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
-        const userDTOUpdate = await new UsersDTO().UpdateUser(user)
+        const userDTOUpdate = await new UsersDTO().updateUser(user)
         response.json([userDTOUpdate, msg, user])
     };
 

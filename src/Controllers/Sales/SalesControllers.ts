@@ -29,13 +29,13 @@ type TSale = {
   tItens: number
   tNote: number
   paySale: number
-  itens:IItens []
+  itens: IItens[]
 }
 
 class SalesControllers {
 
   async registerSale(request: Request, response: Response) {
-    const sale_:TSale = <TSale>request.body
+    const sale_: TSale = <TSale>request.body
     const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.itens)
     const registerSaleDTO = await new salesDTO().registerSale(sale)
     response.json([registerSaleDTO])

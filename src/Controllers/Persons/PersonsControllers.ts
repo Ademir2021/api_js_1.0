@@ -9,7 +9,7 @@ const table = Person.table
 const msg = { msg: "Passed by PersonsControllers" }
 
 type TPerson = {
-    id_person: number //nao usa
+    id_person: number
     name_pers: string
     cpf_pers: string
     phone_pers: string

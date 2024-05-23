@@ -2,10 +2,10 @@ import { IPerson, IAddress } from "../../Interfaces/Person/Person"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = "persons"
-const msgAlreadyExists = 'Está pessoa já existe'
-const msgRecordSucess = 'Cliente Gravado com sucesso'
+const msgAlreadyExists = 'Este cliente já existe'
+const msgRecordSucess = 'Cliente gravado com sucesso'
 const msgPersonNotFound = 'Cliente não localizada'
-const msgPersonUpdatedSuccessfully = 'Cliente Atualizado com sucesso'
+const msgPersonUpdatedSuccessfully = 'Cliente atualizado com sucesso'
 
 class PersonsDTO {
 
