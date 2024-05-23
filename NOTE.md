@@ -13,7 +13,7 @@
 - Brand             [X]
 - Cep               [X]
 - City              [X]
-- Contact           []
+- Contact           [X]
 - Note              [X] `Gerar nota pdf`
 - PaymentPagSeguro  [X]
 - Person            [X] and Address

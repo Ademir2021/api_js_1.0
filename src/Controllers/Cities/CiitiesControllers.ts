@@ -6,7 +6,6 @@ export class ConttrollerCities {
         try {
             const res = await postgreSQL.query("SELECT * FROM cities");
             response.json(res.rows);
-
         } catch (err) {
             console.log("Error Ocurred ! " + err)
         }
@@ -14,7 +13,7 @@ export class ConttrollerCities {
 
     async selectOnCity(request: Request, response: Response) {
         try {
-            const { id } = request.params 
+            const { id } = request.params
             const res = await postgreSQL.query("SELECT name_city FROM cities WHERE id_city = '" + id + "' LIMIT(1)")
             response.json(res.rows[0]);
         } catch (err) {

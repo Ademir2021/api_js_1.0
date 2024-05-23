@@ -19,33 +19,38 @@ class UsersDTO {
         return userName
     };
 
-    private async saveUser(User: IUser) {
-        await new UserDAO().insertUser(User)
-    };
-
     private async updateUser(User: IUser) {
         const userUpdate = await new UserDAO().updateUSer(User)
         return userUpdate
     };
 
-    public async handleSaveUser(User: IUser) {
+    public async saveUser(User: IUser) {
         const user: any = await this.findUserName(User)
         if (user[0]) {
             return ([msgAlreadyExists])
         } else {
-            this.saveUser(User)
+            await new UserDAO().insertUser(User)
             return ([msgRecordSucess])
-
         }
     };
 
-    public async handleUpdateUser(User: IUser) {
+    public async UpdateUser(User: IUser) {
         const user: any = await this.findUser(User)
         if (user[0].id === User.id) {
             const res = await this.updateUser(User)
             return (msgUserUpdatedSuccessfully)
         } else {
             return (msgUserNotFound)
+        }
+    };
+
+    public async listUsers(id: number, privilege: number) {
+        if (privilege == 2) {
+            const users = await new UserDAO().select(table, 'id')
+            return (users)
+        } else {
+            const users = await new UserDAO().selectOne(id, table, 'id')
+            return (users)
         }
     };
 }

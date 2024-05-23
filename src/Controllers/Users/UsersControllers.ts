@@ -13,19 +13,14 @@ class UsersControllers {
     async saveUser(request: Request, response: Response) {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
-        const userDTOSave = await new UsersDTO().handleSaveUser(user)
+        const userDTOSave = await new UsersDTO().saveUser(user)
         response.json(userDTOSave)
     };
 
     async listUsers(request: Request, response: Response) {
         const { id, privilege }: IUser = <IUser>request.body[0]
-        if (privilege == 2) {
-            const users = await new UserDAO().select(table, 'id')
-            response.json(users)
-        } else {
-            const user = await new UserDAO().selectOne(id, table, 'id')
-            response.json(user)
-        }
+        const usersDTOList = await new UsersDTO().listUsers(id, privilege)
+        response.json(usersDTOList)
     };
 
     async listUser(request: Request, response: Response) {
@@ -37,7 +32,7 @@ class UsersControllers {
     async updateUser(request: Request, response: Response) {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
-        const userDTOUpdate = await new UsersDTO().handleUpdateUser(user)
+        const userDTOUpdate = await new UsersDTO().UpdateUser(user)
         response.json([userDTOUpdate, msg, user])
     };
 

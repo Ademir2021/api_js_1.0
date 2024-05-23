@@ -2,12 +2,12 @@ import { IProduct } from "../../Interfaces/Product/Product";
 import { ProductDAO } from "../../Entities/Product/ProductDAO";
 
 const table = "products"
-const msgAlreadyExists = { msg: 'Product already exists - Passed by DTO' }
-const msgRecordSucess = { msg: 'Record com sucess - Passed by DTO' }
-const msgProductNotFound = { msg: 'Product not found' }
-const msgProductUpdatedSuccessfully = { msg: 'Product updated successfully' }
+const msgAlreadyExists = 'Produto já existe'
+const msgRecordSucess = 'Produto gravado com sucesso'
+const msgProductNotFound = 'Produto não localiado'
+const msgProductUpdatedSuccessfully = 'Produto atualizado com sucesso'
 
-class ProductsDTO{
+class ProductsDTO {
 
     private async findProduct(Product: IProduct) {
         const product = await new ProductDAO().selectOne(Product.id, table, 'id_product')
@@ -36,7 +36,7 @@ class ProductsDTO{
             return ([msgAlreadyExists, product])
         } else {
             const res = await this.saveProduct(Product)
-            return ([msgRecordSucess, product, res])
+            return ([msgRecordSucess, res])
 
         }
     };
@@ -45,11 +45,11 @@ class ProductsDTO{
         const product: any = await this.findProduct(Product)
         if (product[0].id_product === Product.id) {
             const res = await this.updateProduct(Product)
-            return ([msgProductUpdatedSuccessfully, "Find:", product, "Resp:", res])
+            return (msgProductUpdatedSuccessfully)
         } else {
-            return ([msgProductNotFound, product])
+            return (msgProductNotFound)
         }
     };
 }
 
-export {ProductsDTO}
+export { ProductsDTO }

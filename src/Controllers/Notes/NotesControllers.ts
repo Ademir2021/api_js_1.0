@@ -9,14 +9,6 @@ const handleService: HandleService = new HandleService()
 
 export class ConttrollersNotes {
 
-    async index(request: Request, response: Response) {
-        try {
-            response.status(200).json({ status: 'sucesss' })
-        } catch (err) {
-            console.log("Error Occurred ! " + err)
-        }
-    };
-
     async select(request: Request, response: Response) {
         try {
             const { num_nota } = request.params

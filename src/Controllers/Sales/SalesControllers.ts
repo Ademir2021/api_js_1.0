@@ -5,31 +5,55 @@ import { salesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
 import { IUser } from "../../Interfaces/User/User"
 
+type TSale = {
+  filial: number
+  user: {
+    user_id: number
+    user_name: string
+  }
+  person: {
+    fk_name_pers: number
+    name_pers: string
+    cpf_pers: string
+    phone_pers: string
+    address: {
+      address_pers: string
+      bairro_pers: string
+      fk_cep: number
+      name_city: string
+      uf: string
+      num_cep: string
+    }
+  }
+  disc_sale: number
+  tItens: number
+  tNote: number
+  paySale: number
+  itens:IItens []
+}
+
 class SalesControllers {
 
-  async  registerSale(request: Request, response: Response) {
-        const { fkFilial, diskSale }: ISale = <ISale>request.body
-        const { fkPerson }: ISale = <ISale>request.body.person
-        const { fkUserId }: ISale = <ISale>request.body.user
-        const itens: IItens[] = <IItens[]>request.body.itens
-        const sale: Sale = new Sale(fkPerson, diskSale, fkFilial, fkUserId, itens)
-        const registerSaleDTO = await new salesDTO().handleRegisterSale(sale)
-        response.json([registerSaleDTO])
-    };
+  async registerSale(request: Request, response: Response) {
+    const sale_:TSale = <TSale>request.body
+    const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.itens)
+    const registerSaleDTO = await new salesDTO().handleRegisterSale(sale)
+    response.json([registerSaleDTO])
+  };
 
-  async findUserSale(request: Request, response:Response){
+  async findUserSale(request: Request, response: Response) {
     const { id, privilege }: IUser = <IUser>request.body[0]
-    if(privilege == 2 ){
+    if (privilege == 2) {
       const sales = await new salesDTO().handleFindSales()
       response.json(sales)
-    }else{
+    } else {
       const sales = await new salesDTO().handleFindUserSales(id)
       response.json(sales)
     }
   };
 
-  async findSale(request: Request, response:Response){
-    const findUserSale = await new SaleDAO().select("sales","id_sale")
+  async findSale(request: Request, response: Response) {
+    const findUserSale = await new SaleDAO().select("sales", "id_sale")
     response.json(findUserSale)
   };
 

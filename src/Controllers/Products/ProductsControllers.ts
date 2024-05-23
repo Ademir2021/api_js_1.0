@@ -7,13 +7,24 @@ import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
 const table = Product.table
 const msg = { msg: "Passed by ProductsControllers" }
 
+type TProduct = {
+  id_product: number
+  descric_product: string
+  val_max_product: number
+  val_min_product: number
+  fk_brand: number
+  fk_sector: number
+  bar_code: string
+  image: string
+}
+
 class ProductsControllers{
 
     async saveProduct(request: Request, response: Response){
-        const {id, name, valMax, valMin, fkBrand, fkSector, barCode, image}:IProduct = <IProduct>request.body
-        const product:Product =  new Product(id, name, valMax, valMin, fkBrand, fkSector, barCode, image)
+        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
+        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
         const productDTOSave = await new ProductsDTO().handleSaveProduct(product)
-        response.json([productDTOSave, msg, product])
+        response.json(productDTOSave)
     };
 
     async listProducts(request: Request, response: Response) {
@@ -28,10 +39,10 @@ class ProductsControllers{
     };
 
     async updateProduct(request: Request, response: Response) {
-        const {id, name, valMax, valMin, fkBrand, fkSector, barCode, image}:IProduct = <IProduct>request.body
-        const product:Product =  new Product(id, name, valMax, valMin, fkBrand, fkSector, barCode, image)
+        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
+        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
         const productDTOUpdate = await new ProductsDTO().handleUpdateProduct(product)
-        response.json([productDTOUpdate, msg, product])
+        response.json(productDTOUpdate)
     };
 
     async deleteProduct(request: Request, response: Response) {
