@@ -37,19 +37,14 @@ class SalesControllers {
   async registerSale(request: Request, response: Response) {
     const sale_:TSale = <TSale>request.body
     const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.itens)
-    const registerSaleDTO = await new salesDTO().handleRegisterSale(sale)
+    const registerSaleDTO = await new salesDTO().registerSale(sale)
     response.json([registerSaleDTO])
   };
 
   async findUserSale(request: Request, response: Response) {
     const { id, privilege }: IUser = <IUser>request.body[0]
-    if (privilege == 2) {
-      const sales = await new salesDTO().handleFindSales()
-      response.json(sales)
-    } else {
-      const sales = await new salesDTO().handleFindUserSales(id)
-      response.json(sales)
-    }
+    const sales = await new salesDTO().listSalesByLoggedInUser(id, privilege)
+    response.json(sales)
   };
 
   async findSale(request: Request, response: Response) {

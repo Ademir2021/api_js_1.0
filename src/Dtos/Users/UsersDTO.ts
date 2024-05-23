@@ -44,7 +44,7 @@ class UsersDTO {
         }
     };
 
-    public async listUsers(id: number, privilege: number) {
+    public async listUsersByLoggedInUser(id: number, privilege: number) {
         if (privilege == 2) {
             const users = await new UserDAO().select(table, 'id')
             return (users)

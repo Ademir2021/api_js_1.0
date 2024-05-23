@@ -19,7 +19,7 @@ class UsersControllers {
 
     async listUsers(request: Request, response: Response) {
         const { id, privilege }: IUser = <IUser>request.body[0]
-        const usersDTOList = await new UsersDTO().listUsers(id, privilege)
+        const usersDTOList = await new UsersDTO().listUsersByLoggedInUser(id, privilege)
         response.json(usersDTOList)
     };
 

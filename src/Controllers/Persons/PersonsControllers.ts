@@ -30,7 +30,7 @@ class PersonsControlles {
         const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
         const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
         const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
-        const personDTOSave = await new PersonsDTO().handleSavePerson(person, address)
+        const personDTOSave = await new PersonsDTO().savePerson(person, address)
         response.json(personDTOSave)
     };
 
@@ -47,20 +47,15 @@ class PersonsControlles {
 
     async listUserPersons(request: Request, response: Response) {
         const { id, privilege }: IUser = <IUser>request.body[0]
-        if (privilege == 2) {
-            const persons = await new PersonDAO().select(table, 'id_person')
-            response.json(persons)
-        } else {
-            const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
-            response.json(persons)
-        }
+      const users = await new PersonsDTO().listPersonsByLoggedInUser(id, privilege)
+      response.json(users)
     };
 
     async updatePerson(request: Request, response: Response) {
         const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
         const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
         const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
-        const personDTOUpdate = await new PersonsDTO().handleUpdatePerson(person, address)
+        const personDTOUpdate = await new PersonsDTO().updatePerson(person, address)
         response.json(personDTOUpdate)
     };
 

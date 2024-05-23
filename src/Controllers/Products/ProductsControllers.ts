@@ -23,7 +23,7 @@ class ProductsControllers{
     async saveProduct(request: Request, response: Response){
         const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
         const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
-        const productDTOSave = await new ProductsDTO().handleSaveProduct(product)
+        const productDTOSave = await new ProductsDTO().saveProduct(product)
         response.json(productDTOSave)
     };
 
@@ -41,7 +41,7 @@ class ProductsControllers{
     async updateProduct(request: Request, response: Response) {
         const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
         const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
-        const productDTOUpdate = await new ProductsDTO().handleUpdateProduct(product)
+        const productDTOUpdate = await new ProductsDTO().updateProduct(product)
         response.json(productDTOUpdate)
     };
 

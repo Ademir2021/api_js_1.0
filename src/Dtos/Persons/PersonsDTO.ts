@@ -19,34 +19,34 @@ class PersonsDTO {
         return person
     };
 
-    private async savePerson(Person: IPerson, Address: IAddress) {
-        const person = await new PersonDAO().insert(Person, Address)
-        return person
-    };
-
-    private async updatePerson(Person: IPerson, Address: IAddress) {
-        const personUpdate = await new PersonDAO().update(Person, Address)
-        return personUpdate
-    };
-
-    async handleSavePerson(Person: IPerson, Address: IAddress) {
+    async savePerson(Person: IPerson, Address: IAddress) {
         const person: any = await this.findPersonName(Person, Address)
         if (person[0]) {
             return (msgAlreadyExists)
         } else {
-            const res = await this.savePerson(Person, Address)
+            const person = await new PersonDAO().insert(Person, Address)
             return (msgRecordSucess)
 
         }
     };
 
-    public async handleUpdatePerson(Person: IPerson, Address: IAddress) {
+    async updatePerson(Person: IPerson, Address: IAddress) {
         const person: any = await this.findPerson(Person)
         if (person[0].id_person === Person.id) {
-            const res = await this.updatePerson(Person, Address)
+            const res = await new PersonDAO().update(Person, Address)
             return (msgPersonUpdatedSuccessfully)
         } else {
             return (msgPersonNotFound)
+        }
+    };
+
+    async listPersonsByLoggedInUser(id: number, privilege: number) {
+        if (privilege == 2) {
+            const persons = await new PersonDAO().select(table, 'id_person')
+            return persons
+        } else {
+            const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
+            return persons
         }
     };
 }

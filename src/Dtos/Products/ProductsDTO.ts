@@ -20,31 +20,22 @@ class ProductsDTO {
         return product
     };
 
-    private async saveProduct(Product: IProduct) {
-        const product = await new ProductDAO().insert(Product)
-        return product
-    };
 
-    private async updateProduct(Product: IProduct) {
-        const personUpdate = await new ProductDAO().update(Product)
-        return personUpdate
-    };
-
-    async handleSaveProduct(Product: IProduct) {
+    async saveProduct(Product: IProduct) {
         const product: any = await this.findProductName(Product)
         if (product[0]) {
             return ([msgAlreadyExists, product])
         } else {
-            const res = await this.saveProduct(Product)
-            return ([msgRecordSucess, res])
+            const product = await new ProductDAO().insert(Product)
+            return ([msgRecordSucess, product])
 
         }
     };
 
-    public async handleUpdateProduct(Product: IProduct) {
+    public async updateProduct(Product: IProduct) {
         const product: any = await this.findProduct(Product)
         if (product[0].id_product === Product.id) {
-            const res = await this.updateProduct(Product)
+            const personUpdate = await new ProductDAO().update(Product)
             return (msgProductUpdatedSuccessfully)
         } else {
             return (msgProductNotFound)
