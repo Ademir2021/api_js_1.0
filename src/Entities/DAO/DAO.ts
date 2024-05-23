@@ -9,18 +9,18 @@ abstract class DAO {
         return "Error occurred ! " + err
     }
 
-    public async select(table: string, param: string) {
+    public async select(table: string, filed: string) {
         try {
-            const res = await postgreSQL.query("SELECT * FROM " + table + " order by " + param + " ")
+            const res = await postgreSQL.query("SELECT * FROM " + table + " order by " + filed + " ")
             return res.rows
         } catch (err) {
             return (this.errors(err))
         }
     };
 
-    public async selectOne(id: number, table: string, param: string) {
+    public async selectOne(id: number, table: string, field: string) {
         try {
-            const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + param + " = " + id + " ")
+            const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field + " = " + id + " ")
             if (res.rowCount !== 0) {
                 return res.rows
             } else {
@@ -28,6 +28,15 @@ abstract class DAO {
             }
         } catch (err) {
             return (this.errors(err))
+        }
+    };
+
+    async selectHandle(table:string, field1:string , field2: string | number) {
+        try {
+            const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field1 + " = '" + field2 + "'")
+            return (res.rows);
+        } catch (err) {
+            return ( this.errors(err))
         }
     };
 

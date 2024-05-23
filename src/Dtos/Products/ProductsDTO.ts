@@ -10,13 +10,13 @@ const msgProductUpdatedSuccessfully = 'Produto atualizado com sucesso'
 class ProductsDTO {
 
     private async findProduct(Product: IProduct) {
-        const product = await new ProductDAO().selectOne(Product.id, table, 'id_product')
+        const product = await new ProductDAO().selectHandle(table, 'id_product', Product.id)
         return product
     };
 
 
     private async findProductName(Product: IProduct) {
-        const product = await new ProductDAO().selectOneproduct(Product)
+        const product = await new ProductDAO().selectHandle(table, 'descric_product', Product.name)
         return product
     };
 
@@ -24,10 +24,10 @@ class ProductsDTO {
     async saveProduct(Product: IProduct) {
         const product: any = await this.findProductName(Product)
         if (product[0]) {
-            return ([msgAlreadyExists, product])
+            return (msgAlreadyExists)
         } else {
             const product = await new ProductDAO().insert(Product)
-            return ([msgRecordSucess, product])
+            return (msgRecordSucess)
 
         }
     };

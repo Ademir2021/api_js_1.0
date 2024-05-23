@@ -21,24 +21,6 @@ class PersonDAO extends DAO {
             return (new PersonDAO().errors(err))
         }
     };
-
-    async selectOnePerson(Person:IPerson) {
-        try {
-            const res = await postgreSQL.query("SELECT * FROM " + PersonDAO.table + " WHERE name_pers = '" + Person.name + "'")
-            return (res.rows);
-        } catch (err) {
-            return (new PersonDAO().errors(err))
-        }
-    };
-
-    async selectUserPerson(Person:IPerson) {
-        try {
-            const res = await postgreSQL.query("SELECT * FROM " + PersonDAO.table + " WHERE fk_id_users = '" + Person.fkIdUser + "'")
-            return (res.rows);
-        } catch (err) {
-            return (new PersonDAO().errors(err))
-        }
-    };
 }
 
 export { PersonDAO }

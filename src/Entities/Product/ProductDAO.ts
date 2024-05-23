@@ -2,7 +2,6 @@ import { IProduct } from "../../Interfaces/Product/Product";
 import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL";
 import { DAO } from "../DAO/DAO";
 
-
 class ProductDAO extends DAO {
 
     public static table = "products"
@@ -24,15 +23,6 @@ class ProductDAO extends DAO {
             return (new ProductDAO().errors(err))
         }
     };
-
-    async selectOneproduct(Product: IProduct) {
-        try {
-            const res = await postgreSQL.query("SELECT * FROM " + ProductDAO.table + " WHERE descric_product = '" + Product.name + "'")
-            return (res.rows);
-        } catch (err) {
-            return (new ProductDAO().errors(err))
-        }
-    }
 }
 
 export { ProductDAO }

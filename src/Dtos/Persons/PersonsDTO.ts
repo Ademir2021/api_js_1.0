@@ -2,7 +2,8 @@ import { IPerson, IAddress } from "../../Interfaces/Person/Person"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = "persons"
-const msgAlreadyExists = 'Este cliente já existe'
+const msgPhoneAlreadyExists = 'Este número de telefone já existe'
+const msgCPFAlreadyExists = 'Este CPF pertence a outro Cliente'
 const msgRecordSucess = 'Cliente gravado com sucesso'
 const msgPersonNotFound = 'Cliente não localizada'
 const msgPersonUpdatedSuccessfully = 'Cliente atualizado com sucesso'
@@ -10,23 +11,32 @@ const msgPersonUpdatedSuccessfully = 'Cliente atualizado com sucesso'
 class PersonsDTO {
 
     private async findPerson(Person: IPerson) {
-        const person = await new PersonDAO().selectOne(Person.id, table, 'id_person')
+        const person = await new PersonDAO().selectHandle(table, 'id_person', Person.id)
         return person
     };
 
-    private async findPersonName(Person: IPerson, Address: IAddress) {
-        const person = await new PersonDAO().selectOnePerson(Person)
+    private async findPersonPhone(Person: IPerson, Address: IAddress) {
+        const person = await new PersonDAO().selectHandle(table,'phone_pers', Person.phone)
+        return person
+    };
+
+    private async findPersonCPF(Person: IPerson, Address: IAddress) {
+        const person = await new PersonDAO().selectHandle(table,'cpf_pers', Person.cpf)
         return person
     };
 
     async savePerson(Person: IPerson, Address: IAddress) {
-        const person: any = await this.findPersonName(Person, Address)
-        if (person[0]) {
-            return (msgAlreadyExists)
+        const personCPF = await this.findPersonCPF(Person, Address)
+        if (!personCPF[0]) {
+            const personPhone = await this.findPersonPhone(Person, Address)
+            if (personPhone[0]) {
+                return (msgPhoneAlreadyExists)
+            } else {
+                const person = await new PersonDAO().insert(Person, Address)
+                return (msgRecordSucess)
+            }
         } else {
-            const person = await new PersonDAO().insert(Person, Address)
-            return (msgRecordSucess)
-
+            return (msgCPFAlreadyExists)
         }
     };
 
