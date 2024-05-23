@@ -3,6 +3,7 @@ import { ISale, IItens } from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
 import { salesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
+import { IUser } from "../../Interfaces/User/User"
 
 class SalesControllers {
 
@@ -17,9 +18,14 @@ class SalesControllers {
     };
 
   async findUserSale(request: Request, response:Response){
-    const {fkUserId}:ISale = <ISale>request.body.user
-    const findUserSale = await new salesDTO().handleFindUserSales(fkUserId)
-    response.json(findUserSale)
+    const { id, privilege }: IUser = <IUser>request.body[0]
+    if(privilege == 2 ){
+      const sales = await new salesDTO().handleFindSales()
+      response.json(sales)
+    }else{
+      const sales = await new salesDTO().handleFindUserSales(id)
+      response.json(sales)
+    }
   };
 
   async findSale(request: Request, response:Response){

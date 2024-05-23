@@ -5,9 +5,14 @@ const table = SaleDAO.table
 
 class salesDTO {
 
-    async handleFindUserSales(idUser:number){ // privilege Admin
-        const findUserSales = await new SaleDAO().selectOne(idUser, table, "fk_name_user" )
-        return ([findUserSales])
+    async handleFindUserSales(idUser:number){ // Cliente
+        const sales = await new SaleDAO().selectOne(idUser, table, "fk_name_user" )
+        return (sales)
+    };
+
+    async handleFindSales(){ // Admin Privilege == 2
+        const sales = await new SaleDAO().select(table, "id_sale" )
+        return (sales)
     };
 
    async handleRegisterSale(Sale:ISale){
