@@ -5,7 +5,7 @@ const routeBrands = Router();
 const brandsControllers = new BrandsControllers()
 
 
-routeBrands.get('/brands', brandsControllers.find)
+routeBrands.get('/brands', brandsControllers.findAll)
 
 
 export { routeBrands }

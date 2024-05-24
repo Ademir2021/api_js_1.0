@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL";
 
-export class ConttrollerCities {
+class CitiesControllers {
     async select(request: Request, response: Response) {
         try {
             const res = await postgreSQL.query("SELECT * FROM cities");
@@ -21,3 +21,5 @@ export class ConttrollerCities {
         }
     };
 }
+
+export {CitiesControllers}

@@ -11,7 +11,7 @@ type TContact = {
 
 const handleService: HandleService = new HandleService()
 
-export class ConttrollersContacts {
+class ContactsConttrollers {
 
     async select(request: Request, response: Response) {
         const { user_id } = request.params
@@ -31,7 +31,7 @@ export class ConttrollersContacts {
     async insert(request: Request, response: Response) {
         const { name, email, phone, comments } = <TContact>request.body
         try {
-            handleService.setSendMail(name, email, phone, comments )
+            handleService.setSendMail(name, email, phone, comments)
             await postgreSQL.query('INSERT INTO contacts(name, email, phone, comments) VALUES (' + "'" + name + "', '" + email + "', '" + phone + "', '" + comments + "');")
             const res_name = await postgreSQL.query("SELECT name FROM contacts WHERE name = '" + name + "' LIMIT(1)")
             response.json(res_name.rows[0].name + ' Seu contato foi registrado com sucesso !')
@@ -40,3 +40,5 @@ export class ConttrollersContacts {
         }
     }
 }
+
+export { ContactsConttrollers }

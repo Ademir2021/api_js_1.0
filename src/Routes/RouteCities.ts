@@ -1,10 +1,10 @@
 import { Router } from "express"
-import { ConttrollerCities } from "../Controllers/Cities/CiitiesControllers";
+import { CitiesControllers } from "../Controllers/Cities/CiitiesControllers";
 
 const routeCities = Router();
-const conttrollersCities = new ConttrollerCities()
+const citiesControllers = new CitiesControllers()
 
-routeCities.get('/on_city/:id', conttrollersCities.selectOnCity)
-routeCities.get('/cities', conttrollersCities.select)
+routeCities.get('/on_city/:id', citiesControllers.selectOnCity)
+routeCities.get('/cities', citiesControllers.select)
 
 export { routeCities }

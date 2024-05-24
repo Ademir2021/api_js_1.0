@@ -8,13 +8,13 @@ import fetch from 'node-fetch';
 // const urlPagseguroBoleto = 'https://api.pagseguro.com/orders'
 // const urlPublicKey = 'https://api.pagseguro.com/public-keys'
 
-const authorization:any = process.env.AUTH_PAGSEGURO_SANDOX
+const authorization: any = process.env.AUTH_PAGSEGURO_SANDOX
 const urlPagseguroPix = 'https://sandbox.api.pagseguro.com/orders'
 const urlPagseguroCard = 'https://sandbox.api.pagseguro.com/orders'
 const urlPagseguroBoleto = 'https://sandbox.api.pagseguro.com/orders'
 const urlPublicKey = 'https://sandbox.api.pagseguro.com/public-keys'
 
-export class ConttrollersPagSeguro {
+class PagSeguroControllers {
 
     async insertPix(request: Request, response: Response) {
         try {
@@ -97,3 +97,5 @@ export class ConttrollersPagSeguro {
         }
     };
 }
+
+export { PagSeguroControllers }

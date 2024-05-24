@@ -1,13 +1,11 @@
 import { Request, Response } from "express"
-import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL";
+import { DAO } from "../../Entities/DAO/DAO";
 
-export class ConttrollerSectors {
-    async select(request: Request, response: Response) {
-        try {
-            const res = await postgreSQL.query("SELECT * FROM sectors ORDER BY id_sector");
-            response.json(res.rows);
-        } catch (err) {
-            console.log("Error Ocurred ! " + err)
-        }
+  class SectorsConttrollers extends DAO {
+    async findAll(request: Request, response: Response){
+    const sectors = await new SectorsConttrollers().select('sectors', 'id_sector')
+    response.json(sectors)
     };
-}
+ }
+
+export {SectorsConttrollers}

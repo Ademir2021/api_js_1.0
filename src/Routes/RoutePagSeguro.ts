@@ -1,12 +1,12 @@
 import { Router } from "express"
-import { ConttrollersPagSeguro } from "../Controllers/PagSeguro/PagSeguroControllers";
+import { PagSeguroControllers } from "../Controllers/PagSeguro/PagSeguroControllers";
 
 const routePagSeguro = Router();
-const conttrollersPagSeguro = new ConttrollersPagSeguro()
+const pagSeguroControllers = new PagSeguroControllers()
 
-routePagSeguro.post('/pix', conttrollersPagSeguro.insertPix)
-routePagSeguro.post('/boleto', conttrollersPagSeguro.insertBoleto)
-routePagSeguro.post('/card', conttrollersPagSeguro.insertCard)
-routePagSeguro.get('/publickey', conttrollersPagSeguro.publicKeyPagSeguro)
+routePagSeguro.post('/pix', pagSeguroControllers.insertPix)
+routePagSeguro.post('/boleto', pagSeguroControllers.insertBoleto)
+routePagSeguro.post('/card', pagSeguroControllers.insertCard)
+routePagSeguro.get('/publickey', pagSeguroControllers.publicKeyPagSeguro)
 
 export { routePagSeguro }

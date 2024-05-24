@@ -3,7 +3,7 @@ import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL"
 abstract class DAO {
 
     public id: number = 0
-    public name:string = ""
+    public name: string = ""
 
     protected errors(err: unknown) {
         return "Error occurred ! " + err
@@ -18,7 +18,7 @@ abstract class DAO {
         }
     };
 
-    public async selectOne(table:string, id: number, field: string) {
+    public async selectOne(table: string, id: number, field: string) {
         try {
             const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field + " = " + id + " ")
             if (res.rowCount !== 0) {
@@ -31,16 +31,16 @@ abstract class DAO {
         }
     };
 
-    async selectHandle(table:string, field1:string , field2: string | number) {
+    async selectHandle(table: string, field1: string, field2: string | number) {
         try {
             const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field1 + " = '" + field2 + "'")
             return (res.rows);
         } catch (err) {
-            return ( this.errors(err))
+            return (this.errors(err))
         }
     };
 
-    public async delete(table:string, id: number, id_: string) {
+    public async delete(table: string, id: number, id_: string) {
         try {
             const res = await postgreSQL.query("DELETE FROM " + table + " WHERE " + id + " = " + id_ + "")
             if (res.rowCount !== 0) {
