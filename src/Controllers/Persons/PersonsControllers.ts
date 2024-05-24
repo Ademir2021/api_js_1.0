@@ -23,7 +23,7 @@ type TPerson = {
     fk_address: number
 }
 
-class PersonsControlles {
+class PersonsControllers {
 
     async savePerson(request: Request, response: Response) {
         const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
@@ -65,4 +65,4 @@ class PersonsControlles {
     };
 }
 
-export { PersonsControlles }
+export { PersonsControllers }

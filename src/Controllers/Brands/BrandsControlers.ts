@@ -1,13 +1,11 @@
 import { Request, Response } from "express"
-import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL";
+import { DAO } from "../../Entities/DAO/DAO";
 
-export class ConttrollerBrands {
-    async select(request: Request, response: Response) {
-        try{
-            const res = await postgreSQL.query("SELECT * FROM brands ORDER BY id_brand");
-            response.json(res.rows);
-        }catch(err){
-            console.log("Error Ocurred ! " + err)
-        }
-    }
+class BrandsControllers extends DAO {
+    async find(request: Request, response: Response) {
+        const brands = await new BrandsControllers().select('brands', 'id_brand')
+        response.json(brands)
+    };
 }
+
+export { BrandsControllers }

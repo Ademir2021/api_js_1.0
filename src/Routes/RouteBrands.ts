@@ -1,11 +1,11 @@
 import { Router } from "express"
-import { ConttrollerBrands } from "../Controllers/Brands/BrandsControlers";
+import { BrandsControllers } from "../Controllers/Brands/BrandsControlers";
 
 const routeBrands = Router();
-const conttrollersBrands = new ConttrollerBrands()
+const brandsControllers = new BrandsControllers()
 
 
-routeBrands.get('/brands', conttrollersBrands.select)
+routeBrands.get('/brands', brandsControllers.find)
 
 
 export { routeBrands }
