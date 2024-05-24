@@ -6,7 +6,6 @@ import { UsersServices } from "../../Services/Users/UsersServices"
 import { UserDAO } from "../../Entities/User/UserDAO"
 
 const table = UserDAO.table
-const msg = { msg: "Passed by UsersControllers" }
 
 class UsersControllers {
 
@@ -25,7 +24,7 @@ class UsersControllers {
 
     async listUser(request: Request, response: Response) {
         const { id }: IUser = <IUser>request.body
-        const listUser = await new UserDAO().selectOne(id, table, 'id')
+        const listUser = await new UserDAO().selectOne(table, id, 'id')
         response.json(listUser)
     };
 
@@ -33,12 +32,12 @@ class UsersControllers {
         const { id, name, username, password, privilege }: IUser = <IUser>request.body
         const user: User = new User(id, name, username, password, privilege)
         const userDTOUpdate = await new UsersDTO().updateUser(user)
-        response.json([userDTOUpdate, msg, user])
+        response.json([userDTOUpdate, user])
     };
 
     async deleteUser(request: Request, response: Response) {
         const { id }: IUser = <IUser>request.body
-        const deleteUser = await new UserDAO().delete(id, table, 'id')
+        const deleteUser = await new UserDAO().delete( table, id, 'id')
         response.json(deleteUser)
     };
 

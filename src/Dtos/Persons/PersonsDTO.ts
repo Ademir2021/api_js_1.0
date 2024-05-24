@@ -55,7 +55,7 @@ class PersonsDTO {
             const persons = await new PersonDAO().select(table, 'id_person')
             return persons
         } else {
-            const persons = await new PersonDAO().selectOne(id, table, 'fk_id_user')
+            const persons = await new PersonDAO().selectOne(table, id, 'fk_id_user')
             return persons
         }
     };

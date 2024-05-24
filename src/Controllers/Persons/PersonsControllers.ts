@@ -6,7 +6,6 @@ import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = Person.table
-const msg = { msg: "Passed by PersonsControllers" }
 
 type TPerson = {
     id_person: number
@@ -41,7 +40,7 @@ class PersonsControlles {
 
     async listPerson(request: Request, response: Response) {
         const { id }: IPerson = <IPerson>request.body.person
-        const persons = await new PersonDAO().selectOne(id, table, 'id_person')
+        const persons = await new PersonDAO().selectOne(table, id, 'id_person')
         response.json(persons)
     };
 
@@ -61,7 +60,7 @@ class PersonsControlles {
 
     async deletePerson(request: Request, response: Response) {
         const { id }: IPerson = <IPerson>request.body.person
-        const deletePerson = await new PersonDAO().delete(id, table, 'id_person')
+        const deletePerson = await new PersonDAO().delete( table, id, 'id_person')
         response.json(deletePerson)
     };
 }

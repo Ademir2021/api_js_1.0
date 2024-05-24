@@ -5,8 +5,8 @@ const table = SaleDAO.table
 
 class salesDTO {
 
-    private async findSalesByLoggedInUser(idUser: number) { // Cliente
-        const sales = await new SaleDAO().selectOne(idUser, table, "fk_name_user")
+    private async findSalesByLoggedInUser(id: number) { // Cliente
+        const sales = await new SaleDAO().selectOne(table, id, "fk_name_user")
         return (sales)
     };
 

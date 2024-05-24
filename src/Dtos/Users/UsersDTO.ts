@@ -10,7 +10,7 @@ const msgUserUpdatedSuccessfully = { msg: 'Usuário Atualizado com Sucesso' }
 class UsersDTO {
 
     private async findUser(User: IUser) {
-        const user = await new UserDAO().selectOne(User.id, table, 'id')
+        const user = await new UserDAO().selectOne( table, User.id, 'id')
         return user
     };
 
@@ -45,7 +45,7 @@ class UsersDTO {
             const users = await new UserDAO().select(table, 'id')
             return (users)
         } else {
-            const users = await new UserDAO().selectOne(id, table, 'id')
+            const users = await new UserDAO().selectOne( table, id, 'id')
             return (users)
         }
     };

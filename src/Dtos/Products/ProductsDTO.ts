@@ -2,7 +2,8 @@ import { IProduct } from "../../Interfaces/Product/Product";
 import { ProductDAO } from "../../Entities/Product/ProductDAO";
 
 const table = "products"
-const msgAlreadyExists = 'Produto já existe'
+const msgNameAlreadyExists = 'Produto já existe'
+const msgBarCodeAlreadyExists = "Còdigo de barras pertence a outro produto"
 const msgRecordSucess = 'Produto gravado com sucesso'
 const msgProductNotFound = 'Produto não localiado'
 const msgProductUpdatedSuccessfully = 'Produto atualizado com sucesso'
@@ -20,15 +21,24 @@ class ProductsDTO {
         return product
     };
 
+    private async findProductBarCode(Product: IProduct) {
+        const product = await new ProductDAO().selectHandle(table, 'bar_code', Product.barCode)
+        return product
+    };
+
 
     async saveProduct(Product: IProduct) {
-        const product: any = await this.findProductName(Product)
-        if (product[0]) {
-            return (msgAlreadyExists)
+        const productBarCode = await this.findProductBarCode(Product)
+        if (!productBarCode[0]) {
+            const productName = await this.findProductName(Product)
+            if (productName[0]) {
+                return (msgNameAlreadyExists)
+            } else {
+                const product = await new ProductDAO().insert(Product)
+                return (msgRecordSucess)
+            }
         } else {
-            const product = await new ProductDAO().insert(Product)
-            return (msgRecordSucess)
-
+            return (msgBarCodeAlreadyExists)
         }
     };
 

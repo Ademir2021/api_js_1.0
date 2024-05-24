@@ -5,7 +5,6 @@ import { ProductDAO } from "../../Entities/Product/ProductDAO"
 import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
 
 const table = Product.table
-// const msg = { msg: "Passed by ProductsControllers" }
 
 type TProduct = {
   id_product: number
@@ -34,7 +33,7 @@ class ProductsControllers{
 
     async listProduct(request: Request, response: Response) {
         const { id }: IProduct = <IProduct>request.body
-        const persons = await new ProductDAO().selectOne(id, table, 'id_product')
+        const persons = await new ProductDAO().selectOne(table, id, 'id_product')
         response.json(persons)
     };
 
@@ -47,7 +46,7 @@ class ProductsControllers{
 
     async deleteProduct(request: Request, response: Response) {
         const { id }: IProduct = <IProduct>request.body
-        const deleteProduct = await new ProductDAO().delete(id, table, 'id_product')
+        const deleteProduct = await new ProductDAO().delete( table, id, 'id_product')
         response.json(deleteProduct)
     };
 }

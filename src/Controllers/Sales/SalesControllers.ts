@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { ISale, IItens } from "../../Interfaces/Sale/Sale"
+import { IItens } from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
 import { salesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
@@ -51,7 +51,7 @@ class SalesControllers {
     const findUserSale = await new SaleDAO().select("sales", "id_sale")
     response.json(findUserSale)
   };
-
+  
 }
 
 export { SalesControllers }

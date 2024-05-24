@@ -18,7 +18,7 @@ abstract class DAO {
         }
     };
 
-    public async selectOne(id: number, table: string, field: string) {
+    public async selectOne(table:string, id: number, field: string) {
         try {
             const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field + " = " + id + " ")
             if (res.rowCount !== 0) {
@@ -40,9 +40,9 @@ abstract class DAO {
         }
     };
 
-    public async delete(id: number, table: string, param: string) {
+    public async delete(table:string, id: number, id_: string) {
         try {
-            const res = await postgreSQL.query("DELETE FROM " + table + " WHERE " + param + " = " + id + "")
+            const res = await postgreSQL.query("DELETE FROM " + table + " WHERE " + id + " = " + id_ + "")
             if (res.rowCount !== 0) {
                 return "ID:" + res.rowCount + ", deletado com sucesso"
             } else {
