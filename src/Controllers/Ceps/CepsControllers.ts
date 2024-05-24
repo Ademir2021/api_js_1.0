@@ -15,7 +15,7 @@ interface ICeps {
     uf: string;
 };
 
-export class ConttrollerCeps {
+class CepsControllers {
 
     async select(request: Request, response: Response) {
         try {
@@ -50,3 +50,5 @@ export class ConttrollerCeps {
         }
     };
 }
+
+export {CepsControllers}
