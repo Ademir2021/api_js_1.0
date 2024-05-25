@@ -13,6 +13,6 @@ routeUsers.post('/user_list', usersControllers.listUser)
 routeUsers.post('/user', usersControllers.saveUser)
 routeUsers.put('/user_update', usersControllers.updateUser)
 routeUsers.delete('/user_delete', usersControllers.deleteUser)
-routeUsers.post('/login', usersControllers.userLogin)
+routeUsers.post('/login', ensureAuthenticated, usersControllers.userLogin)
 
 export { routeUsers }
