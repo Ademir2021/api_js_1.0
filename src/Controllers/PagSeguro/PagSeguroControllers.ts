@@ -2,17 +2,17 @@ import { Request, Response } from "express";
 require('dotenv').config()
 import fetch from 'node-fetch';
 
-// const authorization:any = process.env.AUTH_PAGSEGURO
-// const urlPagseguroPix = 'https://api.pagseguro.com/orders'
-// const urlPagseguroCard = 'https://api.pagseguro.com/orders'
-// const urlPagseguroBoleto = 'https://api.pagseguro.com/orders'
-// const urlPublicKey = 'https://api.pagseguro.com/public-keys'
+const authorization:any = process.env.AUTH_PAGSEGURO
+const urlPagseguroPix = 'https://api.pagseguro.com/orders'
+const urlPagseguroCard = 'https://api.pagseguro.com/orders'
+const urlPagseguroBoleto = 'https://api.pagseguro.com/orders'
+const urlPublicKey = 'https://api.pagseguro.com/public-keys'
 
-const authorization: any = process.env.AUTH_PAGSEGURO_SANDOX
-const urlPagseguroPix = 'https://sandbox.api.pagseguro.com/orders'
-const urlPagseguroCard = 'https://sandbox.api.pagseguro.com/orders'
-const urlPagseguroBoleto = 'https://sandbox.api.pagseguro.com/orders'
-const urlPublicKey = 'https://sandbox.api.pagseguro.com/public-keys'
+// const authorization: any = process.env.AUTH_PAGSEGURO_SANDOX
+// const urlPagseguroPix = 'https://sandbox.api.pagseguro.com/orders'
+// const urlPagseguroCard = 'https://sandbox.api.pagseguro.com/orders'
+// const urlPagseguroBoleto = 'https://sandbox.api.pagseguro.com/orders'
+// const urlPublicKey = 'https://sandbox.api.pagseguro.com/public-keys'
 
 class PagSeguroControllers {
 
