@@ -1,5 +1,4 @@
 #bin/bash
-
 # echo "# api_js_1.0" >> README.md
 # git init
 # git add README.md
