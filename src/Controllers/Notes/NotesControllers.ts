@@ -13,7 +13,7 @@ export class ConttrollersNotes {
         try {
             const { num_nota } = request.params
             const res_nota = await postgreSQL.query("SELECT  *FROM nota WHERE nota = '" + num_nota + "'")
-            const { nota, filial, comprador, cpf, endereco, telefone, usuario, email, emitida,
+            const { nota, filial, comprador, cpf, endereco, num_endereco, telefone, usuario, email, emitida,
                 val_rec, desc_venda, total_venda, fantasia, f_endereco, cnpj, inscricao,
                 f_telefone, f_email, bairro, cep, uf, municipio } = res_nota.rows[0];
             const res_itens_nota = await postgreSQL.query("SELECT  *FROM itens_nota WHERE id_venda = '" + num_nota + "'")
@@ -103,7 +103,7 @@ export class ConttrollersNotes {
                             body: [
                                 [`Nome:${comprador}`, `Telefone:${telefone}`],
                                 [`CPF:${cpf}`, `Telefone:`],
-                                [`Endereço:${endereco}`, `Bairro:${bairro}`],
+                                [`Endereço:${endereco} - Nº${num_endereco}`, `Bairro:${bairro}`],
                                 [`Cidade: ${municipio}`, `Email:${email}`],
                                 [`Estado: ${uf}`, `User:${usuario}`],
                                 [`CEP: ${cep}`, `Email: ${email}`]
