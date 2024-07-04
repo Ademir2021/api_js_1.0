@@ -29,10 +29,11 @@ class Address extends PersonDAO implements IAddress {
     city = ''
     uf = ''
     cep = ''
-    constructor(id:number, name:string, bairro:string, fkCep:number ) {
+    constructor(id:number, name:string, number:string, bairro:string, fkCep:number ) {
         super()
         this.id = id
         this.name = name //publicPlace
+        this.number = number //num_address
         this.bairro = bairro
         this.fkCep = fkCep
     }

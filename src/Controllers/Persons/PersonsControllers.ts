@@ -13,6 +13,7 @@ type TPerson = {
     cpf_pers: string
     phone_pers: string
     address_pers: string
+    num_address:string
     bairro_pers: string
     fk_cep: number
     name_city?: string
@@ -26,9 +27,9 @@ type TPerson = {
 class PersonsControllers {
 
     async savePerson(request: Request, response: Response) {
-        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
+        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, num_address, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
         const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
-        const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
+        const address: Address = new Address(id_person, address_pers, num_address, bairro_pers, fk_cep)
         const personDTOSave = await new PersonsDTO().savePerson(person, address)
         response.json(personDTOSave)
     };
@@ -51,9 +52,9 @@ class PersonsControllers {
     };
 
     async updatePerson(request: Request, response: Response) {
-        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
+        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, num_address, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
         const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
-        const address: Address = new Address(id_person, address_pers, bairro_pers, fk_cep)
+        const address: Address = new Address(id_person, address_pers, num_address, bairro_pers, fk_cep)
         const personDTOUpdate = await new PersonsDTO().updatePerson(person, address)
         response.json(personDTOUpdate)
     };

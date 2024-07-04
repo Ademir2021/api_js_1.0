@@ -19,7 +19,7 @@ export class AuthenticateJwt {
 
             const passwordMatch = await compare(password, userAlreadExists.rows[0].password)
             if (!passwordMatch) {
-                response.json("Usuário ou senha inválido")
+                response.json("Nome de Usuário ou senha inválido(a)")
             }
             else {
                 let str_id = userAlreadExists.rows[0].id.toString()
