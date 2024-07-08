@@ -10,4 +10,6 @@ routerProducts.post('/product', productsControlers.saveProduct)
 routerProducts.put('/product_update', productsControlers.updateProduct)
 routerProducts.delete('/product_delete', productsControlers.deleteProduct)
 
+routerProducts.get('/un_med', productsControlers.findAllUnMeds)
+
 export {routerProducts}

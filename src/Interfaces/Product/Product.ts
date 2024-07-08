@@ -7,8 +7,13 @@ export type IProduct = {
     valMin:number
     fkBrand:number
     fkSector:number
+    fk_un_med: number
     barCode:string
     image:string
+    fk_classe: number
+    fk_grupo_fiscal: number
+    fk_tipo_prod:number
+    ncm:string
 }
 
 export type IBrand = {

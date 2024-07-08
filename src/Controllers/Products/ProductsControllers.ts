@@ -3,6 +3,7 @@ import { IProduct } from "../../Interfaces/Product/Product"
 import { Product } from "../../Entities/Product/Product"
 import { ProductDAO } from "../../Entities/Product/ProductDAO"
 import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
+import { DAO } from "../../Entities/DAO/DAO"
 
 const table = Product.table
 
@@ -13,15 +14,20 @@ type TProduct = {
   val_min_product: number
   fk_brand: number
   fk_sector: number
+  fk_un_med: number
   bar_code: string
   image: string
+  fk_classe: number
+  fk_grupo_fiscal: number
+  fk_tipo_prod:number
+  ncm:string
 }
 
-class ProductsControllers{
+class ProductsControllers extends DAO{
 
     async saveProduct(request: Request, response: Response){
-        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
-        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
+        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image, fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm}:TProduct = <TProduct>request.body
+        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image, fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm)
         const productDTOSave = await new ProductsDTO().saveProduct(product)
         response.json(productDTOSave)
     };
@@ -38,8 +44,8 @@ class ProductsControllers{
     };
 
     async updateProduct(request: Request, response: Response) {
-        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image}:TProduct = <TProduct>request.body
-        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, bar_code, image)
+        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image,fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm}:TProduct = <TProduct>request.body
+        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image,fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm )
         const productDTOUpdate = await new ProductsDTO().updateProduct(product)
         response.json(productDTOUpdate)
     };
@@ -48,6 +54,11 @@ class ProductsControllers{
         const { id }: IProduct = <IProduct>request.body
         const deleteProduct = await new ProductDAO().delete( table, id, 'id_product')
         response.json(deleteProduct)
+    };
+
+    async findAllUnMeds(request: Request, response: Response) {
+        const uniMeds = await new ProductsControllers().select('un_meds', 'id_un')
+        response.json(uniMeds)
     };
 }
 
