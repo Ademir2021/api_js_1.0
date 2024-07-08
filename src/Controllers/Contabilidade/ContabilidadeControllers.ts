@@ -7,11 +7,11 @@ class ContabilidadeControllers extends DAO {
         response.json(classesProds)
     };
     async findAllTiposProds(request: Request, response: Response) {
-        const tiposProds = await new ContabilidadeControllers().select('tipos_prods', 'id_prod')
+        const tiposProds = await new ContabilidadeControllers().select('tipos_prods', 'id_tipo')
         response.json(tiposProds)
     };
     async findAllGruposFiscais(request: Request, response: Response) {
-        const gruposFiscais = await new ContabilidadeControllers().select('grupos_fiscais', 'id_grupo')
+        const gruposFiscais = await new ContabilidadeControllers().select('grupos_fiscais', 'id_grupo_fiscal')
         response.json(gruposFiscais)
     };
 };
