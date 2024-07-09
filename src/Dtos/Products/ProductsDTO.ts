@@ -46,8 +46,11 @@ class ProductsDTO {
         const product: any = await this.findProduct(Product)
         if (product[0].id_product === Product.id) {
             const personUpdate = await new ProductDAO().update(Product)
-            return (msgProductUpdatedSuccessfully)
-            // return personUpdate
+            if (personUpdate) {
+                return personUpdate
+            } else {
+                return (msgProductUpdatedSuccessfully)
+            }
         } else {
             return (msgProductNotFound)
         }
