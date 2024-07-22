@@ -15,7 +15,6 @@ class ProductsDTO {
         return product
     };
 
-
     private async findProductName(Product: IProduct) {
         const product = await new ProductDAO().selectHandle(table, 'descric_product', Product.name)
         return product
@@ -25,7 +24,6 @@ class ProductsDTO {
         const product = await new ProductDAO().selectHandle(table, 'bar_code', Product.barCode)
         return product
     };
-
 
     async saveProduct(Product: IProduct) {
         const productBarCode = await this.findProductBarCode(Product)

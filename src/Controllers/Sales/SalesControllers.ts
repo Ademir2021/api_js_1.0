@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { IItens } from "../../Interfaces/Sale/Sale"
+import { IItens ,IContaAreceber} from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
 import { salesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
@@ -30,13 +30,14 @@ type TSale = {
   tNote: number
   paySale: number
   itens: IItens[]
+  duplicatas:IContaAreceber[]
 }
 
 class SalesControllers {
 
   async registerSale(request: Request, response: Response) {
     const sale_: TSale = <TSale>request.body
-    const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.itens)
+    const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.itens, sale_.duplicatas)
     const registerSaleDTO = await new salesDTO().registerSale(sale)
     response.json([registerSaleDTO])
   };
