@@ -13,6 +13,7 @@ import { routeCities } from './Routes/RouteCities';
 import { routePagSeguro } from './Routes/RoutePagSeguro';
 import { routeContacts } from './Routes/RouteContacts';
 import { routeContabilidades } from './Routes/RouteContabilidades';
+import { routeContasReceber } from './Routes/RouteContasReceber';
 
 const cors = require('cors');
 const app = express();
@@ -34,6 +35,7 @@ app.use(routeCities)
 app.use(routePagSeguro)
 app.use(routeContacts)
 app.use(routeContabilidades)
+app.use(routeContasReceber)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {
