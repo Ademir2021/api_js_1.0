@@ -2,17 +2,20 @@ import { IValsRecebidos } from "../../Interfaces/ValsRecebidos/ValsRecebidos";
 import { ValRecebidoDAO } from "./ValRecebidoDAO"
 
 class ValRecebido extends ValRecebidoDAO implements IValsRecebidos {
-    fk_conta = 0 //duplicatas
-    fk_venda = 0
-    fk_user = 0
+    fkConta = 0 //duplicatas
+    fkVenda = 0
+    fkUser = 0
     valor = 0
-    data_recebimento = ""
-    constructor(id: number, fk_conta: number, fk_venda: number, fk_user: number, valor: number, data_recebimento: Date | string) {
+    dataRecebimento: Date | string
+    constructor(id: number, fkConta: number, fkVenda: number, fkUser: number, valor: number, dataRecebimento: Date | string) {
         super()
         this.id = id
-        this.fk_conta = fk_conta
+        this.fkConta = fkConta
+        this.fkVenda = fkVenda
+        this.fkUser = fkUser
+        this.valor = valor
+        this.dataRecebimento = dataRecebimento
     }
-
 }
 
 export { ValRecebido }

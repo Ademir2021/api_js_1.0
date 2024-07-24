@@ -1,8 +1,8 @@
 export type IValsRecebidos = {
-    id_val?: number
-    fk_conta: number
-    fk_venda: number
-    fk_user: number
+    id_val?: number | any
+    fkConta: number
+    fkVenda: number
+    fkUser: number
     valor: number
-    data_recebimento: Date | string
+    dataRecebimento: Date | string | any
 }
