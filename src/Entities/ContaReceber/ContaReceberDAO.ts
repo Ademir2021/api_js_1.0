@@ -13,7 +13,6 @@ class ContaReceberDAO extends DAO {
             return (new ContaReceberDAO().errors(err))
         }
     };
-
 }
 
 export { ContaReceberDAO }

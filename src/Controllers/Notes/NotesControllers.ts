@@ -1,4 +1,4 @@
-import { Request, Response } from "express"
+import { Request, Response, text } from "express"
 import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL"
 import PDFPrinter from 'pdfmake'
 import fs from 'fs'
@@ -18,9 +18,10 @@ export class ConttrollersNotes {
                 f_telefone, f_email, bairro, cep, uf, municipio } = res_nota.rows[0];
             const res_itens_nota = await postgreSQL.query("SELECT  *FROM itens_nota WHERE id_venda = '" + num_nota + "'")
             const itens = res_itens_nota.rows
+            const res_faturas = await postgreSQL.query("SELECT *FROM contas_receber WHERE fk_venda = '" + num_nota + "' ")
+            const faturas = res_faturas.rows
 
             const body = [];
-
             const columnsTitle = [
                 { text: "Item", style: "columnsTitle" },
                 { text: "Descrição produtos", style: "columnsTitle" },
@@ -43,6 +44,25 @@ export class ConttrollersNotes {
                 rows.push(`R$ ${item.valor}`)
                 rows.push(`R$ ${item.total}`)
                 body.push(rows)
+            }
+
+            const bodyFaturas = []
+            const columnsTitleFaturas = [
+                { text: "Número", style: "columnsTitle" },
+                { text: "Vencimento", style: "columnsTitle" },
+                { text: "Valor", style: "columnsTitle" },
+            ]
+
+            const columnsBodyFaturas = new Array();
+            columnsTitleFaturas.forEach(column => columnsBodyFaturas.push(column));
+            bodyFaturas.push(columnsBodyFaturas)
+
+            for (let fatura of faturas) {
+                const rows = new Array();
+                rows.push(fatura.id_conta)
+                rows.push(fatura.vencimento)
+                rows.push(fatura.valor)
+                bodyFaturas.push(rows)
             }
 
             const img = {
@@ -111,6 +131,19 @@ export class ConttrollersNotes {
                         }
                     },
                     {
+                        text: '\n\n FATURA', style: 'title'
+                    },
+                    {
+                        style: 'columnsNota',
+                        table: {
+                            heights: function (row: any) {
+                                return 10;
+                            },
+                            widths: ["30%", "30%", "30%"],
+                            body:bodyFaturas
+                        },
+                    },
+                    {
                         text: `\n\n DADOS PRODUTOS/SERVIÇOS`, style: "title"
                     },
                     {
@@ -133,7 +166,7 @@ export class ConttrollersNotes {
                             body: [
                                 [`Produtos/Serviços\nR$ ${val_rec}`,
                                 `Desconto/Produtos\nR$ ${desc_venda}`,
-                                `Total Recebido\nR$${total_venda}`,
+                                `Total à pagar\nR$${total_venda}`,
                                 `Total Nota\nR$${total_venda}`]
                             ]
                         }
@@ -207,7 +240,7 @@ export class ConttrollersNotes {
             })
 
             //console.log("Relatório concluido");
-            handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
+            // handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
 
         } catch (err) {
             response.json("Error Occurred ! " + err)
