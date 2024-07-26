@@ -21,7 +21,7 @@ export class ConttrollersNotes {
             const res_faturas = await postgreSQL.query("SELECT *FROM contas_receber WHERE fk_venda = '" + num_nota + "' ORDER BY vencimento")
             const faturas = res_faturas.rows
 
-            const body = [];
+            const bodyItems = [];
             const columnsTitle = [
                 { text: "Item", style: "columnsTitle" },
                 { text: "Descrição produtos", style: "columnsTitle" },
@@ -33,7 +33,7 @@ export class ConttrollersNotes {
 
             const columnsBody = new Array();
             columnsTitle.forEach(column => columnsBody.push(column));
-            body.push(columnsBody)
+            bodyItems.push(columnsBody)
 
             for (let item of itens) {
                 const rows = new Array();
@@ -43,7 +43,7 @@ export class ConttrollersNotes {
                 rows.push(item.quant)
                 rows.push(`R$ ${item.valor}`)
                 rows.push(`R$ ${item.total}`)
-                body.push(rows)
+                bodyItems.push(rows)
             }
 
             const bodyFaturas = []
@@ -155,7 +155,7 @@ export class ConttrollersNotes {
                                 return 10;
                             },
                             widths: ["6%", "46%", "15%", "7%", "12%", "14%"],
-                            body:body
+                            body:bodyItems
                         },
                     },
                     {
