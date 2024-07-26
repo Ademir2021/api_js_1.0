@@ -242,7 +242,7 @@ export class ConttrollersNotes {
             })
 
             //console.log("Relatório concluido");
-            // handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
+            handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
 
         } catch (err) {
             response.json("Error Occurred ! " + err)
