@@ -139,7 +139,7 @@ export class ConttrollersNotes {
                             heights: function (row: any) {
                                 return 10;
                             },
-                            widths: ["30%", "30%", "30%"],
+                            widths: ["10%", "30%", "30%"],
                             body:bodyFaturas
                         },
                     },
