@@ -18,7 +18,7 @@ export class ConttrollersNotes {
                 f_telefone, f_email, bairro, cep, uf, municipio } = res_nota.rows[0];
             const res_itens_nota = await postgreSQL.query("SELECT  *FROM itens_nota WHERE id_venda = '" + num_nota + "'")
             const itens = res_itens_nota.rows
-            const res_faturas = await postgreSQL.query("SELECT *FROM contas_receber WHERE fk_venda = '" + num_nota + "' ")
+            const res_faturas = await postgreSQL.query("SELECT *FROM contas_receber WHERE fk_venda = '" + num_nota + "' ORDER BY vencimento")
             const faturas = res_faturas.rows
 
             const body = [];
@@ -49,6 +49,7 @@ export class ConttrollersNotes {
             const bodyFaturas = []
             const columnsTitleFaturas = [
                 { text: "Número", style: "columnsTitle" },
+                { text: "Tipo", style: "columnsTitle" },
                 { text: "Vencimento", style: "columnsTitle" },
                 { text: "Valor", style: "columnsTitle" },
             ]
@@ -60,8 +61,9 @@ export class ConttrollersNotes {
             for (let fatura of faturas) {
                 const rows = new Array();
                 rows.push(fatura.id_conta)
-                rows.push(fatura.vencimento)
-                rows.push(fatura.valor)
+                rows.push(fatura.tipo)
+                rows.push(fatura.vencimento.toLocaleString('pt-BR', { timezone: 'UTC' }))
+                rows.push(`R$ ${parseFloat(fatura.valor).toFixed(2)}`)
                 bodyFaturas.push(rows)
             }
 
@@ -139,7 +141,7 @@ export class ConttrollersNotes {
                             heights: function (row: any) {
                                 return 10;
                             },
-                            widths: ["10%", "30%", "30%"],
+                            widths: ["8%", "5%", "20%", "15%"],
                             body:bodyFaturas
                         },
                     },
@@ -153,7 +155,7 @@ export class ConttrollersNotes {
                                 return 10;
                             },
                             widths: ["6%", "46%", "15%", "7%", "12%", "14%"],
-                            body
+                            body:body
                         },
                     },
                     {
