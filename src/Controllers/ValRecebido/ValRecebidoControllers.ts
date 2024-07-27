@@ -16,8 +16,8 @@ type TValsRecebidos = {
 class ValRecebidoControllers extends DAO {
 
     async registerValRecebido(request: Request, response: Response) {
-        const { id_val, fk_conta, fk_user, fk_venda, valor, data_recebimento }: TValsRecebidos = <TValsRecebidos>request.body
-        const valRecebido = new ValRecebido(id_val, fk_conta, fk_user, fk_venda, valor, data_recebimento)
+        const { id_val, fk_conta, fk_venda, fk_user, valor, data_recebimento }: TValsRecebidos = <TValsRecebidos>request.body
+        const valRecebido = new ValRecebido(id_val, fk_conta, fk_venda, fk_user, valor, data_recebimento)
         const registerVals = new ValRecebidoDAO().insert(valRecebido)
         return response.json(registerVals)
         console.log(registerVals)
