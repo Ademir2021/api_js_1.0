@@ -8,7 +8,15 @@ class ContaReceberDAO extends DAO {
 
     async update(ContaRec: IContaAreceber) {
         try {
-            await postgreSQL.query("UPDATE " + ContaReceberDAO.table + " SET juros = '" + ContaRec.juros + "', multa = '" + ContaRec.multa + "', desconto ='" + ContaRec.desconto + "', saldo ='" + ContaRec.saldo + "', pagamento = '" + ContaRec.pagamento + "', recebimento = '" + ContaRec.recebimento + "' WHERE id_conta = '" + ContaRec.id + "'")
+            await postgreSQL.query("UPDATE " + ContaReceberDAO.table
+                + " SET juros = '" + ContaRec.juros
+                + "', multa = '" + ContaRec.multa
+                + "', desconto ='" + ContaRec.desconto
+                + "', saldo ='" + ContaRec.saldo
+                + "', pagamento = '" + ContaRec.pagamento
+                + "', recebimento = '" + ContaRec.recebimento
+                + "' WHERE id_conta = '" + ContaRec.id
+                + "'")
         } catch (err) {
             return (new ContaReceberDAO().errors(err))
         }
