@@ -36,4 +36,6 @@ export type IContaAreceber = {
     saldo:number //numeric 13,3
     pagamento:Date | string  | any
     recebimento: number | null
+    observacao:string | null
+    fk_pagador:number
 }

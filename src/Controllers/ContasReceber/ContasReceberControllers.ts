@@ -15,10 +15,10 @@ class ContasReceberControllers extends DAO {
     async updateContasReceber(request: Request, response: Response) {
         const { id_conta, fk_filial, tipo, fk_venda, fk_user, parcela,
             valor, multa, juros, desconto, emissao, vencimento, saldo,
-            pagamento, recebimento }: IContaAreceber | any = <IContaAreceber | any>request.body
+            pagamento, recebimento, observacao, pagador }: IContaAreceber | any = <IContaAreceber | any>request.body
         const contaReceber: ContaReceber = new ContaReceber(id_conta, fk_filial, tipo, fk_venda,
             fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento,
-            saldo, pagamento, recebimento)
+            saldo, pagamento, recebimento, observacao, pagador)
         const updateConta = await new ContaReceberDAO().update(contaReceber)
         return response.json(updateConta)
     }

@@ -1,7 +1,6 @@
 import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber";
 import { ContaReceberDAO } from "./ContaReceberDAO";
 
-
 class ContaReceber extends ContaReceberDAO implements IContaAreceber {
 
     fkFilial = 0
@@ -18,6 +17,8 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
     saldo = 0
     pagamento: Date | any
     recebimento = 0
+    observacao = ""
+    fkPagador = 0
     constructor(
         id:number,
         fkFilial: number,
@@ -33,7 +34,9 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
         vencimento: Date | any,
         saldo: number,
         pagamento: Date | any,
-        recebimento: number
+        recebimento: number,
+        observacao:string,
+        fkPagador:number
     ) {
         super()
         this.id = id
@@ -51,6 +54,8 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
         this.saldo = saldo
         this.pagamento = pagamento
         this.recebimento = recebimento
+        this.observacao = observacao
+        this.fkPagador = fkPagador
     }
 }
 

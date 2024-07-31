@@ -38,7 +38,7 @@ class SaleDAO extends DAO {
 
             if (Sales.contasReceber)
                 for (let conta of Sales.contasReceber) {
-                    await postgreSQL.query('INSERT INTO ' + SaleDAO.tableContasReceber + '(fk_filial, tipo, fk_venda, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento) VALUES ('
+                    await postgreSQL.query('INSERT INTO ' + SaleDAO.tableContasReceber + '(fk_filial, tipo, fk_venda, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador) VALUES ('
                         + "'"
                         + conta.fk_filial + "','"
                         + conta.tipo + "','"
@@ -52,7 +52,9 @@ class SaleDAO extends DAO {
                         + conta.emissao + "','"
                         + conta.vencimento + "','"
                         + conta.saldo + "','"
-                        + conta.recebimento
+                        + conta.recebimento + "','"
+                        + conta.observacao + "','"
+                        + conta.fk_pagador
                         + "')")
                 };
             return (num_sale)
