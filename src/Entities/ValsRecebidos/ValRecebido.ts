@@ -7,7 +7,17 @@ class ValRecebido extends ValRecebidoDAO implements IValsRecebidos {
     fkUser = 0
     valor = 0
     dataRecebimento: Date | string
-    constructor(id: number, fkConta: number, fkVenda: number, fkUser: number, valor: number, dataRecebimento: Date | string) {
+    fkPerson: number
+    constructor(
+        id: number,
+        fkConta: number,
+        fkVenda: number,
+        fkUser: number,
+        valor: number,
+        dataRecebimento: Date | string,
+        name:string,
+        fkPerson:number
+        ) {
         super()
         this.id = id
         this.fkConta = fkConta
@@ -15,6 +25,8 @@ class ValRecebido extends ValRecebidoDAO implements IValsRecebidos {
         this.fkUser = fkUser
         this.valor = valor
         this.dataRecebimento = dataRecebimento
+        this.name = name // Descriçao do pagamento
+        this.fkPerson = fkPerson
     }
 }
 

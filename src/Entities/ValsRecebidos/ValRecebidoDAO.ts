@@ -8,12 +8,14 @@ class ValRecebidoDAO extends DAO {
 
     async insert(Vals: IValsRecebidos) {
         try {
-            await postgreSQL.query('INSERT INTO ' + ValRecebidoDAO.table + '(fk_conta, fk_venda, fk_user, valor, data_recebimento) VALUES ('
+            await postgreSQL.query('INSERT INTO ' + ValRecebidoDAO.table + '(fk_conta, fk_venda, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
                 + "'" + Vals.fkConta
                 + "','" + Vals.fkVenda
                 + "', '" + Vals.fkUser
                 + "', '" + Vals.valor
                 + "', '" + Vals.dataRecebimento
+                + "', '" + Vals.name
+                + "', '" + Vals.fkPerson
                 + "')")
         } catch (err) {
             return (new ValRecebidoDAO().errors(err))

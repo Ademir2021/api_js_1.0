@@ -5,4 +5,6 @@ export type IValsRecebidos = {
     fkUser: number
     valor: number
     dataRecebimento: Date | string | any
+    fkPerson:number
+    name: string //descrição do pagamento
 }
