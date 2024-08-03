@@ -1,5 +1,5 @@
 export type IValsRecebidos = {
-    id_val?: number | any
+    id: number
     fkConta: number
     fkVenda: number
     fkUser: number
