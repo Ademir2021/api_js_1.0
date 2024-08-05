@@ -15,6 +15,7 @@ import { routeContacts } from './Routes/RouteContacts';
 import { routeContabilidades } from './Routes/RouteContabilidades';
 import { routeContasReceber } from './Routes/RouteContasReceber';
 import { routerValsRecebidos } from './Routes/RouteValsRecebidos';
+import { routerCaixaMovs } from './Routes/RouteCaixaMovs';
 
 const cors = require('cors');
 const app = express();
@@ -38,6 +39,7 @@ app.use(routeContacts)
 app.use(routeContabilidades)
 app.use(routeContasReceber)
 app.use(routerValsRecebidos)
+app.use(routerCaixaMovs)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {
