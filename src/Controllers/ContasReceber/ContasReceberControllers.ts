@@ -28,7 +28,7 @@ export type TContaAreceber = {
 class ContasReceberControllers extends DAO {
 
     async findAllContasReceber(request: Request, response: Response) {
-        const contasReceber = await new ContasReceberControllers().select('contas_receber', 'id_conta')
+        const contasReceber = await new ContasReceberControllers().select('contas_receber', 'vencimento')
         response.json(contasReceber)
     };
 
