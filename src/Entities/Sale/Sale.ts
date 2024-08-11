@@ -6,14 +6,16 @@ class Sale extends SaleDAO implements ISale {
     diskSale = 0
     fkFilial = 0
     fkUserId = 0
+    dinheiro = 0
     itens?: IItens[] = []
     contasReceber?: IContaAreceber[] = []
-    constructor(fkPerson: number, diskSale: number, fkFilial: number, fkUserId: number, itens: IItens[], contasReceber: IContaAreceber[]) {
+    constructor(fkPerson: number, diskSale: number, fkFilial: number, fkUserId: number, dinheiro:number, itens: IItens[], contasReceber: IContaAreceber[]) {
         super()
         this.fkPerson = fkPerson
         this.diskSale = diskSale
         this.fkFilial = fkFilial
         this.fkUserId = fkUserId
+        this.dinheiro = dinheiro
         this.itens = itens
         this.contasReceber = contasReceber
     }

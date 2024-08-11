@@ -5,6 +5,10 @@ import fs from 'fs'
 import { IReportNotes } from "../../Interfaces/Note/Note"
 import { HandleService } from "../../Providers/Mail/nodeMailer"
 
+type TDinheiro = {
+    valor: 0
+}
+
 const handleService: HandleService = new HandleService()
 
 export class ConttrollersNotes {
@@ -12,7 +16,7 @@ export class ConttrollersNotes {
     async select(request: Request, response: Response) {
         try {
             const { num_nota } = request.params
-            const res_nota = await postgreSQL.query("SELECT  *FROM nota WHERE nota = '" + num_nota + "'")
+            const res_nota = await postgreSQL.query("SELECT *FROM nota WHERE nota = '" + num_nota + "'")
             const { nota, filial, comprador, cpf, endereco, num_endereco, telefone, usuario, email, emitida,
                 val_rec, desc_venda, total_venda, fantasia, f_endereco, cnpj, inscricao,
                 f_telefone, f_email, bairro, cep, uf, municipio } = res_nota.rows[0];
@@ -20,6 +24,15 @@ export class ConttrollersNotes {
             const itens = res_itens_nota.rows
             const res_faturas = await postgreSQL.query("SELECT *FROM contas_receber WHERE fk_venda = '" + num_nota + "' ORDER BY vencimento")
             const faturas = res_faturas.rows
+            const res_dinheiro = await postgreSQL.query("SELECT  valor FROM vals_recebidos WHERE fk_venda = '" + num_nota + "' and fk_conta = 0 ")
+            const dinheiro: TDinheiro | any = res_dinheiro.rows[0]
+
+            function setDinheiro() {
+                if (dinheiro?.valor != null) 
+                    return "R$ " + parseFloat(dinheiro?.valor).toFixed(3)
+                else if (dinheiro?.valor == null)
+                    return "R$ 0,00" 
+            }
 
             const bodyItems = [];
             const columnsTitle = [
@@ -133,6 +146,9 @@ export class ConttrollersNotes {
                         }
                     },
                     {
+                        text: `\n\nVALOR RECEBIDO EM DINHEIRO/ESPÉCIE - ${setDinheiro()}`, style: 'title',
+                    },
+                    {
                         text: '\n\n FATURA', style: 'title'
                     },
                     {
@@ -142,7 +158,7 @@ export class ConttrollersNotes {
                                 return 10;
                             },
                             widths: ["8%", "5%", "20%", "15%"],
-                            body:bodyFaturas
+                            body: bodyFaturas
                         },
                     },
                     {
@@ -155,7 +171,7 @@ export class ConttrollersNotes {
                                 return 10;
                             },
                             widths: ["6%", "46%", "15%", "7%", "12%", "14%"],
-                            body:bodyItems
+                            body: bodyItems
                         },
                     },
                     {
@@ -182,6 +198,7 @@ export class ConttrollersNotes {
                             widths: ["*"],
                             body: [
                                 [`\nObservações:\n
+                                    Valor recebido em dinheiro: ${setDinheiro()}\n
                                 Está nota Nº ${nota} não possui valor fiscal\n
                                 Nota emitida on-line pelo site: https://www.centroinfo.com.br`]
                             ]
@@ -242,7 +259,7 @@ export class ConttrollersNotes {
             })
 
             //console.log("Relatório concluido");
-            handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
+            // handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
 
         } catch (err) {
             response.json("Error Occurred ! " + err)

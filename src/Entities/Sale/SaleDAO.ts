@@ -7,6 +7,7 @@ class SaleDAO extends DAO {
     static table = "sales"
     static tableItens = "itens_sale"
     static tableContasReceber = "contas_receber"
+    static tableValsRecebidos = "vals_recebidos"
 
     async insert(Sales: ISale) {
         try {
@@ -57,6 +58,17 @@ class SaleDAO extends DAO {
                         + conta.fk_pagador
                         + "')")
                 };
+            if (Sales.dinheiro > 0) {
+                await postgreSQL.query('INSERT INTO ' + SaleDAO.tableValsRecebidos + '(fk_conta, fk_venda, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
+                    + "'" + 0
+                    + "','" + num_sale
+                    + "', '" + Sales.fkUserId
+                    + "', '" + Sales.dinheiro
+                    + "', '" + new Date().toISOString()
+                    + "', '" + "Venda"
+                    + "', '" + Sales.fkPerson
+                    + "')")
+            }
             return (num_sale)
         } catch (err) {
             return new SaleDAO().errors(err);
