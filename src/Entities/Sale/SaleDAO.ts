@@ -11,7 +11,7 @@ class SaleDAO extends DAO {
 
     async insert(Sales: ISale) {
         try {
-            await postgreSQL.query('INSERT INTO ' + SaleDAO.table + '(fk_name_pers, disc_sale, fk_name_filial, fk_name_user) VALUES ('
+            await postgreSQL.query('INSERT INTO ' + SaleDAO.table + '(fk_name_pers, disc_sale, fk_name_filial, fk_name_user, val_rec, total_sale) VALUES ('
                 + "'"
                 + Sales.fkPerson
                 + "','"
@@ -20,6 +20,10 @@ class SaleDAO extends DAO {
                 + Sales.fkFilial
                 + "','"
                 + Sales.fkUserId
+                + "','"
+                + (Sales.paySale - Sales.dinheiro)
+                + "','"
+                + (Sales.tNote)
                 + "')")
 
             const num_sale_ = await postgreSQL.query("SELECT MAX(id_sale) FROM " + SaleDAO.table + "");
@@ -62,11 +66,11 @@ class SaleDAO extends DAO {
                 await postgreSQL.query('INSERT INTO ' + SaleDAO.tableValsRecebidos + '(fk_conta, fk_venda, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
                     + "'" + 0
                     + "','" + num_sale
-                    + "', '" + Sales.fkUserId
-                    + "', '" + Sales.dinheiro
-                    + "', '" + new Date().toISOString()
-                    + "', '" + "Venda"
-                    + "', '" + Sales.fkPerson
+                    + "','" + Sales.fkUserId
+                    + "','" + Sales.dinheiro
+                    + "','" + new Date().toISOString()
+                    + "','" + "Venda"
+                    + "','" + Sales.fkPerson
                     + "')")
             }
             return (num_sale)

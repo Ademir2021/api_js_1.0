@@ -28,11 +28,14 @@ export class ConttrollersNotes {
             const dinheiro: TDinheiro | any = res_dinheiro.rows[0]
 
             function setDinheiro() {
-                if (dinheiro?.valor != null) 
-                    return "R$ " + parseFloat(dinheiro?.valor).toFixed(3)
+                if (dinheiro?.valor != null)
+                    return dinheiro?.valor
                 else if (dinheiro?.valor == null)
-                    return "R$ 0,00" 
+                    return 0
             }
+
+            const totalNota = parseFloat(total_venda) - parseFloat(desc_venda)
+            const totalPagar = parseFloat(total_venda) - parseFloat(desc_venda)
 
             const bodyItems = [];
             const columnsTitle = [
@@ -146,7 +149,7 @@ export class ConttrollersNotes {
                         }
                     },
                     {
-                        text: `\n\nVALOR RECEBIDO EM DINHEIRO/ESPÉCIE - ${setDinheiro()}`, style: 'title',
+                        text: `\n\nVALOR RECEBIDO EM DINHEIRO/ESPÉCIE - R$ ${setDinheiro()}`, style: 'title',
                     },
                     {
                         text: '\n\n FATURA', style: 'title'
@@ -182,10 +185,10 @@ export class ConttrollersNotes {
                         table: {
                             widths: ['*', '*', '*', 100],
                             body: [
-                                [`Produtos/Serviços\nR$ ${val_rec}`,
+                                [`Produtos/Serviços\nR$ ${total_venda}`,
                                 `Desconto/Produtos\nR$ ${desc_venda}`,
-                                `Total à pagar\nR$${total_venda}`,
-                                `Total Nota\nR$${total_venda}`]
+                                `Total à pagar\nR$ ${totalPagar.toFixed(2)}`,
+                                `Total Nota\nR$ ${totalNota.toFixed(2)}`]
                             ]
                         }
                     },
@@ -198,7 +201,7 @@ export class ConttrollersNotes {
                             widths: ["*"],
                             body: [
                                 [`\nObservações:\n
-                                    Valor recebido em dinheiro: ${setDinheiro()}\n
+                                    Valor recebido em dinheiro - R$ ${setDinheiro()}\n
                                 Está nota Nº ${nota} não possui valor fiscal\n
                                 Nota emitida on-line pelo site: https://www.centroinfo.com.br`]
                             ]

@@ -5,6 +5,8 @@ export type ISale = {
     diskSale:number
     fkFilial:number
     fkUserId:number
+    tNote: number
+    paySale: number
     dinheiro:number
     itens?:IItens []
     contasReceber?:IContaAreceber[]

@@ -38,7 +38,7 @@ class SalesControllers {
 
   async registerSale(request: Request, response: Response) {
     const sale_: TSale = <TSale>request.body
-    const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.dinheiro, sale_.itens, sale_.duplicatas)
+    const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.tItens, sale_.paySale, sale_.dinheiro, sale_.itens, sale_.duplicatas)
     const registerSaleDTO = await new salesDTO().registerSale(sale)
     response.json([registerSaleDTO])
   };
