@@ -4,8 +4,94 @@ import { INotaRecebida } from "../../Interfaces/NotaRecebida/NotaRecebida";
 
 class NotaRecebidaDAO extends DAO {
 
-    insert(NotaRecebidas: INotaRecebida){
-        //
+    static table = "notas_recebidas"
+    static tableItensComprados = "itens_comprados"
+    static tableContasPagar = 'contas_pagar'
+    static tableValsPagos = 'vals_pagos'
+
+    async insert(NotaRecebida: INotaRecebida) {
+        try {
+            await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.table + '(xx,xx) VALUES ('
+                + "'"
+                + NotaRecebida.fkFornecedor
+                + "','"
+                + NotaRecebida.data
+                + "','"
+                + NotaRecebida.emissao
+                + "','"
+                + NotaRecebida.numNota
+                + "','"
+                + NotaRecebida.modelo
+                + "','"
+                + NotaRecebida.vFrete
+                + "','"
+                + NotaRecebida.vSeguro
+                + "','"
+                + NotaRecebida.despAcessorias
+                + "','"
+                + NotaRecebida.acrescimo
+                + "','"
+                + NotaRecebida.desconto
+                + "','"
+                + NotaRecebida.tProdutos
+                + "','"
+                + NotaRecebida.total
+                + "')")
+
+            const num_sale_ = await postgreSQL.query("SELECT MAX(id_XXX) FROM " + NotaRecebidaDAO.table + "");
+            const num_sale: number = num_sale_.rows[0].max;
+
+            if (NotaRecebida.items)
+                for (let item of NotaRecebida.items) {
+                    await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.tableItensComprados + '(xx, xx) VALUES ('
+                        + "'" + num_sale + "','"
+                        + item.item + "','"
+                        + item.descric + "','"
+                        + item.quantidade + "','"
+                        + item.unitario + "','"
+                        + item.total + "','"
+                        + "')")
+                };
+
+                if (NotaRecebida.contaAPagar)
+                    for (let conta of NotaRecebida.contaAPagar) {
+                        await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.tableContasPagar + '(fk_filial, tipo, fk_venda, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador) VALUES ('
+                            + "'"
+                            + conta.fk_filial + "','"
+                            + conta.tipo + "','"
+                            + num_sale + "','"
+                            + conta.fk_user + "','"
+                            + conta.parcela + "','"
+                            + conta.valor + "','"
+                            + conta.multa + "','"
+                            + conta.juros + "','"
+                            + conta.desconto + "','"
+                            + conta.emissao + "','"
+                            + conta.vencimento + "','"
+                            + conta.saldo + "','"
+                            + conta.recebimento + "','"
+                            + conta.observacao + "','"
+                            + conta.fk_pagador
+                            + "')")
+                    };
+
+                    if (NotaRecebida.valsPago.length > 0) {
+                        for (let NotaRec of NotaRecebida.valsPago){
+                        await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.tableValsPagos + '(fk_conta, fk_venda, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
+                            + "'" + 0
+                            + "','" + num_sale
+                            + "','" + NotaRec.fk_user
+                            + "','" + NotaRec.valor
+                            + "','" + NotaRec.data_pagamento
+                            + "','" + NotaRec.descricao
+                            + "','" + NotaRec.fk_person
+                            + "')")
+                    }
+                }
+
+        } catch (err) {
+            return new NotaRecebidaDAO().errors(err);
+        }
     }
 }
 
