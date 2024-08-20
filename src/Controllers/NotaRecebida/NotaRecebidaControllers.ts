@@ -1,9 +1,10 @@
 import { Request, Response } from "express"
 import { NotaRecebida } from "../../Entities/NotaRecebida/NotaRecebida"
 import { INotaRecebida } from "../../Interfaces/NotaRecebida/NotaRecebida"
+import { NotaRecebidaDAO } from "../../Entities/NotaRecebida/NotaRecebidaDAO"
 
 class NotaRecebidaControllers{
-    registerNotaRecebida(request: Request, response: Response){
+   async registerNotaRecebida(request: Request, response: Response){
         const resp:INotaRecebida = request.body
         const notaRecebida:NotaRecebida = new NotaRecebida(
             resp.fkFornecedor,
@@ -21,10 +22,12 @@ class NotaRecebidaControllers{
             resp.total,
             resp.items,
             resp.contaAPagar,
-            resp.valsPago,
-
+            resp.valsPago
         )
-        console.log(notaRecebida)
+        // console.log(notaRecebida)
+        const notaRecebidaRegister = await new NotaRecebidaDAO().insert(notaRecebida)
+        // console.log(notaRecebidaRegister)
+        return response.json(notaRecebidaRegister)
     };
 }
 

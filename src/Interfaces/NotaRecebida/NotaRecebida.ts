@@ -24,7 +24,7 @@ export type IItems = {
     descric: string | number
     quantidade: number
     unitario: number
-    total: number | any
+    total: number
 }
 
 export type ITrib = {
