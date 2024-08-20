@@ -18,6 +18,8 @@ import { routerValsRecebidos } from './Routes/RouteValsRecebidos';
 import { routerCaixaMovs } from './Routes/RouteCaixaMovs';
 import { routeUniMeds } from './Routes/RouteUniMeds';
 import { routeNotaRecebidas } from './Routes/RouteNotaRecebida';
+import { routeContasPagar } from './Routes/RouteContasPagar';
+import { routerValsPago } from './Routes/RouteValsPago';
 
 const cors = require('cors');
 const app = express();
@@ -44,6 +46,8 @@ app.use(routerValsRecebidos)
 app.use(routerCaixaMovs)
 app.use(routeUniMeds)
 app.use(routeNotaRecebidas)
+app.use(routeContasPagar)
+app.use(routerValsPago)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {

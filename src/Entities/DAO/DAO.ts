@@ -1,14 +1,12 @@
 import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL"
 
 abstract class DAO {
-
     public id: number = 0
     public name: string = ""
-
     protected errors(err: unknown) {
         return "Error occurred ! " + err
-    }
-
+    };
+    
     public async select(table: string, filed: string) {
         try {
             const res = await postgreSQL.query("SELECT * FROM " + table + " order by " + filed + " ")

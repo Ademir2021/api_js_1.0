@@ -3,12 +3,10 @@ import { ISale } from "../../Interfaces/Sale/Sale";
 import { DAO } from "../DAO/DAO";
 
 class SaleDAO extends DAO {
-
     static table = "sales"
     static tableItens = "itens_sale"
     static tableContasReceber = "contas_receber"
     static tableValsRecebidos = "vals_recebidos"
-
     async insert(Sales: ISale) {
         try {
             await postgreSQL.query('INSERT INTO ' + SaleDAO.table + '(fk_name_pers, disc_sale, fk_name_filial, fk_name_user, val_rec, total_sale) VALUES ('
@@ -79,5 +77,4 @@ class SaleDAO extends DAO {
         }
     };
 }
-
 export { SaleDAO }

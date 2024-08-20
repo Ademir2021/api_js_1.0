@@ -29,5 +29,4 @@ class ValRecebido extends ValRecebidoDAO implements IValsRecebidos {
         this.fkPerson = fkPerson
     }
 }
-
 export { ValRecebido }
