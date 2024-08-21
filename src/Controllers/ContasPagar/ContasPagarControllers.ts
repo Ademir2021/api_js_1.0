@@ -54,7 +54,7 @@ class ContasPagarControllers extends DAO {
         );
         const insertConta = await new ContaPagarDAO().insert(contaAPagar)
         response.json(insertConta)
-    }
+    };
 
     async findAllContasPagar(request: Request, response: Response) {
         const contasPagar = await new ContasPagarControllers().select('contas_pagar', 'vencimento')
