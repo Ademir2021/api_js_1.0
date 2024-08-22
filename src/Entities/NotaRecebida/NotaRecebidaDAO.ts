@@ -55,7 +55,7 @@ class NotaRecebidaDAO extends DAO {
 
             if (NotaRecebida.contaAPagar)
                 for (let conta of NotaRecebida.contaAPagar) {
-                    await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.tableContasPagar + '(fk_filial, tipo, fk_compra, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador) VALUES ('
+                    await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.tableContasPagar + '(fk_filial, tipo, fk_compra, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador, fk_despesa) VALUES ('
                         + "'"
                         + conta.fk_filial + "','"
                         + conta.tipo + "','"
@@ -71,7 +71,8 @@ class NotaRecebidaDAO extends DAO {
                         + conta.saldo + "','"
                         + conta.recebimento + "','"
                         + conta.observacao + "','"
-                        + conta.fk_pagador
+                        + conta.fk_pagador + "','"
+                        + conta.fk_despesa
                         + "')")
                 };
 
