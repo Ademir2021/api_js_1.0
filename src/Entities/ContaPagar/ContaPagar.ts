@@ -19,6 +19,7 @@ class ContasPagar extends ContaPagarDAO implements IContaAPagar {
     recebimento: number
     observacao: string | null
     fk_pagador: number
+    fk_despesa: number
     constructor(
         id_conta: number,
         fk_filial: number,
@@ -36,7 +37,8 @@ class ContasPagar extends ContaPagarDAO implements IContaAPagar {
         pagamento: Date | any | null,
         recebimento: number | any,
         observacao: string | null,
-        fk_pagador: number
+        fk_pagador: number,
+        fk_despesa:number
     ) {
         super()
         this.id_conta = id_conta
@@ -56,6 +58,7 @@ class ContasPagar extends ContaPagarDAO implements IContaAPagar {
         this.recebimento = recebimento
         this.observacao = observacao
         this.fk_pagador = fk_pagador
+        this.fk_despesa = fk_despesa
     }
 }
 

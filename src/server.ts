@@ -20,6 +20,7 @@ import { routeUniMeds } from './Routes/RouteUniMeds';
 import { routeNotaRecebidas } from './Routes/RouteNotaRecebida';
 import { routeContasPagar } from './Routes/RouteContasPagar';
 import { routerValsPago } from './Routes/RouteValsPago';
+import { routeDespesas } from './Routes/RouteDespesas';
 
 const cors = require('cors');
 const app = express();
@@ -48,6 +49,7 @@ app.use(routeUniMeds)
 app.use(routeNotaRecebidas)
 app.use(routeContasPagar)
 app.use(routerValsPago)
+app.use(routeDespesas)
 
 app.use(
     (error: Error, request: Request, response: Response, next: NextFunction) => {

@@ -25,7 +25,8 @@ class ContasPagarControllers extends DAO {
             resp.pagamento,
             resp.recebimento,
             resp.observacao,
-            resp.fk_pagador
+            resp.fk_pagador,
+            resp.fk_despesa
         );
         const updateConta = await new ContaPagarDAO().update(constaAPagar)
         return response.json(updateConta)
@@ -50,7 +51,8 @@ class ContasPagarControllers extends DAO {
             resp.pagamento,
             resp.recebimento,
             resp.observacao,
-            resp.fk_pagador
+            resp.fk_pagador,
+            resp.fk_despesa
         );
         const insertConta = await new ContaPagarDAO().insert(contaAPagar)
         response.json(insertConta)

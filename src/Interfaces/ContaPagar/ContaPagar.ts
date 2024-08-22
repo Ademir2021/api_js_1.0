@@ -16,4 +16,5 @@ export type IContaAPagar = {
     recebimento: number | any
     observacao:string | null
     fk_pagador:number
+    fk_despesa:number
 }
