@@ -9,7 +9,7 @@ class ValPagoControllers extends DAO{
         const resp: IValsPagos = <IValsPagos>request.body
         const valPago = new ValPago(
             resp.id_val, resp.fk_conta, resp.fk_compra, resp.fk_user,
-            resp.valor, resp.data_recebimento, resp.descricao, resp.fk_person)
+            resp.valor, resp.data_recebimento, resp.descricao, resp.fk_person, resp.fk_despesa)
         const registerVal = await new ValPagoDAO().insert(valPago)
         return response.json(registerVal)
     };

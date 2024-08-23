@@ -10,6 +10,7 @@ class ValPago extends ValPagoDAO implements IValsPagos {
     data_recebimento: Date | any | null
     descricao: string
     fk_person: number
+    fk_despesa: number;
     constructor(
         id_val: number,
         fk_conta: number,
@@ -19,6 +20,7 @@ class ValPago extends ValPagoDAO implements IValsPagos {
         data_recebimento: Date | any | null,
         descricao: string,
         fk_person: number,
+        fk_despesa:number
     ) {
         super()
         this.id_val = id_val
@@ -29,6 +31,7 @@ class ValPago extends ValPagoDAO implements IValsPagos {
         this.data_recebimento = data_recebimento
         this.descricao = descricao
         this.fk_person = fk_person
+        this.fk_despesa = fk_despesa
     }
 }
 

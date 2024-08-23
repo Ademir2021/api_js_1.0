@@ -8,7 +8,7 @@ class ValPagoDAO extends DAO {
 
     async insert(Vals: IValsPagos) {
         try {
-            await postgreSQL.query('INSERT INTO ' + ValPagoDAO.table + '(fk_conta, fk_compra, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
+            await postgreSQL.query('INSERT INTO ' + ValPagoDAO.table + '(fk_conta, fk_compra, fk_user, valor, data_recebimento, descricao, fk_person, fk_despesa) VALUES ('
                 + "'" + Vals.fk_conta
                 + "','" + Vals.fk_compra
                 + "', '" + Vals.fk_user
@@ -16,6 +16,7 @@ class ValPagoDAO extends DAO {
                 + "', '" + Vals.data_recebimento
                 + "', '" + Vals.descricao
                 + "', '" + Vals.fk_person
+                + "', '" + Vals.fk_despesa
                 + "')")
         } catch (err) {
             return (new ValPagoDAO().errors(err))

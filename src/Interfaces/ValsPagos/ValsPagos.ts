@@ -7,4 +7,5 @@ export type IValsPagos = {
     data_recebimento: Date | any | null
     descricao:string
     fk_person:number
+    fk_despesa:number
 }
