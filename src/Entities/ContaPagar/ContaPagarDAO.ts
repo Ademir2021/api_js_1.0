@@ -24,7 +24,7 @@ class ContaPagarDAO extends DAO {
 
     async insert(Titulo: IContaAPagar) {
         try {
-            await postgreSQL.query('INSERT INTO ' + ContaPagarDAO.table + '(fk_filial, tipo, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador, fk_despesa) VALUES ('
+            await postgreSQL.query('INSERT INTO ' + ContaPagarDAO.table + '(fk_filial, tipo, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_beneficiario, fk_despesa) VALUES ('
                 + "'"
                 + Titulo.fk_filial + "','"
                 + Titulo.tipo + "','"
@@ -40,7 +40,7 @@ class ContaPagarDAO extends DAO {
                 + Titulo.saldo + "','"
                 + Titulo.recebimento + "','"
                 + Titulo.observacao + "','"
-                + Titulo.fk_pagador + "','"
+                + Titulo.fk_beneficiario + "','"
                 + Titulo.fk_despesa
                 + "')")
             return "Título gerado com sucesso."
