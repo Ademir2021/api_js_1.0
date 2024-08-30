@@ -1,36 +1,20 @@
 import { Request, Response } from "express"
-import { IPerson, IAddress } from "../../Interfaces/Person/Person"
+import { IPerson} from "../../Interfaces/Person/Person"
 import { IUser } from "../../Interfaces/User/User"
-import { Person, Address } from "../../Entities/Person/Person"
+import { Person } from "../../Entities/Person/Person"
 import { PersonsDTO } from "../../Dtos/Persons/PersonsDTO"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = Person.table
 
-type TPerson = {
-    id_person: number
-    name_pers: string
-    cpf_pers: string
-    phone_pers: string
-    address_pers: string
-    num_address:string
-    bairro_pers: string
-    fk_cep: number
-    name_city?: string
-    uf?: string
-    num_cep?: string
-    fk_name_filial: number
-    fk_id_user: number
-    fk_address: number
-}
-
 class PersonsControllers {
 
     async savePerson(request: Request, response: Response) {
-        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, num_address, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
-        const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
-        const address: Address = new Address(id_person, address_pers, num_address, bairro_pers, fk_cep)
-        const personDTOSave = await new PersonsDTO().savePerson(person, address)
+        const resp: IPerson = <IPerson>request.body
+        const person: Person = new Person(resp.id_person, resp.name_pers, resp.cpf_pers, resp.phone_pers,
+            resp.address_pers,resp.num_address,resp.bairro_pers,resp.fk_cep, resp.fk_name_filial,resp.fk_id_user,
+        resp.rg,resp.cnpj,resp.inscricao,resp.fantasia,resp.limit_cred,resp.fk_grupo)
+        const personDTOSave = await new PersonsDTO().savePerson(person)
         response.json(personDTOSave)
     };
 
@@ -40,8 +24,8 @@ class PersonsControllers {
     };
 
     async listPerson(request: Request, response: Response) {
-        const { id }: IPerson = <IPerson>request.body.person
-        const persons = await new PersonDAO().selectOne(table, id, 'id_person')
+        const { id_person }: IPerson = <IPerson>request.body.person
+        const persons = await new PersonDAO().selectOne(table, id_person, 'id_person')
         response.json(persons)
     };
 
@@ -52,16 +36,17 @@ class PersonsControllers {
     };
 
     async updatePerson(request: Request, response: Response) {
-        const { id_person, name_pers, cpf_pers, phone_pers, address_pers, num_address, bairro_pers, fk_cep, fk_name_filial, fk_id_user, fk_address }: TPerson = <TPerson>request.body
-        const person: Person = new Person(id_person, name_pers, cpf_pers, phone_pers, fk_name_filial, fk_id_user, fk_address)
-        const address: Address = new Address(id_person, address_pers, num_address, bairro_pers, fk_cep)
-        const personDTOUpdate = await new PersonsDTO().updatePerson(person, address)
+        const resp:IPerson = <IPerson>request.body
+        const person: Person = new Person(resp.id_person, resp.name_pers, resp.cpf_pers, resp.phone_pers,
+            resp.address_pers,resp.num_address,resp.bairro_pers,resp.fk_cep, resp.fk_name_filial,resp.fk_id_user,
+        resp.rg,resp.cnpj,resp.inscricao,resp.fantasia,resp.limit_cred,resp.fk_grupo)
+        const personDTOUpdate = await new PersonsDTO().updatePerson(person)
         response.json(personDTOUpdate)
     };
 
     async deletePerson(request: Request, response: Response) {
-        const { id }: IPerson = <IPerson>request.body.person
-        const deletePerson = await new PersonDAO().delete( table, id, 'id_person')
+        const { id_person }: IPerson = <IPerson>request.body.person
+        const deletePerson = await new PersonDAO().delete( table, id_person, 'id_person')
         response.json(deletePerson)
     };
 }

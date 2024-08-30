@@ -1,4 +1,4 @@
-import { IPerson, IAddress } from "../../Interfaces/Person/Person"
+import { IPerson } from "../../Interfaces/Person/Person"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = "persons"
@@ -11,28 +11,30 @@ const msgPersonUpdatedSuccessfully = 'Cliente atualizado com sucesso'
 class PersonsDTO {
 
     private async findPerson(Person: IPerson) {
-        const person = await new PersonDAO().selectHandle(table, 'id_person', Person.id)
+        const person = await new PersonDAO().selectHandle(table, 'id_person', Person.id_person)
         return person
     };
 
-    private async findPersonPhone(Person: IPerson, Address: IAddress) {
-        const person = await new PersonDAO().selectHandle(table,'phone_pers', Person.phone)
+    private async findPersonPhone(Person: IPerson) {
+        const person = await new PersonDAO().selectHandle(table,'phone_pers', Person.phone_pers)
         return person
     };
 
-    private async findPersonCPF(Person: IPerson, Address: IAddress) {
-        const person = await new PersonDAO().selectHandle(table,'cpf_pers', Person.cpf)
+    private async findPersonCPF(Person: IPerson) {
+        const person = await new PersonDAO().selectHandle(table,'cpf_pers', Person.cpf_pers)
+    //    console.log(person)
         return person
     };
 
-    async savePerson(Person: IPerson, Address: IAddress) {
-        const personCPF = await this.findPersonCPF(Person, Address)
-        if (!personCPF[0]) {
-            const personPhone = await this.findPersonPhone(Person, Address)
+    async savePerson(Person: IPerson) {
+        const personCPF = await this.findPersonCPF(Person)
+        if (!personCPF[0] || personCPF[0].cpf_pers == '') {
+            const personPhone = await this.findPersonPhone(Person)
             if (personPhone[0]) {
                 return (msgPhoneAlreadyExists)
             } else {
-                const person = await new PersonDAO().insert(Person, Address)
+                const person = await new PersonDAO().insert(Person)
+                // console.log(person)
                 return (msgRecordSucess)
             }
         } else {
@@ -40,10 +42,10 @@ class PersonsDTO {
         }
     };
 
-    async updatePerson(Person: IPerson, Address: IAddress) {
+    async updatePerson(Person: IPerson) {
         const person: any = await this.findPerson(Person)
-        if (person[0].id_person === Person.id) {
-            const res = await new PersonDAO().update(Person, Address)
+        if (person[0].id_person === Person.id_person) {
+            const res = await new PersonDAO().update(Person)
             return (msgPersonUpdatedSuccessfully)
         } else {
             return (msgPersonNotFound)
