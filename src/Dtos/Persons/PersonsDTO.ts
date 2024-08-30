@@ -28,7 +28,7 @@ class PersonsDTO {
 
     async savePerson(Person: IPerson) {
         const personCPF = await this.findPersonCPF(Person)
-        if (!personCPF[0] || personCPF[0].cpf_pers == '') {
+        if (!personCPF[0] || personCPF[0].cpf_pers == '0') {
             const personPhone = await this.findPersonPhone(Person)
             if (personPhone[0]) {
                 return (msgPhoneAlreadyExists)
