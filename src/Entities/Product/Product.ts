@@ -29,8 +29,8 @@ class Product extends ProductDAO implements IProduct {
         ncm:string
     ) {
         super()
-        this.id = id // id_product
-        this.name = name // descric_product
+        this.id = id
+        this.name = name
         this.valMax = valMax
         this.valMin = valMin
         this.fkBrand = fkBrand

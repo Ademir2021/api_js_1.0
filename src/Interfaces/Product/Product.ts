@@ -1,6 +1,6 @@
 export type IProduct = {
-    id:number; // id_product
-    name:string; // descric_product
+    id:number;
+    name:string;
     valMax:number
     valMin:number
     fkBrand:number

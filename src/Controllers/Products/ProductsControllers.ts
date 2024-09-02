@@ -26,8 +26,10 @@ type TProduct = {
 class ProductsControllers extends DAO{
 
     async saveProduct(request: Request, response: Response){
-        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image, fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm}:TProduct = <TProduct>request.body
-        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image, fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm)
+        const resp:TProduct = <TProduct>request.body
+        const product:Product =  new Product(resp.id_product, resp.descric_product, resp.val_max_product,
+            resp.val_min_product, resp.fk_brand, resp.fk_sector, resp.fk_un_med, resp.bar_code, resp.image,
+            resp.fk_classe, resp.fk_grupo_fiscal, resp.fk_tipo_prod, resp.ncm)
         const productDTOSave = await new ProductsDTO().saveProduct(product)
         response.json(productDTOSave)
     };
@@ -44,8 +46,10 @@ class ProductsControllers extends DAO{
     };
 
     async updateProduct(request: Request, response: Response) {
-        const {id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image,fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm}:TProduct = <TProduct>request.body
-        const product:Product =  new Product(id_product, descric_product, val_max_product, val_min_product, fk_brand, fk_sector, fk_un_med, bar_code, image,fk_classe, fk_grupo_fiscal, fk_tipo_prod, ncm )
+        const resp:TProduct = <TProduct>request.body
+        const product:Product =  new Product(resp.id_product, resp.descric_product, resp.val_max_product,
+            resp.val_min_product, resp.fk_brand, resp.fk_sector, resp.fk_un_med, resp.bar_code, resp.image,
+            resp.fk_classe, resp.fk_grupo_fiscal, resp.fk_tipo_prod, resp.ncm)
         const productDTOUpdate = await new ProductsDTO().updateProduct(product)
         response.json(productDTOUpdate)
     };

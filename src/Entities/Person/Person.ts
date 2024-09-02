@@ -2,8 +2,6 @@ import { IPerson } from "../../Interfaces/Person/Person";
 import { PersonDAO } from "./PersonDAO";
 
 class Person extends PersonDAO implements IPerson {
-    // id_person = 0
-    // name_pers = ''
     cpf_pers = '0'
     phone_pers = ''
     address_pers = ''
