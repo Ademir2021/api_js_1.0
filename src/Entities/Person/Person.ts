@@ -1,51 +1,40 @@
-import { IPerson} from "../../Interfaces/Person/Person";
+import { IPerson } from "../../Interfaces/Person/Person";
 import { PersonDAO } from "./PersonDAO";
 
 class Person extends PersonDAO implements IPerson {
-    id_person: number
-    // created_at?: Date | any
-    // updated_at?: Date | any
-    name_pers: string
-    cpf_pers: string
-    phone_pers: string
-    address_pers: string
-    num_address:string
-    bairro_pers: string
-    fk_cep: number
-    // num_cep: string | undefined | any
-    // name_city: string | undefined | any
-    // uf: string | undefined
-    fk_name_filial: number
-    fk_id_user: number
-    rg:string
-    cnpj:string
-    inscricao:string
-    fantasia:string
-    limit_cred:number
-    fk_grupo:number
+    id_person = 0
+    name_pers = ''
+    cpf_pers = '0'
+    phone_pers = ''
+    address_pers = ''
+    num_address = '0'
+    bairro_pers = ''
+    fk_cep = 0
+    fk_name_filial = 0
+    fk_id_user = 0
+    rg = '0'
+    cnpj = '0'
+    inscricao = '0'
+    fantasia = '0'
+    limit_cred = 0
+    fk_grupo = 0
     constructor(
         id_person: number,
-        // created_at?: Date | any
-        // updated_at?: Date | any
         name_pers: string,
         cpf_pers: string,
         phone_pers: string,
         address_pers: string,
-        num_address:string,
+        num_address: string,
         bairro_pers: string,
         fk_cep: number,
-        // num_cep: string | undefined | any
-        // name_city: string | undefined | any
-        // uf: string | undefined
         fk_name_filial: number,
         fk_id_user: number,
-        rg:string,
-        cnpj:string,
-        inscricao:string,
-        fantasia:string,
-        limit_cred:number,
-        fk_grupo:number
-
+        rg: string,
+        cnpj: string,
+        inscricao: string,
+        fantasia: string,
+        limit_cred: number,
+        fk_grupo: number
     ) {
         super()
         this.id_person = id_person
@@ -64,8 +53,6 @@ class Person extends PersonDAO implements IPerson {
         this.fantasia = fantasia
         this.limit_cred = limit_cred
         this.fk_grupo = fk_grupo
-     
-
     }
 }
 
