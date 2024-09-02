@@ -11,7 +11,7 @@ const msgPersonUpdatedSuccessfully = 'Cliente atualizado com sucesso'
 
 class PersonsDTO {
     private async findPerson(Person: IPerson) {
-        const person = await new PersonDAO().selectHandle(table, 'id_person', Person.id_person)
+        const person = await new PersonDAO().selectHandle(table, 'id_person', Person.id)
         return person
     };
     private async findPersonPhone(Person: IPerson) {
@@ -47,7 +47,7 @@ class PersonsDTO {
     };
     async updatePerson(Person: IPerson) {
         const person: any = await this.findPerson(Person)
-        if (person[0].id_person === Person.id_person) {
+        if (person[0].id_person === Person.id) {
             const res = await new PersonDAO().update(Person)
             return (msgPersonUpdatedSuccessfully)
         } else {

@@ -1,6 +1,6 @@
 export type IPerson = {
-    id_person: number
-    name_pers: string
+    id: number //id_pers
+    name: string //name_pers
     cpf_pers: string
     phone_pers: string
     address_pers: string

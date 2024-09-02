@@ -1,7 +1,5 @@
 export type IProduct = {
     id:number; // id_product
-    createdAt?:Date
-    updatedAt?:Date
     name:string; // descric_product
     valMax:number
     valMin:number

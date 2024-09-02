@@ -2,8 +2,8 @@ import { IPerson } from "../../Interfaces/Person/Person";
 import { PersonDAO } from "./PersonDAO";
 
 class Person extends PersonDAO implements IPerson {
-    id_person = 0
-    name_pers = ''
+    // id_person = 0
+    // name_pers = ''
     cpf_pers = '0'
     phone_pers = ''
     address_pers = ''
@@ -19,8 +19,8 @@ class Person extends PersonDAO implements IPerson {
     limit_cred = 0
     fk_grupo = 0
     constructor(
-        id_person: number,
-        name_pers: string,
+        id: number,
+        name: string,
         cpf_pers: string,
         phone_pers: string,
         address_pers: string,
@@ -37,8 +37,8 @@ class Person extends PersonDAO implements IPerson {
         fk_grupo: number
     ) {
         super()
-        this.id_person = id_person
-        this.name_pers = name_pers
+        this.id = id
+        this.name = name
         this.cpf_pers = cpf_pers
         this.phone_pers = phone_pers
         this.address_pers = address_pers

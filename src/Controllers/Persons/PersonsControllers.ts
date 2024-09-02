@@ -7,9 +7,28 @@ import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
 const table = Person.table
 
+export type TPerson = {
+    id_person: number
+    name_pers: string
+    cpf_pers: string
+    phone_pers: string
+    address_pers: string
+    num_address:string
+    bairro_pers: string
+    fk_cep: number
+    fk_name_filial: number
+    fk_id_user: number
+    rg:string
+    cnpj:string
+    inscricao:string
+    fantasia:string
+    limit_cred:number
+    fk_grupo:number
+}
+
 class PersonsControllers {
     async savePerson(request: Request, response: Response) {
-        const resp: IPerson = <IPerson>request.body
+        const resp: TPerson = <TPerson>request.body
         const person: Person = new Person(resp.id_person, resp.name_pers, resp.cpf_pers, resp.phone_pers,
             resp.address_pers,resp.num_address,resp.bairro_pers,resp.fk_cep, resp.fk_name_filial,resp.fk_id_user,
         resp.rg,resp.cnpj,resp.inscricao,resp.fantasia,resp.limit_cred,resp.fk_grupo)
@@ -21,8 +40,8 @@ class PersonsControllers {
         response.json(person)
     };
     async listPerson(request: Request, response: Response) {
-        const { id_person }: IPerson = <IPerson>request.body.person
-        const persons = await new PersonDAO().selectOne(table, id_person, 'id_person')
+        const { id }: IPerson = <IPerson>request.body.person
+        const persons = await new PersonDAO().selectOne(table, id, 'id_person')
         response.json(persons)
     };
     async listUserPersons(request: Request, response: Response) {
@@ -31,7 +50,7 @@ class PersonsControllers {
       response.json(users)
     };
     async updatePerson(request: Request, response: Response) {
-        const resp:IPerson = <IPerson>request.body
+        const resp:TPerson = <TPerson>request.body
         const person: Person = new Person(resp.id_person, resp.name_pers, resp.cpf_pers, resp.phone_pers,
             resp.address_pers,resp.num_address,resp.bairro_pers,resp.fk_cep, resp.fk_name_filial,resp.fk_id_user,
         resp.rg,resp.cnpj,resp.inscricao,resp.fantasia,resp.limit_cred,resp.fk_grupo)
@@ -39,8 +58,8 @@ class PersonsControllers {
         response.json(personDTOUpdate)
     };
     async deletePerson(request: Request, response: Response) {
-        const { id_person }: IPerson = <IPerson>request.body.person
-        const deletePerson = await new PersonDAO().delete( table, id_person, 'id_person')
+        const { id }: IPerson = <IPerson>request.body.person
+        const deletePerson = await new PersonDAO().delete( table, id, 'id_person')
         response.json(deletePerson)
     };
 };

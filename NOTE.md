@@ -10,6 +10,7 @@
 |-- Services `Business rules`
 
 ## Entities Definition
+- DAO               [X] `Entities DAO`
 - Brand             [X]
 - Cep               [X]
 - City              [X]
@@ -21,3 +22,8 @@
 - Sale              [X]
 - Sector            [X]
 - User              [X]
+- ContasPagar       [X]
+- ContasReceber     [X]
+- ValsPagos         [X]
+- ValsRecebidos     [X]
+- CaixaMov          [X] `triggers on ValsPagos and ValsRecebidos`
