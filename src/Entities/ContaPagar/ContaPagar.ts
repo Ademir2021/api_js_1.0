@@ -2,43 +2,43 @@ import { IContaAPagar } from "../../Interfaces/ContaPagar/ContaPagar";
 import { ContaPagarDAO } from "./ContaPagarDAO";
 
 class ContasPagar extends ContaPagarDAO implements IContaAPagar {
-    id_conta
-    fk_filial: number
-    tipo: string
-    fk_compra: number
-    fk_user: number
-    parcela: number | string
-    valor: number
-    multa: number
-    juros: number
-    desconto: number
-    emissao: Date | string
-    vencimento: Date | string
-    saldo: number
-    pagamento: Date | null
-    recebimento: number
-    observacao: string | null
-    fk_beneficiario: number
-    fk_despesa: number
+    id_conta = 0
+    fk_filial = 0
+    tipo = ''
+    fk_compra = 0
+    fk_user = 0
+    parcela = ''
+    valor = 0
+    multa = 0
+    juros = 0
+    desconto = 0
+    emissao: Date
+    vencimento: Date
+    saldo = 0
+    pagamento: Date
+    recebimento = 0
+    observacao = ''
+    fk_beneficiario = 0
+    fk_despesa = 0
     constructor(
         id_conta: number,
         fk_filial: number,
         tipo: string,
         fk_compra: number,
         fk_user: number,
-        parcela: number | string,
+        parcela: string,
         valor: number,
         multa: number,
         juros: number,
         desconto: number,
-        emissao: Date | string,
-        vencimento: Date | string,
-        saldo: number | any,
-        pagamento: Date | any | null,
-        recebimento: number | any,
-        observacao: string | null,
+        emissao: Date,
+        vencimento: Date,
+        saldo: number,
+        pagamento: Date,
+        recebimento: number,
+        observacao: string,
         fk_beneficiario: number,
-        fk_despesa:number
+        fk_despesa: number
     ) {
         super()
         this.id_conta = id_conta

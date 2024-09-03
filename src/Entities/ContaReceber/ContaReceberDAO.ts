@@ -10,10 +10,10 @@ class ContaReceberDAO extends DAO {
         try {
             await postgreSQL.query('INSERT INTO ' + ContaReceberDAO.table + '(fk_filial, tipo, fk_user, parcela, valor, multa, juros, desconto, emissao, vencimento, saldo, recebimento, observacao, fk_pagador) VALUES ('
                 + "'"
-                + Titulo.fkFilial + "','"
+                + Titulo.fk_filial + "','"
                 + Titulo.tipo + "','"
                 // + Titulo.fkVenda + "','"
-                + Titulo.fkUser + "','"
+                + Titulo.fk_user + "','"
                 + Titulo.parcela + "','"
                 + Titulo.valor + "','"
                 + Titulo.multa + "','"
@@ -24,7 +24,7 @@ class ContaReceberDAO extends DAO {
                 + Titulo.saldo + "','"
                 + Titulo.recebimento + "','"
                 + Titulo.observacao + "','"
-                + Titulo.fkPagador
+                + Titulo.fk_pagador
                 + "')")
             return "Título gerado com sucesso."
         } catch (err) {
@@ -41,7 +41,7 @@ class ContaReceberDAO extends DAO {
                 + "', saldo ='" + ContaRec.saldo
                 + "', pagamento = '" + ContaRec.pagamento
                 + "', recebimento = '" + ContaRec.recebimento
-                + "' WHERE id_conta = '" + ContaRec.id
+                + "' WHERE id_conta = '" + ContaRec.id_conta
                 + "'")
         } catch (err) {
             return (new ContaReceberDAO().errors(err))

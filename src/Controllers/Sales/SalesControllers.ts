@@ -1,9 +1,10 @@
 import { Request, Response } from "express"
-import { IItens ,IContaAreceber} from "../../Interfaces/Sale/Sale"
+import { IItens} from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
 import { salesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
 import { IUser } from "../../Interfaces/User/User"
+import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber"
 
 type TSale = {
   filial: number

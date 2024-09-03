@@ -24,9 +24,7 @@ class NotaRecebidaControllers{
             resp.contaAPagar,
             resp.valsPago
         )
-        // console.log(notaRecebida)
         const notaRecebidaRegister = await new NotaRecebidaDAO().insert(notaRecebida)
-        // console.log(notaRecebidaRegister)
         return response.json(notaRecebidaRegister)
     };
 }

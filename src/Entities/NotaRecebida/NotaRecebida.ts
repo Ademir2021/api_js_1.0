@@ -1,28 +1,29 @@
-import { INotaRecebida, IItems, IContaAPagar, IValsPago } from "../../Interfaces/NotaRecebida/NotaRecebida";
+import { IContaAPagar } from "../../Interfaces/ContaPagar/ContaPagar";
+import { INotaRecebida, IItems } from "../../Interfaces/NotaRecebida/NotaRecebida";
+import { IValsPagos } from "../../Interfaces/ValsPagos/ValsPagos";
 import { NotaRecebidaDAO } from "./NotaRecebidaDAO";
 
 class NotaRecebida extends NotaRecebidaDAO implements INotaRecebida {
     fkFornecedor = 0
-    data: Date | any
-    emissao: Date | any
+    data: Date 
+    emissao: Date
     numNota = 0
     modelo = ''
-    vFrete: number | any
-    vSeguro: number | any
-    despAcessorias: number | any
-    encargos: number | any
-    acrescimo: number | any
-    desconto: number | any
-    tProdutos: number | any
-    total: number | any
+    vFrete = 0
+    vSeguro = 0
+    despAcessorias = 0
+    encargos = 0
+    acrescimo = 0
+    desconto = 0
+    tProdutos = 0
+    total = 0
     items: IItems[] = []
     contaAPagar: IContaAPagar[] = []
-    valsPago: IValsPago[] = []
+    valsPago: IValsPagos[] = []
     constructor(
-        // id: number,
         fkFornecedor: number,
-        data: Date | any,
-        emissao: Date | any,
+        data: Date,
+        emissao: Date,
         numNota: number,
         modelo: string,
         vFrete: number,
@@ -35,10 +36,9 @@ class NotaRecebida extends NotaRecebidaDAO implements INotaRecebida {
         total: number,
         items: IItems[],
         contaAPagar: IContaAPagar[],
-        valsPago: IValsPago[]
+        valsPago: IValsPagos[]
     ) {
         super()
-        // this.id = id
         this.fkFornecedor = fkFornecedor
         this.data = data
         this.emissao = emissao

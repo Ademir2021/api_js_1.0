@@ -83,7 +83,7 @@ class NotaRecebidaDAO extends DAO {
                         + "','" + num_compra
                         + "','" + NotaRec.fk_user
                         + "','" + NotaRec.valor
-                        + "','" + NotaRec.data_pagamento
+                        + "','" + NotaRec.data_recebimento
                         + "','" + NotaRec.descricao
                         + "','" + NotaRec.fk_person
                         + "')")

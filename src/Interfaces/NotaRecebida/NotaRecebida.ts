@@ -1,20 +1,23 @@
+import { IContaAPagar } from "../ContaPagar/ContaPagar"
+import { IValsPagos } from "../ValsPagos/ValsPagos"
+
 export type INotaRecebida = {
     fkFornecedor: number,
-    data: Date | string
-    emissao: Date | string
+    data: Date
+    emissao: Date
     numNota: number
     modelo: string
-    vFrete: number | any
-    vSeguro: number | any
-    despAcessorias: number | any
-    encargos: number | any
-    acrescimo: number | any
-    desconto: number | any
-    tProdutos: number | any
+    vFrete: number
+    vSeguro: number
+    despAcessorias: number
+    encargos: number
+    acrescimo: number
+    desconto: number
+    tProdutos: number
     total: number
     items: IItems[]
     contaAPagar:IContaAPagar[]
-    valsPago: IValsPago[]
+    valsPago: IValsPagos[]
 }
 
 export type IItems = {
@@ -34,36 +37,4 @@ export type ITrib = {
     pisSubst: number
     cofinsSubst: number
     icmsSobreIpi: number
-}
-
-export type IContaAPagar = {
-    id_conta: number 
-    fk_filial: number
-    tipo: string
-    fk_compra: number 
-    fk_user:number
-    parcela: number | string
-    valor: number | any
-    multa: number | any
-    juros: number | any
-    desconto:number | any
-    emissao:Date |  string | any 
-    vencimento:Date | string | any
-    saldo:number | any 
-    pagamento:Date | any | null
-    recebimento: number | any
-    observacao:string | null
-    fk_beneficiario:number
-    fk_despesa:number
-}
-
-export type IValsPago = {
-    id_val: number
-    fk_conta: number
-    fk_compra: number
-    fk_user: number
-    valor: number
-    data_pagamento: Date | any | null
-    descricao:string
-    fk_person:number
 }

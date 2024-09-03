@@ -22,6 +22,7 @@
 - Sale              [X]
 - Sector            [X]
 - User              [X]
+- Contabilidade     [x]
 - ContasPagar       [X]
 - ContasReceber     [X]
 - ValsPagos         [X]

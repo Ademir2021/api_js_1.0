@@ -1,31 +1,32 @@
-import { IContaAreceber, IItens, ISale } from "../../Interfaces/Sale/Sale";
+import { IItens, ISale } from "../../Interfaces/Sale/Sale";
+import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber";
 import { SaleDAO } from "./SaleDAO";
 
 class Sale extends SaleDAO implements ISale {
-    fkPerson = 0
-    diskSale = 0
-    fkFilial = 0
-    fkUserId = 0
+    fk_person = 0
+    disc_sale = 0
+    fk_filial = 0
+    fk_user = 0
     tNote = 0
     paySale = 0
     dinheiro = 0
     itens?: IItens[] = []
     contasReceber?: IContaAreceber[] = []
     constructor(
-        fkPerson: number,
-        diskSale: number,
-        fkFilial: number, 
-        fkUserId: number,
+        fk_person: number,
+        disc_sale: number,
+        fk_filial: number, 
+        fk_user: number,
         tNote:number,
         paySale:number,
         dinheiro:number,
         itens: IItens[],
         contasReceber: IContaAreceber[]) {
         super()
-        this.fkPerson = fkPerson
-        this.diskSale = diskSale
-        this.fkFilial = fkFilial
-        this.fkUserId = fkUserId
+        this.fk_person = fk_person
+        this.disc_sale = disc_sale
+        this.fk_filial = fk_filial
+        this.fk_user = fk_user
         this.tNote = tNote
         this.paySale = paySale
         this.dinheiro = dinheiro

@@ -2,26 +2,26 @@ import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber";
 import { ContaReceberDAO } from "./ContaReceberDAO";
 
 class ContaReceber extends ContaReceberDAO implements IContaAreceber {
-
-    fkFilial = 0
-    tipo: string | number | any
-    fkVenda = 0
-    fkUser = 0
-    parcela:number | string
+    id_conta = 0
+    fk_filial = 0
+    tipo = ''
+    fk_venda = 0
+    fk_user = 0
+    parcela = ''
     valor = 0
     multa = 0
     juros = 0
     desconto = 0
-    emissao: Date | any
-    vencimento: Date | any
+    emissao: Date
+    vencimento: Date
     saldo = 0
-    pagamento: Date | any
+    pagamento: Date 
     recebimento = 0
-    observacao = ""
-    fkPagador = 0
+    observacao = ''
+    fk_pagador = 0
     constructor(
-        id:number,
-        fkFilial: number,
+        id_conta:number,
+        fk_filial: number,
         tipo: string,
         fkVenda: number,
         fkUser: number,
@@ -39,11 +39,11 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
         fkPagador:number
     ) {
         super()
-        this.id = id
-        this.fkFilial = fkFilial
+        this.id_conta = id_conta
+        this.fk_filial = fk_filial
         this.tipo = tipo
-        this.fkVenda = fkVenda
-        this.fkUser = fkUser
+        this.fk_venda = fkVenda
+        this.fk_user = fkUser
         this.parcela = parcela
         this.valor = valor
         this.multa = multa
@@ -55,7 +55,7 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
         this.pagamento = pagamento
         this.recebimento = recebimento
         this.observacao = observacao
-        this.fkPagador = fkPagador
+        this.fk_pagador = fkPagador
     }
 }
 

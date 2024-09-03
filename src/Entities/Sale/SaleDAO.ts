@@ -11,13 +11,13 @@ class SaleDAO extends DAO {
         try {
             await postgreSQL.query('INSERT INTO ' + SaleDAO.table + '(fk_name_pers, disc_sale, fk_name_filial, fk_name_user, val_rec, total_sale) VALUES ('
                 + "'"
-                + Sales.fkPerson
+                + Sales.fk_person
                 + "','"
-                + Sales.diskSale
+                + Sales.disc_sale
                 + "','"
-                + Sales.fkFilial
+                + Sales.fk_filial
                 + "','"
-                + Sales.fkUserId
+                + Sales.fk_user
                 + "','"
                 + (Sales.paySale - Sales.dinheiro)
                 + "','"
@@ -64,11 +64,11 @@ class SaleDAO extends DAO {
                 await postgreSQL.query('INSERT INTO ' + SaleDAO.tableValsRecebidos + '(fk_conta, fk_venda, fk_user, valor, data_recebimento, descricao, fk_person) VALUES ('
                     + "'" + 0
                     + "','" + num_sale
-                    + "','" + Sales.fkUserId
+                    + "','" + Sales.fk_user
                     + "','" + Sales.dinheiro
                     + "','" + new Date().toISOString()
                     + "','" + "Venda"
-                    + "','" + Sales.fkPerson
+                    + "','" + Sales.fk_person
                     + "')")
             }
             return (num_sale)

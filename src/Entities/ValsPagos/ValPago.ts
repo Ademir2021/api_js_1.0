@@ -2,22 +2,22 @@ import { IValsPagos } from "../../Interfaces/ValsPagos/ValsPagos";
 import { ValPagoDAO } from "./ValPagoDAO"
 
 class ValPago extends ValPagoDAO implements IValsPagos {
-    id_val: number
-    fk_conta: number
-    fk_compra: number
-    fk_user: number
-    valor: number
-    data_recebimento: Date | any | null
-    descricao: string
-    fk_person: number
-    fk_despesa: number;
+    id_val = 0
+    fk_conta = 0
+    fk_compra = 0
+    fk_user = 0
+    valor = 0
+    data_recebimento: Date
+    descricao =''
+    fk_person = 0
+    fk_despesa = 0
     constructor(
         id_val: number,
         fk_conta: number,
         fk_compra: number,
         fk_user: number,
         valor: number,
-        data_recebimento: Date | any | null,
+        data_recebimento: Date,
         descricao: string,
         fk_person: number,
         fk_despesa:number

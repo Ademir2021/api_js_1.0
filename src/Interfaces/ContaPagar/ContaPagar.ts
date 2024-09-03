@@ -1,20 +1,20 @@
 export type IContaAPagar = {
-    id_conta?:number | any
+    id_conta:number 
     fk_filial: number
     tipo: string
     fk_compra: number 
     fk_user:number
-    parcela: number | string
-    valor: number | any
-    multa: number | any
-    juros: number | any
-    desconto:number | any
-    emissao:Date |  string | any 
-    vencimento:Date | string | any
-    saldo:number | any 
-    pagamento:Date | any | null
-    recebimento: number | any
-    observacao:string | null
+    parcela: string
+    valor: number
+    multa: number
+    juros: number
+    desconto:number
+    emissao:Date
+    vencimento:Date
+    saldo:number
+    pagamento:Date
+    recebimento: number
+    observacao:string
     fk_beneficiario:number
     fk_despesa:number
 }
