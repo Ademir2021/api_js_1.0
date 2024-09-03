@@ -23,6 +23,7 @@
 - Sector            [X]
 - User              [X]
 - Contabilidade     [x]
+- Despesas          [x]
 - ContasPagar       [X]
 - ContasReceber     [X]
 - ValsPagos         [X]

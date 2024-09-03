@@ -1,10 +1,10 @@
 export type IValsRecebidos = {
-    id: number
-    fkConta: number
-    fkVenda: number
-    fkUser: number
+    id_val: number
+    fk_conta: number
+    fk_venda: number
+    fk_user: number
     valor: number
-    dataRecebimento: Date | string | any
-    fkPerson:number
-    name: string //descrição do pagamento
+    data_recebimento: Date
+    descricao: string
+    fk_person: number
 }
