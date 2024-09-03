@@ -9,7 +9,7 @@ import { routeNotes } from './Routes/RouteNotes';
 import { routeBrands } from './Routes/RouteBrands';
 import { routeSectors } from './Routes/RouteSectors';
 import { routeCeps } from './Routes/RouteCeps';
-import { routeCities } from './Routes/RouteCities';
+import { routeCities } from './Routes/RouteCity';
 import { routePagSeguro } from './Routes/RoutePagSeguro';
 import { routeContacts } from './Routes/RouteContacts';
 import { routeContabilidades } from './Routes/RouteContabilidades';

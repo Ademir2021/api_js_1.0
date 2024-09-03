@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { CaixaMovsControllers  } from '../Controllers/CaixaMovs/CaixaMovsControllers'
+import { CaixaMovControllers  } from '../Controllers/CaixaMov/CaixaMovControllers'
 
 const routerCaixaMovs = Router()
-const caixaMovsControllers = new CaixaMovsControllers()
+const caixaMovControllers = new CaixaMovControllers()
 
-routerCaixaMovs.post('/caixa_movs', caixaMovsControllers.listCaixaMovs)
+routerCaixaMovs.post('/caixa_movs', caixaMovControllers.listCaixaMovs)
 
 export {routerCaixaMovs}

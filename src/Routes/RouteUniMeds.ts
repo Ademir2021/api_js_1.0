@@ -1,9 +1,9 @@
 import { Router } from "express"
-import { UniMedsControllers } from "../Controllers/UniMeds/UniMedsControllers";
+import { UniMedControllers } from "../Controllers/UniMed/UniMedControllers";
 
 const routeUniMeds = Router();
-const uniMedsControllers = new UniMedsControllers()
+const uniMedControllers = new UniMedControllers()
 
-routeUniMeds.get('/un_meds', uniMedsControllers.findAll)
+routeUniMeds.get('/un_meds', uniMedControllers.findAll)
 
 export { routeUniMeds }

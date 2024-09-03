@@ -1,8 +1,8 @@
 import { IContaAPagar } from "../ContaPagar/ContaPagar"
-import { IValsPagos } from "../ValsPagos/ValsPagos"
+import { IValPago } from "../ValPago/ValPago"
 
 export type INotaRecebida = {
-    fkFornecedor: number,
+    fk_fornecedor: number,
     data: Date
     emissao: Date
     numNota: number
@@ -17,7 +17,7 @@ export type INotaRecebida = {
     total: number
     items: IItems[]
     contaAPagar:IContaAPagar[]
-    valsPago: IValsPagos[]
+    valsPago: IValPago[]
 }
 
 export type IItems = {

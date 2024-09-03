@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
 import { DAO } from "../../Entities/DAO/DAO";
-import { IValsPagos } from "../../Interfaces/ValsPagos/ValsPagos";
-import { ValPago } from "../../Entities/ValsPagos/ValPago";
-import { ValPagoDAO } from "../../Entities/ValsPagos/ValPagoDAO";
+import { IValPago } from "../../Interfaces/ValPago/ValPago";
+import { ValPago } from "../../Entities/ValPago/ValPago";
+import { ValPagoDAO } from "../../Entities/ValPago/ValPagoDAO";
 
 class ValPagoControllers extends DAO{
     async registerValPago(request: Request, response: Response) {
-        const resp: IValsPagos = <IValsPagos>request.body
+        const resp: IValPago = <IValPago>request.body
         const valPago = new ValPago(
             resp.id_val, resp.fk_conta, resp.fk_compra, resp.fk_user,
             resp.valor, resp.data_recebimento, resp.descricao, resp.fk_person, resp.fk_despesa)

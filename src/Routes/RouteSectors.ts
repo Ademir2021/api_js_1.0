@@ -1,9 +1,9 @@
 import { Router } from "express"
-import { SectorsConttrollers } from "../Controllers/Sectors/SectorsControllers";
+import { SectorConttrollers } from "../Controllers/Sector/SectorControllers";
 
 const routeSectors = Router();
-const sectorsconttrollers = new SectorsConttrollers()
+const sectorconttrollers = new SectorConttrollers()
 
-routeSectors.get('/sectors', sectorsconttrollers.findAll)
+routeSectors.get('/sectors', sectorconttrollers.findAll)
 
 export { routeSectors }

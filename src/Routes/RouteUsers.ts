@@ -1,18 +1,18 @@
 import { Router } from "express"
-import { UsersControllers } from "../Controllers/Users/UsersControllers";
+import { UserControllers } from "../Controllers/User/UserControllers";
 import { postgreSQL } from "../Providers/Storages/pg/postgreSQL";
 import { ensureAuthenticated } from "../middlewares/EnsureAuthenticated";
 
 postgreSQL.connect()
 
 const routeUsers = Router();
-const usersControllers= new UsersControllers()
+const userControllers= new UserControllers()
 
-routeUsers.post('/users_list', ensureAuthenticated, usersControllers.listUsers)
-routeUsers.post('/user_list', usersControllers.listUser)
-routeUsers.post('/user', usersControllers.saveUser)
-routeUsers.put('/user_update', usersControllers.updateUser)
-routeUsers.delete('/user_delete', usersControllers.deleteUser)
-routeUsers.post('/login', ensureAuthenticated, usersControllers.userLogin)
+routeUsers.post('/users_list', ensureAuthenticated, userControllers.listUsers)
+routeUsers.post('/user_list', userControllers.listUser)
+routeUsers.post('/user', userControllers.saveUser)
+routeUsers.put('/user_update', userControllers.updateUser)
+routeUsers.delete('/user_delete', userControllers.deleteUser)
+routeUsers.post('/login', ensureAuthenticated, userControllers.userLogin)
 
 export { routeUsers }

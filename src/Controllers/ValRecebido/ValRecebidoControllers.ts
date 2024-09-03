@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
 import { DAO } from "../../Entities/DAO/DAO";
-import { ValRecebido } from "../../Entities/ValsRecebidos/ValRecebido";
-import { ValRecebidoDAO } from "../../Entities/ValsRecebidos/ValRecebidoDAO";
-import { IValsRecebidos } from "../../Interfaces/ValsRecebidos/ValsRecebidos";
+import { ValRecebido } from "../../Entities/ValRecebido/ValRecebido";
+import { ValRecebidoDAO } from "../../Entities/ValRecebido/ValRecebidoDAO";
+import { IValRecebido } from "../../Interfaces/ValRecebido/ValRecebido";
 
 class ValRecebidoControllers extends DAO {
     async registerValRecebido(request: Request, response: Response) {
-        const resp: IValsRecebidos = <IValsRecebidos>request.body
+        const resp: IValRecebido = <IValRecebido>request.body
         const valRecebido = new ValRecebido(
             resp.id_val, resp.fk_conta, resp.fk_venda, resp.fk_user,
             resp.valor, resp.data_recebimento, resp.descricao, resp.fk_person)

@@ -1,10 +1,10 @@
 import { Router } from "express"
-import { CepsControllers } from "../Controllers/Ceps/CepsControllers";
+import { CepControllers } from "../Controllers/Cep/CepControllers";
 
 const routeCeps = Router();
-const cepsControllers = new CepsControllers()
+const cepControllers = new CepControllers()
 
-routeCeps.get('/ceps', cepsControllers.select)
-routeCeps.post('/ceps', cepsControllers.insert)
+routeCeps.get('/ceps', cepControllers.select)
+routeCeps.post('/ceps', cepControllers.insert)
 
 export { routeCeps }

@@ -13,7 +13,7 @@ class NotaRecebidaDAO extends DAO {
         try {
             await postgreSQL.query('INSERT INTO ' + NotaRecebidaDAO.table + '(fk_fornecedor, data_nota, emissao, num_nota, modelo, v_frete, v_seguro, desp_acessorias, acrescimo, desconto, t_produto, total) VALUES ('
                 + "'"
-                + NotaRecebida.fkFornecedor
+                + NotaRecebida.fk_fornecedor
                 + "','"
                 + NotaRecebida.data
                 + "','"

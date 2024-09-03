@@ -1,12 +1,12 @@
 import {Router} from "express"
-import { SalesControllers } from "../Controllers/Sales/SalesControllers"
+import { SaleControllers } from "../Controllers/Sale/SaleControllers"
 import { ensureAuthenticated } from "../middlewares/EnsureAuthenticated"
 
 const routerSales =  Router()
-const salesControllers = new SalesControllers()
+const saleControllers = new SaleControllers()
 
-routerSales.post('/sale_register', salesControllers.registerSale)
-routerSales.post('/sale_user', ensureAuthenticated, salesControllers.findUserSale)
-routerSales.post('/sales_list', salesControllers.findSale)
+routerSales.post('/sale_register', saleControllers.registerSale)
+routerSales.post('/sale_user', ensureAuthenticated, saleControllers.findUserSale)
+routerSales.post('/sales_list', saleControllers.findSale)
 
 export { routerSales }

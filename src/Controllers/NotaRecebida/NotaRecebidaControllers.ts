@@ -7,7 +7,7 @@ class NotaRecebidaControllers{
    async registerNotaRecebida(request: Request, response: Response){
         const resp:INotaRecebida = request.body
         const notaRecebida:NotaRecebida = new NotaRecebida(
-            resp.fkFornecedor,
+            resp.fk_fornecedor,
             resp.data,
             resp.emissao,
             resp.numNota,

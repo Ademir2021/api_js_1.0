@@ -1,8 +1,8 @@
 import { Router } from "express"
-import { DespesasControllers } from "../Controllers/Despesas/DespesasControllers";
+import { DespesaControllers } from "../Controllers/Despesa/DespesasControllers";
 
 const routeDespesas = Router();
-const despesasControllers = new DespesasControllers()
-routeDespesas.get('/despesas', despesasControllers.findAll)
+const despesaControllers = new DespesaControllers()
+routeDespesas.get('/despesas', despesaControllers.findAll)
 
 export { routeDespesas }

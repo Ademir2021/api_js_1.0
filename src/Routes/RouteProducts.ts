@@ -1,15 +1,15 @@
 import { Router } from 'express'
-import { ProductsControllers } from '../Controllers/Products/ProductsControllers'
+import { ProductControllers } from '../Controllers/Product/ProductControllers'
 
 const routerProducts = Router()
-const productsControlers = new ProductsControllers()
+const productControlers = new ProductControllers()
 
-routerProducts.post('/products_list', productsControlers.listProducts)
-routerProducts.post('/product_list', productsControlers.listProduct)
-routerProducts.post('/product', productsControlers.saveProduct)
-routerProducts.put('/product_update', productsControlers.updateProduct)
-routerProducts.delete('/product_delete', productsControlers.deleteProduct)
+routerProducts.post('/products_list', productControlers.listProducts)
+routerProducts.post('/product_list', productControlers.listProduct)
+routerProducts.post('/product', productControlers.saveProduct)
+routerProducts.put('/product_update', productControlers.updateProduct)
+routerProducts.delete('/product_delete', productControlers.deleteProduct)
 
-routerProducts.get('/un_med', productsControlers.findAllUnMeds)
+routerProducts.get('/un_med', productControlers.findAllUnMeds)
 
 export {routerProducts}

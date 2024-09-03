@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { PersonsControllers } from "../Controllers/Persons/PersonsControllers"
+import { PersonsControllers } from "../Controllers/Person/PersonsControllers"
 import { ensureAuthenticated } from "../middlewares/EnsureAuthenticated"
 
 const routerPersons = Router()

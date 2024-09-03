@@ -1,10 +1,10 @@
 import { Router } from "express"
-import { ContactsConttrollers } from "../Controllers/Contacts/ContactsControllers";
+import { ContactConttrollers } from "../Controllers/Contact/ContactControllers";
 
 const routeContacts = Router();
-const contactsConttrollers = new ContactsConttrollers()
+const contactConttrollers = new ContactConttrollers()
 
-routeContacts.get('/contacts/:user_id', contactsConttrollers.select)
-routeContacts.post('/contact', contactsConttrollers.insert)
+routeContacts.get('/contacts/:user_id', contactConttrollers.select)
+routeContacts.post('/contact', contactConttrollers.insert)
 
 export { routeContacts }
