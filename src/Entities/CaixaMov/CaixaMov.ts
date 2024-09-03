@@ -4,14 +4,14 @@ import { CaixaMovDAO } from "./CaixaMovDAO";
 class CaixaMov extends CaixaMovDAO implements TCaixaMov {
     id_caixa = 0
     fk_val = 0
-    data_recebimento: Date | string;
+    data_recebimento: Date;
     debito = 0
     credito = 0
     saldo = 0
     constructor(
         id_caixa: number,
         fk_val: number,
-        data_recebimento: Date | string,
+        data_recebimento: Date,
         debito: number,
         credito: number,
         saldo: number

@@ -30,10 +30,10 @@ class ContaReceber extends ContaReceberDAO implements IContaAreceber {
         multa: number,
         juros: number,
         desconto: number,
-        emissao: Date | any,
-        vencimento: Date | any,
+        emissao: Date,
+        vencimento: Date,
         saldo: number,
-        pagamento: Date | any,
+        pagamento: Date,
         recebimento: number,
         observacao:string,
         fkPagador:number
