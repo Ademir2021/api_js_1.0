@@ -2,7 +2,7 @@ import { IContaAPagar } from "../ContaPagar/ContaPagar"
 import { IValPago } from "../ValPago/ValPago"
 
 export type INotaRecebida = {
-    fk_fornecedor: number,
+    fk_fornecedor: number
     data: Date
     emissao: Date
     numNota: number

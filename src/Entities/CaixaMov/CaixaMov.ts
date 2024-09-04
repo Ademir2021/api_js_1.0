@@ -1,7 +1,7 @@
-import { TCaixaMov } from "../../Interfaces/CaixaMov/CaixaMov";
+import { ICaixaMov } from "../../Interfaces/CaixaMov/CaixaMov";
 import { CaixaMovDAO } from "./CaixaMovDAO";
 
-class CaixaMov extends CaixaMovDAO implements TCaixaMov {
+class CaixaMov extends CaixaMovDAO implements ICaixaMov {
     id_caixa = 0
     fk_val = 0
     data_recebimento: Date;
