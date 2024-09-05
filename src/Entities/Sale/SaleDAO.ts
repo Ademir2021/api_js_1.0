@@ -19,9 +19,9 @@ class SaleDAO extends DAO {
                 + "','"
                 + Sales.fk_user
                 + "','"
-                + (Sales.paySale - Sales.dinheiro)
+                + (Sales.paySale - Sales.disc_sale)
                 + "','"
-                + (Sales.tNote)
+                + Sales.tNote
                 + "')")
 
             const num_sale_ = await postgreSQL.query("SELECT MAX(id_sale) FROM " + SaleDAO.table + "");

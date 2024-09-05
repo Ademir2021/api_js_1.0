@@ -34,9 +34,6 @@ export class ConttrollersNotes {
                     return 0
             }
 
-            const totalNota = parseFloat(total_venda) - parseFloat(desc_venda)
-            const totalPagar = parseFloat(total_venda) - parseFloat(desc_venda)
-
             const bodyItems = [];
             const columnsTitle = [
                 { text: "Item", style: "columnsTitle" },
@@ -185,10 +182,10 @@ export class ConttrollersNotes {
                         table: {
                             widths: ['*', '*', '*', 100],
                             body: [
-                                [`Produtos/Serviços\nR$ ${total_venda}`,
+                                [`Produtos/Serviços\nR$ ${val_rec}`,
                                 `Desconto/Produtos\nR$ ${desc_venda}`,
-                                `Total à pagar\nR$ ${totalPagar.toFixed(2)}`,
-                                `Total Nota\nR$ ${totalNota.toFixed(2)}`]
+                                `Total à pagar\nR$ ${total_venda}`,
+                                `Total Nota\nR$ ${total_venda}`]
                             ]
                         }
                     },

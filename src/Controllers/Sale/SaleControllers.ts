@@ -42,6 +42,7 @@ class SaleControllers {
     const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.tItens, sale_.paySale, sale_.dinheiro, sale_.itens, sale_.duplicatas)
     const registerSaleDTO = await new salesDTO().registerSale(sale)
     response.json([registerSaleDTO])
+    // console.log(sale)
   };
 
   async findUserSale(request: Request, response: Response) {
