@@ -28,8 +28,11 @@ export class ConttrollersNotes {
             const dinheiro: TDinheiro | any = res_dinheiro.rows[0]
 
             function setDinheiro() {
-                if (dinheiro?.valor != null)
-                    return dinheiro?.valor
+                let valor:any = 0
+                if (dinheiro?.valor != null) {
+                    valor = dinheiro?.valor
+                    return "R$ " + parseFloat(valor).toFixed(2)
+                }
                 else if (dinheiro?.valor == null)
                     return 0
             }
@@ -146,7 +149,7 @@ export class ConttrollersNotes {
                         }
                     },
                     {
-                        text: `\n\nVALOR RECEBIDO EM DINHEIRO/ESPÉCIE - R$ ${setDinheiro()}`, style: 'title',
+                        text: `\n\nVALOR RECEBIDO EM DINHEIRO/ESPÉCIE - ${setDinheiro()}`, style: 'title',
                     },
                     {
                         text: '\n\n FATURA', style: 'title'
@@ -198,7 +201,7 @@ export class ConttrollersNotes {
                             widths: ["*"],
                             body: [
                                 [`\nObservações:\n
-                                    Valor recebido em dinheiro - R$ ${setDinheiro()}\n
+                                    Valor recebido em dinheiro - ${setDinheiro()}\n
                                 Está nota Nº ${nota} não possui valor fiscal\n
                                 Nota emitida on-line pelo site: https://www.centroinfo.com.br`]
                             ]
