@@ -20,7 +20,6 @@ class ValsRecebidosDTO{
             return vals
         }
     };
-
 }
 
 export { ValsRecebidosDTO }

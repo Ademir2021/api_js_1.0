@@ -31,8 +31,8 @@ class ContasReceberControllers extends DAO {
     };
     async findAllContasReceberlist(request: Request, response: Response) {
         const { id, privilege }: IUser = <IUser>request.body[0]
-         const contasReceber = await new ContasAReceberDTO().listContasAReceberByLoggedInUser(id, privilege)
-        response.json(contasReceber)
+         const listConta = await new ContasAReceberDTO().listContasAReceberByLoggedInUser(id, privilege)
+        response.json(listConta)
     };
 }
 

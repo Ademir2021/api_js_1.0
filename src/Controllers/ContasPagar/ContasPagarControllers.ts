@@ -3,6 +3,8 @@ import { DAO } from "../../Entities/DAO/DAO"
 import { IContaAPagar } from "../../Interfaces/ContaPagar/ContaPagar"
 import { ContasPagar } from "../../Entities/ContaPagar/ContaPagar"
 import { ContaPagarDAO } from "../../Entities/ContaPagar/ContaPagarDAO"
+import { IUser } from "../../Interfaces/User/User"
+import { ContasAPagarDTO } from "../../Dtos/ContasAPagar/ContasAPagarDTO"
 
 class ContasPagarControllers extends DAO {
 
@@ -58,9 +60,10 @@ class ContasPagarControllers extends DAO {
         return response.json(updateConta)
     };
     
-    async findAllContasPagar(request: Request, response: Response) {
-        const contasPagar = await new ContasPagarControllers().select('contas_pagar', 'vencimento')
-        response.json(contasPagar)
+    async findAllContasPagarList(request: Request, response: Response) {
+        const { id, privilege }: IUser = <IUser>request.body[0]
+         const listConta = await new ContasAPagarDTO().listContasAPagarByLoggedInUser(id, privilege)
+        response.json(listConta)
     };
 }
 
