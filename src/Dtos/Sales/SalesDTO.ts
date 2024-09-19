@@ -3,7 +3,7 @@ import { SaleDAO } from "../../Entities/Sale/SaleDAO";
 
 const table = SaleDAO.table
 
-class salesDTO {
+class SalesDTO {
 
     private async findSalesByLoggedInUser(id: number) { // Cliente
         const sales = await new SaleDAO().selectOne(table, id, "fk_name_user")
@@ -31,4 +31,4 @@ class salesDTO {
     };
 }
 
-export { salesDTO }
+export { SalesDTO }

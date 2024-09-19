@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { IItens} from "../../Interfaces/Sale/Sale"
 import { Sale } from "../../Entities/Sale/Sale"
-import { salesDTO } from "../../Dtos/Sales/SalesDTO"
+import { SalesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
 import { IUser } from "../../Interfaces/User/User"
 import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber"
@@ -40,14 +40,15 @@ class SaleControllers {
   async registerSale(request: Request, response: Response) {
     const sale_: TSale = <TSale>request.body
     const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.tItens, sale_.paySale, sale_.dinheiro, sale_.itens, sale_.duplicatas)
-    const registerSaleDTO = await new salesDTO().registerSale(sale)
+    const registerSaleDTO = await new SalesDTO().registerSale(sale)
     response.json([registerSaleDTO])
     // console.log(sale)
   };
 
   async findUserSale(request: Request, response: Response) {
     const { id, privilege }: IUser = <IUser>request.body[0]
-    const sales = await new salesDTO().listSalesByLoggedInUser(id, privilege)
+    const sales = await new SalesDTO().listSalesByLoggedInUser(id, privilege)
+    // console.log(sales)
     response.json(sales)
   };
 

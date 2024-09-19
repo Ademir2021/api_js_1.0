@@ -3,6 +3,8 @@ import { DAO } from "../../Entities/DAO/DAO";
 import { ValRecebido } from "../../Entities/ValRecebido/ValRecebido";
 import { ValRecebidoDAO } from "../../Entities/ValRecebido/ValRecebidoDAO";
 import { IValRecebido } from "../../Interfaces/ValRecebido/ValRecebido";
+import { IUser } from "../../Interfaces/User/User";
+import { ValsRecebidosDTO } from "../../Dtos/ValsRecebidos/ValsRecebidos";
 
 class ValRecebidoControllers extends DAO {
     async registerValRecebido(request: Request, response: Response) {
@@ -13,8 +15,9 @@ class ValRecebidoControllers extends DAO {
         const registerVal = await new ValRecebidoDAO().insert(valRecebido)
         return response.json(registerVal)
     };
-    async findAll(request: Request, response: Response) {
-        const vals = await new ValRecebidoControllers().select('vals_recebidos', 'id_val')
+    async findAllList(request: Request, response: Response) {
+        const { id, privilege }: IUser = <IUser>request.body[0]
+        const vals = await new ValsRecebidosDTO().listValsRecebidosByLoggedInUser(id, privilege)
         response.json(vals)
     };
 }

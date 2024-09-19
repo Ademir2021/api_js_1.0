@@ -3,6 +3,8 @@ import { DAO } from "../../Entities/DAO/DAO";
 import { ContaReceber } from "../../Entities/ContaReceber/ContaReceber";
 import { ContaReceberDAO } from "../../Entities/ContaReceber/ContaReceberDAO";
 import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber";
+import { IUser } from "../../Interfaces/User/User";
+import { ContasAReceberDTO } from "../../Dtos/ContasAReceber/ContasAReceberDTO";
 
 class ContasReceberControllers extends DAO {
 
@@ -26,12 +28,12 @@ class ContasReceberControllers extends DAO {
             resp.pagamento, resp.recebimento, resp.observacao, resp.fk_pagador)
         const updateConta = await new ContaReceberDAO().update(contaReceber)
         return response.json(updateConta)
-    }
-
-    async findAllContasReceber(request: Request, response: Response) {
-        const contasReceber = await new ContasReceberControllers().select('contas_receber', 'vencimento')
+    };
+    async findAllContasReceberlist(request: Request, response: Response) {
+        const { id, privilege }: IUser = <IUser>request.body[0]
+         const contasReceber = await new ContasAReceberDTO().listContasAReceberByLoggedInUser(id, privilege)
         response.json(contasReceber)
     };
 }
 
-export { ContasReceberControllers }
+export {ContasReceberControllers }
