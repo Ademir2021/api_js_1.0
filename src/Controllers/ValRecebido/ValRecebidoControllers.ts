@@ -4,7 +4,7 @@ import { ValRecebido } from "../../Entities/ValRecebido/ValRecebido";
 import { ValRecebidoDAO } from "../../Entities/ValRecebido/ValRecebidoDAO";
 import { IValRecebido } from "../../Interfaces/ValRecebido/ValRecebido";
 import { IUser } from "../../Interfaces/User/User";
-import { ValsRecebidosDTO } from "../../Dtos/ValsRecebidos/ValsRecebidos";
+import { ValsRecebidosDTO } from "../../Dtos/ValsRecebidos/ValsRecebidosDTO";
 
 class ValRecebidoControllers extends DAO {
     async registerValRecebido(request: Request, response: Response) {

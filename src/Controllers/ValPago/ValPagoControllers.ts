@@ -3,6 +3,8 @@ import { DAO } from "../../Entities/DAO/DAO";
 import { IValPago } from "../../Interfaces/ValPago/ValPago";
 import { ValPago } from "../../Entities/ValPago/ValPago";
 import { ValPagoDAO } from "../../Entities/ValPago/ValPagoDAO";
+import { ValsPagosDTO } from "../../Dtos/ValsPagos/ValsPagosDTO"
+import { IUser } from "../../Interfaces/User/User";
 
 class ValPagoControllers extends DAO{
     async registerValPago(request: Request, response: Response) {
@@ -11,11 +13,11 @@ class ValPagoControllers extends DAO{
             resp.id_val, resp.fk_conta, resp.fk_compra, resp.fk_user,
             resp.valor, resp.data_recebimento, resp.descricao, resp.fk_person, resp.fk_despesa)
         const registerVal = await new ValPagoDAO().insert(valPago)
-        // console.log(registerVal)
         return response.json(registerVal)
     };
-    async findAll(request: Request, response: Response) {
-        const vals = await new ValPagoControllers().select('vals_pagos', 'id_val')
+    async findAllList(request: Request, response: Response) {
+        const { id, privilege }: IUser = <IUser>request.body[0]
+        const vals = await new ValsPagosDTO().listValsPagosByLoggedInUser(id, privilege)
         response.json(vals)
     };
 }
