@@ -185,10 +185,10 @@ export class ConttrollersNotes {
                         table: {
                             widths: ['*', '*', '*', 100],
                             body: [
-                                [`Produtos/Serviços\nR$ ${val_rec}`,
+                                [`Produtos/Serviços\nR$ ${total_venda}`,
                                 `Desconto/Produtos\nR$ ${desc_venda}`,
-                                `Total à pagar\nR$ ${total_venda}`,
-                                `Total Nota\nR$ ${total_venda}`]
+                                `Total à pagar\nR$ ${val_rec}`,
+                                `Total Nota\nR$ ${val_rec}`]
                             ]
                         }
                     },
@@ -262,7 +262,7 @@ export class ConttrollersNotes {
             })
 
             //console.log("Relatório concluido");
-            handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
+            // handleService.setSendMailNote(num_nota, email, telefone, comprador, endereco)
 
         } catch (err) {
             response.json("Error Occurred ! " + err)
