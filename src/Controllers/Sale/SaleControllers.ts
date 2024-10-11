@@ -56,7 +56,6 @@ class SaleControllers {
     const findUserSale = await new SaleDAO().select("sales", "id_sale")
     response.json(findUserSale)
   };
-  
 }
 
 export { SaleControllers }
