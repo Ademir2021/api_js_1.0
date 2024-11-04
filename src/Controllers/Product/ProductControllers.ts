@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { IProduct } from "../../Interfaces/Product/Product"
+import { IProduct, IListProductQuery} from "../../Interfaces/Product/Product"
 import { Product } from "../../Entities/Product/Product"
 import { ProductDAO } from "../../Entities/Product/ProductDAO"
 import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
@@ -23,6 +23,8 @@ type TProduct = {
   ncm:string
 }
 
+
+
 class ProductControllers extends DAO{
 
     async saveProduct(request: Request, response: Response){
@@ -43,6 +45,20 @@ class ProductControllers extends DAO{
         const { id }: IProduct = <IProduct>request.body
         const persons = await new ProductDAO().selectOne(table, id, 'id_product')
         response.json(persons)
+    };
+
+    async listProductParam(request:Request, response: Response) {
+        const { id } = request.params
+        response.json(id)
+    };
+
+    async listProductQuery(request:Request, response: Response) {
+        // const { id_product, descric_product, fk_brand, fk_sector }:IListProductQuery = <IListProductQuery | any>request.query
+        // response.json([id_product, descric_product, fk_brand, fk_sector])
+        const list:IListProductQuery | any = request.query
+        const list_ = await new ProductDAO().selectQuery(list)
+        // console.log(list)
+        response.json(list_)
     };
 
     async updateProduct(request: Request, response: Response) {

@@ -1,4 +1,4 @@
-import { Request, Response, text } from "express"
+import { Request, Response } from "express"
 import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL"
 import PDFPrinter from 'pdfmake'
 import fs from 'fs'

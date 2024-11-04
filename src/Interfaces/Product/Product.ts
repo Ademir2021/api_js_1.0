@@ -23,3 +23,10 @@ export type ISector = {
     id:number
     name:string
 }
+
+export type IListProductQuery = {
+    id_product:number
+    descric_product: string
+    fk_brand:number
+    fk_sector:number
+}

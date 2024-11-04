@@ -19,7 +19,6 @@ class UsersDTO {
         return userName
     };
 
-
     public async saveUser(User: IUser) {
         const user: any = await this.findUserName(User)
         if (user[0]) {

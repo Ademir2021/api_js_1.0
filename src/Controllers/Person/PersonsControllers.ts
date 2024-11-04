@@ -40,7 +40,8 @@ class PersonsControllers {
         response.json(person)
     };
     async listPerson(request: Request, response: Response) {
-        const { id }: IPerson = <IPerson>request.body.person
+        // const { id }: IPerson = <IPerson>request.body.person
+        const { id }: IPerson = <IPerson>request.body
         const persons = await new PersonDAO().selectOne(table, id, 'id_person')
         response.json(persons)
     };
