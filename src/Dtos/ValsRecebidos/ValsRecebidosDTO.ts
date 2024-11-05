@@ -8,7 +8,7 @@ class ValsRecebidosDTO{
         return (vals)
     };
     private async findValsRecebidosAdmin() { // Admin Privilege == 2
-        const vals = await new ValRecebidoDAO().select(table, "id_val")
+        const vals = await new ValRecebidoDAO().selectLimit(table, "id_val")
         return (vals)
     };
     async listValsRecebidosByLoggedInUser(id: number, privilege: number) {

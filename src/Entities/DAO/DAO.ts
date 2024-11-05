@@ -9,7 +9,16 @@ abstract class DAO {
     
     public async select(table: string, filed: string) {
         try {
-            const res = await postgreSQL.query("SELECT * FROM " + table + " order by " + filed + " ")
+            const res = await postgreSQL.query("SELECT * FROM " + table + " ORDER BY " + filed + "")
+            return res.rows
+        } catch (err) {
+            return (this.errors(err))
+        }
+    };
+
+    public async selectLimit(table: string, filed: string) {
+        try {
+            const res = await postgreSQL.query("SELECT * FROM " + table + " ORDER BY " + filed + " DESC LIMIT 8")
             return res.rows
         } catch (err) {
             return (this.errors(err))
@@ -18,7 +27,7 @@ abstract class DAO {
 
     public async selectOne(table: string, id: number, field: string) {
         try {
-            const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field + " = " + id + " ")
+            const res = await postgreSQL.query("SELECT * FROM " + table + " WHERE " + field + " = " + id + "")
             if (res.rowCount !== 0) {
                 return res.rows
             } else {

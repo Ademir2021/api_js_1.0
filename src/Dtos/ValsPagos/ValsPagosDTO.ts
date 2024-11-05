@@ -8,7 +8,7 @@ class ValsPagosDTO{
         return (vals)
     };
     private async findValsPagosAdmin() { // Admin Privilege == 2
-        const vals = await new ValPagoDAO().select(table, "id_val")
+        const vals = await new ValPagoDAO().selectLimit(table, "id_val")
         return (vals)
     };
     async listValsPagosByLoggedInUser(id: number, privilege: number) {
