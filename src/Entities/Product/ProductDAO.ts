@@ -26,7 +26,7 @@ class ProductDAO extends DAO {
 
     async selectQuery(list: IListProductQuery) {
         try {
-            const res = await postgreSQL.query("SELECT *FROM " + ProductDAO.table + " WHERE descric_product LIKE '" + list.descric_product + '%' + "' OR fk_brand = '" + list.fk_brand + "' OR fk_sector = '" + list.fk_sector + "' ORDER BY descric_product")
+            const res = await postgreSQL.query("SELECT *FROM " + ProductDAO.table + " WHERE descric_product ILIKE '" + "%" + list.descric_product + "%" + "' OR fk_brand = '" + list.fk_brand + "' OR fk_sector = '" + list.fk_sector + "' ORDER BY descric_product")
             return res.rows
         } catch (err) {
             return (new ProductDAO().errors(err))
