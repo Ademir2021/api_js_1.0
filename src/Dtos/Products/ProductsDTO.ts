@@ -1,4 +1,4 @@
-import { IProduct } from "../../Interfaces/Product/Product";
+import { IProduct, IListProductQuery } from "../../Interfaces/Product/Product";
 import { ProductDAO } from "../../Entities/Product/ProductDAO";
 
 const table = "products"
@@ -52,6 +52,11 @@ class ProductsDTO {
         } else {
             return (msgProductNotFound)
         }
+    };
+
+    async listProductQuery(list:IListProductQuery) {
+        const resp:ProductDAO = await new ProductDAO().selectQuery(list)
+        return resp
     };
 }
 

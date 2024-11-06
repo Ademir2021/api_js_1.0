@@ -54,7 +54,7 @@ class ProductControllers extends DAO{
 
     async listProductQuery(request:Request, response: Response) {
         const list:IListProductQuery | any = request.query
-        const list_:ProductDAO = await new ProductDAO().selectQuery(list)
+        const list_:ProductDAO = await new ProductsDTO().listProductQuery(list)
         response.json(list_)
     };
 
