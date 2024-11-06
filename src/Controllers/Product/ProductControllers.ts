@@ -3,6 +3,7 @@ import { IProduct, IListProductQuery} from "../../Interfaces/Product/Product"
 import { Product } from "../../Entities/Product/Product"
 import { ProductDAO } from "../../Entities/Product/ProductDAO"
 import { ProductsDTO } from "../../Dtos/Products/ProductsDTO"
+import { ProductsServices } from "../../Services/Products/ProductsServices"
 import { DAO } from "../../Entities/DAO/DAO"
 
 const table = Product.table
@@ -54,8 +55,9 @@ class ProductControllers extends DAO{
 
     async listProductQuery(request:Request, response: Response) {
         const list:IListProductQuery | any = request.query
-        const list_:ProductDAO = await new ProductsDTO().listProductQuery(list)
-        response.json(list_)
+        const resp:ProductDAO = await new ProductsServices().listProductQuery(list)
+        // console.log('Chegou no Controlador')
+        response.json(resp)
     };
 
     async updateProduct(request: Request, response: Response) {

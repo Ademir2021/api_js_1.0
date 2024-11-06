@@ -56,6 +56,7 @@ class ProductsDTO {
 
     async listProductQuery(list:IListProductQuery) {
         const resp:ProductDAO = await new ProductDAO().selectQuery(list)
+        // console.log('Passou pelo DTO')
         return resp
     };
 }
