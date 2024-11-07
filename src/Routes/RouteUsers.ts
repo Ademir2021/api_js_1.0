@@ -14,5 +14,6 @@ routeUsers.post('/user', userControllers.saveUser)
 routeUsers.put('/user_update', userControllers.updateUser)
 routeUsers.delete('/user_delete', userControllers.deleteUser)
 routeUsers.post('/login', ensureAuthenticated, userControllers.userLogin)
+routeUsers.post('/user_recover_pass',  userControllers.userRecoverPass)
 
 export { routeUsers }

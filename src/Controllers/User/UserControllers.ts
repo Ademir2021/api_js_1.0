@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { IUser } from "../../Interfaces/User/User"
+import { IUser, IUserRecoverPass } from "../../Interfaces/User/User"
 import { User } from "../../Entities/User/User"
 import { UsersDTO } from "../../Dtos/Users/UsersDTO"
 import { UsersServices } from "../../Services/Users/UsersServices"
@@ -46,6 +46,12 @@ class UserControllers {
         const user: User = new User(id, name, username, password, privilege)
         const userLogin = await new UsersServices().loginUser(user)
         response.json(userLogin)
+    };
+
+    async userRecoverPass(request:Request, response:Response){
+        const userRecover:IUserRecoverPass = request.body
+        const resp = await new UsersServices().userRecoverPass(userRecover)
+        response.json(resp)
     };
 }
 

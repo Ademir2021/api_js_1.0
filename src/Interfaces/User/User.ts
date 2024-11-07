@@ -5,3 +5,9 @@ export type IUser = {
     password:string
     privilege:number
 }
+
+export type IUserRecoverPass = {
+    username: string // Email
+    password:string
+    hash:string
+  }

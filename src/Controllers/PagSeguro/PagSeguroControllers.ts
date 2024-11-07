@@ -29,9 +29,9 @@ class PagSeguroControllers {
             });
             let ress = await reqs.json();
             response.json(ress);
-            // console.log(sale)
-            // console.log("/* Iniciando Response **/")
-            // console.log(ress)
+            console.log(sale)
+            console.log("/* Iniciando Response **/")
+            console.log(ress)
         } catch (err) {
             console.log("Error Occurred ! " + err)
         }
@@ -50,9 +50,9 @@ class PagSeguroControllers {
             });
             let ress = await reqs.json();
             response.json(ress);
-            // console.log(sale)
-            // console.log("/*Iniciando Response **/")
-            // console.log(ress)
+            console.log(sale)
+            console.log("/*Iniciando Response **/")
+            console.log(ress)
         } catch (err) {
             console.log("Error Occurred ! " + err)
         }

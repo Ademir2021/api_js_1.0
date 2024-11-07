@@ -81,4 +81,37 @@ export class HandleService {
             }
         });
     }
+
+    setSendMailRecoverUserPass(email:string, hash:string) {
+        const smtpConfig = smtpTransport({
+            service: "gmail",
+            host: host_email,
+            port: port_email,
+            secure: true,
+            auth: {
+                user: user_email,
+                pass: pass_email
+            }
+        });
+        const transporter = nodemailer.createTransport(smtpConfig);
+        const message: any = {
+            from: "Centro Informática<centroserra@gmail.com>",
+            to: "centroserra@gmail.com," + email,
+            subject: "Recuperar Senha",
+            html: "<b>Conforme solicitado segue recuperação de acesso da sua conta: " +
+                "<br>" + "<b>Email do Usuário:</b> " + email +
+                "<br>" + "<b>Sua nova senha para acesso é:</b> " + hash +
+                "<br>" + "Para sua segurança, após logado atualize sua senha para uma de sua confiança!",
+            headers: {
+                'X-Laziness-level': 1000
+            },
+        };
+        transporter.sendMail(message, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email enviado ' + info.response);
+            }
+        });
+    }
 }

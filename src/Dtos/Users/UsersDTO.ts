@@ -1,4 +1,4 @@
-import { IUser } from "../../Interfaces/User/User"
+import { IUser, IUserRecoverPass } from "../../Interfaces/User/User"
 import { UserDAO } from "../../Entities/User/UserDAO"
 
 const table = "users"
@@ -46,6 +46,15 @@ class UsersDTO {
         } else {
             const users = await new UserDAO().selectOne( table, id, 'id')
             return (users)
+        }
+    };
+
+    public async userRecoverPass(User:IUserRecoverPass){
+        const resp:any = await new UserDAO().userRecoverPass(User)
+        if(resp[0]){
+            return resp
+        }else{
+            return ([msgUserNotFound])
         }
     };
 }
