@@ -40,21 +40,19 @@ class SaleControllers {
   async registerSale(request: Request, response: Response) {
     const sale_: TSale = <TSale>request.body
     const sale: Sale = new Sale(sale_.person.fk_name_pers, sale_.disc_sale, sale_.filial, sale_.user.user_id, sale_.tItens, sale_.paySale, sale_.dinheiro, sale_.itens, sale_.duplicatas)
-    const registerSaleDTO = await new SalesDTO().registerSale(sale)
-    response.json([registerSaleDTO])
-    // console.log(sale)
+    const resp = await new SalesDTO().registerSale(sale)
+    response.json([resp])
   };
 
   async findUserSale(request: Request, response: Response) {
     const { id, privilege }: IUser = <IUser>request.body[0]
-    const sales = await new SalesDTO().listSalesByLoggedInUser(id, privilege)
-    // console.log(sales)
-    response.json(sales)
+    const resp = await new SalesDTO().listSalesByLoggedInUser(id, privilege)
+    response.json(resp)
   };
 
   async findSale(request: Request, response: Response) {
-    const findUserSale = await new SaleDAO().select("sales", "id_sale")
-    response.json(findUserSale)
+    const resp = await new SaleDAO().select("sales", "id_sale")
+    response.json(resp)
   };
 }
 
