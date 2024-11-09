@@ -1,27 +1,8 @@
 import { Request, Response } from "express"
-import { IPerson } from "../../Interfaces/Person/Person"
+import { IPerson, TPerson } from "../../Interfaces/Person/Person"
 import { IUser } from "../../Interfaces/User/User"
 import { Person } from "../../Entities/Person/Person"
 import { PersonsServices } from "../../Services/Persons/PersonsServices"
-
-export type TPerson = {
-    id_person: number
-    name_pers: string
-    cpf_pers: string
-    phone_pers: string
-    address_pers: string
-    num_address: string
-    bairro_pers: string
-    fk_cep: number
-    fk_name_filial: number
-    fk_id_user: number
-    rg: string
-    cnpj: string
-    inscricao: string
-    fantasia: string
-    limit_cred: number
-    fk_grupo: number
-}
 
 class PersonsControllers {
     async savePerson(request: Request, response: Response) {

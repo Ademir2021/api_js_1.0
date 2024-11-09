@@ -1,39 +1,9 @@
 import { Request, Response } from "express"
-import { IItens} from "../../Interfaces/Sale/Sale"
+import { TSale } from "../../Interfaces/Sale/Sale"
+import { IUser } from "../../Interfaces/User/User"
 import { Sale } from "../../Entities/Sale/Sale"
 import { SalesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SaleDAO } from "../../Entities/Sale/SaleDAO"
-import { IUser } from "../../Interfaces/User/User"
-import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber"
-
-type TSale = {
-  filial: number
-  user: {
-    user_id: number
-    user_name: string
-  }
-  person: {
-    fk_name_pers: number
-    name_pers: string
-    cpf_pers: string
-    phone_pers: string
-    address: {
-      address_pers: string
-      bairro_pers: string
-      fk_cep: number
-      name_city: string
-      uf: string
-      num_cep: string
-    }
-  }
-  disc_sale: number
-  tItens: number
-  tNote: number
-  paySale: number
-  dinheiro:number
-  itens: IItens[]
-  duplicatas:IContaAreceber[]
-}
 
 class SaleControllers {
 
