@@ -1,7 +1,7 @@
 import { IPerson } from "../../Interfaces/Person/Person"
 import { PersonDAO } from "../../Entities/Person/PersonDAO"
 
-const table = "persons"
+const table = PersonDAO.table
 const msgPhoneAlreadyExists = 'Este número de telefone já existe'
 const msgCPFAlreadyExists = 'Este CPF pertence a outro Cliente'
 const msgCNPJAlreadyExists = 'Este CNPJ pertence a outro Cliente'
@@ -54,14 +54,26 @@ class PersonsDTO {
             return (msgPersonNotFound)
         }
     };
+    async listPersons() {
+        const resp = await new PersonDAO().select(table, 'id_person')
+        return resp
+    };
+    async listPerson(id: number) {
+        const resp = await new PersonDAO().selectOne(table, id, 'id_person')
+        return resp
+    };
     async listPersonsByLoggedInUser(id: number, privilege: number) {
         if (privilege == 2) {
-            const persons = await new PersonDAO().select(table, 'id_person')
-            return persons
+            const resp = await new PersonDAO().select(table, 'id_person')
+            return resp
         } else {
-            const persons = await new PersonDAO().selectOne(table, id, 'fk_id_user')
-            return persons
+            const resp = await new PersonDAO().selectOne(table, id, 'fk_id_user')
+            return resp
         }
     };
-};
+    async deletePerson(id: number) {
+        const resp = await new PersonDAO().delete(table, id, 'id_person')
+        return resp
+    };
+}
 export { PersonsDTO }
