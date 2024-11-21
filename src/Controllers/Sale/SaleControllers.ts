@@ -2,7 +2,6 @@ import { Request, Response } from "express"
 import { TSale } from "../../Interfaces/Sale/Sale"
 import { IUser } from "../../Interfaces/User/User"
 import { Sale } from "../../Entities/Sale/Sale"
-import { SalesDTO } from "../../Dtos/Sales/SalesDTO"
 import { SalesServices } from "../../Services/Sales/SalesServices"
 
 class SaleControllers {
