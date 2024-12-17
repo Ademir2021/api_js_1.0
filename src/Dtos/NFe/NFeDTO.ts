@@ -4,13 +4,13 @@ import { INFe } from "../../Interfaces/NFe/NFe";
 import { AutorizaNFe } from "./autoriza_nfe";
 import { GeraXMLNFe } from "./gera_xml_nfe";
 import { HandleNFe } from "./handleNFe/handleNFe";
+import { GeraItemsNFe } from './gera_items_nfe';
 
 class NFeDTO {
-
     async findNota(NFe: INFe) {
         const nota = await new NFeDAO().selectOne(NFeDAO.tbl_notas, NFe.id_nota, "id_sale")
         const filial = await new NFeDAO().selectOne(NFeDAO.tbl_filiais, NFe.fk_name_filial, "id_filial")
-        const user = await new NFeDAO().selectOne(NFeDAO.tbl_users, NFe.fk_name_user, 'id')
+        // const user = await new NFeDAO().selectOne(NFeDAO.tbl_users, NFe.fk_name_user, 'id')
         const person = await new NFeDAO().selectOne(NFeDAO.tbl_persons, NFe.fk_name_pers, 'id_person')
         const items = await new NFeDAO().selectOne(NFeDAO.tbl_items_nota, NFe.id_nota, 'fk_sale')
 
@@ -59,16 +59,28 @@ class NFeDTO {
         dest.enderDest.CEP = '86960000'
         dest.enderDest.cPais = '1058'
         dest.enderDest.xPais = 'Brasil'
-        dest.indIEDest = '1'
-        dest.IE = 'Isento'
+        dest.indIEDest = person[0].inscricao
+        dest.IE = person[0].inscricao
 
+        const total = jsonNFe.nfeProc.NFe.infNFe.total
+        total.ICMSTot.vBC = nota[0].total_sale
+        total.ICMSTot.vICMS = 56.80
+        total.ICMSTot.vProd = nota[0].val_rec
+        total.ICMSTot.vNF = nota[0].val_rec
+        total.ICMSTot.CNF = nota[0].total_sale
+
+        const geraItemsNFe = new GeraItemsNFe()
+        const gerarItemsNFe = await geraItemsNFe.gerarItemsNFe(items)
+        console.log(gerarItemsNFe)
+       
         const geraXMLNFe = new GeraXMLNFe()
         const gerarXMLNFe = geraXMLNFe.gerarXMLNFe()
         console.log(gerarXMLNFe)
+
         // const autorizaNFe = new AutorizaNFe()
         // const autorizarNFe = autorizaNFe.autorizarNFe()
         // console.log(autorizarNFe)
-        
+
         return jsonNFe
     }
 }

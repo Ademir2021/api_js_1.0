@@ -6,7 +6,7 @@
       "infNFe": {
         "versao": "4.00",
         "Id": "NFe35140630290882000182550010000000011000000010",
-        "chNFe": "?",
+        "chNFe": "35122418069383000110550010000000012000000017",
         "ide": {
           "cUF": "35",
           "cNF": "00000001",
@@ -14,8 +14,8 @@
           "mod": "55",
           "serie": "001",
           "nNF": "000000001",
-          "dhEmi": "2024-12-16T21:33:56+00:00",
-          "dhSaiEnt": "2024-12-16T21:33:56+00:00",
+          "dhEmi": "2024-12-17T19:28:55+00:00",
+          "dhSaiEnt": "2024-12-17T19:28:55+00:00",
           "idDest": "1",
           "cMunFG": "4125506",
           "tpAmb": "2",
@@ -24,9 +24,9 @@
         },
         "emit": {
           "CNPJ": "18069383000110",
-          "xNome": "Ademir Souza de Almeida",
+          "xNome": "Filial 01",
           "enderEmit": {
-            "xLgr": "Rua Paraiba",
+            "xLgr": "Av. Castro Alves  Nº1241 - centro",
             "nro": "200",
             "xBairro": "Centro",
             "cMun": "4102505",
@@ -40,12 +40,12 @@
           "CRT": "3"
         },
         "dest": {
-          "CNPJ": "18069383000199",
-          "xNome": "Jose Amaro da Silva",
+          "CNPJ": "05731303000106",
+          "xNome": "Valle Antenas e Componetes Ltda",
           "enderDest": {
-            "xLgr": "Comprador de teste",
-            "nro": "300",
-            "xBairro": "Primavera",
+            "xLgr": "Av Arquiteto Nildo Ribeiro da Rocha",
+            "nro": "1723",
+            "xBairro": "Vila Marumby",
             "cMun": "4102505",
             "xMun": "Barbosa Ferraz",
             "UF": "PR",
@@ -53,22 +53,22 @@
             "cPais": "1058",
             "xPais": "Brasil"
           },
-          "indIEDest": "1",
-          "IE": "Isento"
+          "indIEDest": "9098872750",
+          "IE": "9098872750"
         },
         "det": [
           {
             "nItem": "1",
             "prod": {
-              "cProd": "23",
-              "cEAN": "EAN: ",
-              "xProd": "Mouse Optico com Scroll",
-              "NCM": "NCM: ",
+              "cProd": 1,
+              "cEAN": "1",
+              "xProd": "Lnbf Universal Century Ku single",
+              "NCM": "85437014",
               "CFOP": "CFOP: ",
-              "uCom": "UN: ",
+              "uCom": "PC",
               "qCom": 3,
-              "vUnCom": 19.9,
-              "vProd": 59.7,
+              "vUnCom": "18.00",
+              "vProd": "54.00",
               "cEANTrib": "EAN Tributável: ",
               "uTrib": "Unidade Tributável: ",
               "qTrib": "Quantidade Tributável: ",
@@ -78,28 +78,28 @@
             "imposto": {
               "ICMS": {
                 "ICMS00": {
-                  "orig": "Origem do ICMS: XX",
-                  "CST": "CST: XX ",
-                  "modBC": "Modalidade de BC: XX",
-                  "vBC": 59.7,
-                  "pICMS": 12,
-                  "vICMS": 59.7
+                  "orig": "Origem do ICMS",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
                 }
               },
               "PIS": {
                 "PISAliq": {
-                  "CST": "CST do PIS: XX",
-                  "vBC": 59.7,
-                  "pPIS": 12,
-                  "vPIS": 59.7
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
                 }
               },
               "COFINS": {
                 "COFINSAliq": {
-                  "CST": "CST do COFINS: XX",
-                  "vBC": 59.7,
-                  "pCOFINS": 12,
-                  "vCOFINS": 59.7
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
                 }
               }
             }
@@ -107,15 +107,15 @@
           {
             "nItem": "2",
             "prod": {
-              "cProd": "26",
-              "cEAN": "EAN: ",
-              "xProd": "Teclado Padrao",
-              "NCM": "NCM: ",
+              "cProd": 2,
+              "cEAN": "2",
+              "xProd": "Smart Tv Box Aquario Stv-3000 AV HDMI",
+              "NCM": "00000000",
               "CFOP": "CFOP: ",
-              "uCom": "UN: ",
-              "qCom": 2,
-              "vUnCom": 39.9,
-              "vProd": 79.8,
+              "uCom": "PC",
+              "qCom": 1,
+              "vUnCom": "350.00",
+              "vProd": "350.00",
               "cEANTrib": "EAN Tributável: ",
               "uTrib": "Unidade Tributável: ",
               "qTrib": "Quantidade Tributável: ",
@@ -125,28 +125,28 @@
             "imposto": {
               "ICMS": {
                 "ICMS00": {
-                  "orig": "Origem do ICMS: ",
+                  "orig": "Origem do ICMS",
                   "CST": "CST:",
                   "modBC": "Modalidade de BC:",
-                  "vBC": "Valor da BC do ICMS:",
-                  "pICMS": "Alíquota do ICMS:",
-                  "vICMS": "Valor do ICMS:"
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
                 }
               },
               "PIS": {
                 "PISAliq": {
-                  "CST": "CST do PIS: ",
-                  "vBC": "Valor da BC do PIS: ",
-                  "pPIS": "Alíquota do PIS: ",
-                  "vPIS": "Valor do PIS: "
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
                 }
               },
               "COFINS": {
                 "COFINSAliq": {
-                  "CST": "CST do COFINS: ",
-                  "vBC": "Valor da BC do COFINS: ",
-                  "pCOFINS": "Alíquota do COFINS: ",
-                  "vCOFINS": "Valor do COFINS: "
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
                 }
               }
             }
@@ -154,15 +154,15 @@
           {
             "nItem": "3",
             "prod": {
-              "cProd": "45",
-              "cEAN": "EAN: ",
-              "xProd": "Roteador Wireles 300mbps",
-              "NCM": "NCM: ",
+              "cProd": 3,
+              "cEAN": "3",
+              "xProd": "Fonte CPU PowerX ATX 300W",
+              "NCM": "00000000",
               "CFOP": "CFOP: ",
-              "uCom": "UN: ",
-              "qCom": 2,
-              "vUnCom": 180,
-              "vProd": 360,
+              "uCom": "PC",
+              "qCom": 1,
+              "vUnCom": "129.90",
+              "vProd": "129.90",
               "cEANTrib": "EAN Tributável: ",
               "uTrib": "Unidade Tributável: ",
               "qTrib": "Quantidade Tributável: ",
@@ -172,28 +172,75 @@
             "imposto": {
               "ICMS": {
                 "ICMS00": {
-                  "orig": "Origem do ICMS: ",
+                  "orig": "Origem do ICMS",
                   "CST": "CST:",
                   "modBC": "Modalidade de BC:",
-                  "vBC": "Valor da BC do ICMS:",
-                  "pICMS": "Alíquota do ICMS:",
-                  "vICMS": "Valor do ICMS:"
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
                 }
               },
               "PIS": {
                 "PISAliq": {
-                  "CST": "CST do PIS: ",
-                  "vBC": "Valor da BC do PIS: ",
-                  "pPIS": "Alíquota do PIS: ",
-                  "vPIS": "Valor do PIS: "
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
                 }
               },
               "COFINS": {
                 "COFINSAliq": {
-                  "CST": "CST do COFINS: ",
-                  "vBC": "Valor da BC do COFINS: ",
-                  "pCOFINS": "Alíquota do COFINS: ",
-                  "vCOFINS": "Valor do COFINS: "
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
+                }
+              }
+            }
+          },
+          {
+            "nItem": "4",
+            "prod": {
+              "cProd": 4,
+              "cEAN": "4",
+              "xProd": "Teclado Multilaser TC193 PT Abnt2",
+              "NCM": "00000000",
+              "CFOP": "CFOP: ",
+              "uCom": "UN",
+              "qCom": 1,
+              "vUnCom": "29.00",
+              "vProd": "29.00",
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
                 }
               }
             }
@@ -201,10 +248,11 @@
         ],
         "total": {
           "ICMSTot": {
-            "vBC": "10.00",
-            "vICMS": "1.80",
-            "vProd": "10.00",
-            "vNF": "10.00"
+            "vBC": "562.90",
+            "vICMS": 56.8,
+            "vProd": "530.90",
+            "vNF": "530.90",
+            "CNF": "562.90"
           }
         },
         "transp": {

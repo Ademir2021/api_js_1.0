@@ -6,16 +6,16 @@
         <infNFe>
             <versao>4.00</versao>
             <Id>NFe35140630290882000182550010000000011000000010</Id>
-            <chNFe>35122418069383000110550010000000092000000015</chNFe>
+            <chNFe>35122418069383000110550010000000012000000017</chNFe>
             <ide>
                 <cUF>35</cUF>
                 <cNF>00000001</cNF>
                 <natOp>VENDA</natOp>
                 <mod>55</mod>
                 <serie>001</serie>
-                <nNF>000000009</nNF>
-                <dhEmi>2024-12-17T13:35:43+00:00</dhEmi>
-                <dhSaiEnt>2024-12-17T13:35:43+00:00</dhSaiEnt>
+                <nNF>000000001</nNF>
+                <dhEmi>2024-12-17T19:28:55+00:00</dhEmi>
+                <dhSaiEnt>2024-12-17T19:28:55+00:00</dhSaiEnt>
                 <idDest>1</idDest>
                 <cMunFG>4125506</cMunFG>
                 <tpAmb>2</tpAmb>
@@ -40,12 +40,12 @@
                 <CRT>3</CRT>
             </emit>
             <dest>
-                <CNPJ>0</CNPJ>
-                <xNome>José da Silva</xNome>
+                <CNPJ>05731303000106</CNPJ>
+                <xNome>Valle Antenas e Componetes Ltda</xNome>
                 <enderDest>
-                    <xLgr>Rua Castro Alves</xLgr>
-                    <nro>1330</nro>
-                    <xBairro>Centro</xBairro>
+                    <xLgr>Av Arquiteto Nildo Ribeiro da Rocha</xLgr>
+                    <nro>1723</nro>
+                    <xBairro>Vila Marumby</xBairro>
                     <cMun>4102505</cMun>
                     <xMun>Barbosa Ferraz</xMun>
                     <UF>PR</UF>
@@ -53,21 +53,21 @@
                     <cPais>1058</cPais>
                     <xPais>Brasil</xPais>
                 </enderDest>
-                <indIEDest>1</indIEDest>
-                <IE>Isento</IE>
+                <indIEDest>9098872750</indIEDest>
+                <IE>9098872750</IE>
             </dest>
             <det>
                 <nItem>1</nItem>
                 <prod>
-                    <cProd>23</cProd>
-                    <cEAN>EAN: </cEAN>
-                    <xProd>Mouse Optico com Scroll</xProd>
-                    <NCM>NCM: </NCM>
+                    <cProd>1</cProd>
+                    <cEAN>1</cEAN>
+                    <xProd>Lnbf Universal Century Ku single</xProd>
+                    <NCM>85437014</NCM>
                     <CFOP>CFOP: </CFOP>
-                    <uCom>UN: </uCom>
+                    <uCom>PC</uCom>
                     <qCom>3</qCom>
-                    <vUnCom>19.9</vUnCom>
-                    <vProd>59.7</vProd>
+                    <vUnCom>18.00</vUnCom>
+                    <vProd>54.00</vProd>
                     <cEANTrib>EAN Tributável: </cEANTrib>
                     <uTrib>Unidade Tributável: </uTrib>
                     <qTrib>Quantidade Tributável: </qTrib>
@@ -77,28 +77,28 @@
                 <imposto>
                     <ICMS>
                         <ICMS00>
-                            <orig>Origem do ICMS: XX</orig>
-                            <CST>CST: XX </CST>
-                            <modBC>Modalidade de BC: XX</modBC>
-                            <vBC>59.7</vBC>
-                            <pICMS>12</pICMS>
-                            <vICMS>59.7</vICMS>
+                            <orig>Origem do ICMS</orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
                         </ICMS00>
                     </ICMS>
                     <PIS>
                         <PISAliq>
-                            <CST>CST do PIS: XX</CST>
-                            <vBC>59.7</vBC>
-                            <pPIS>12</pPIS>
-                            <vPIS>59.7</vPIS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
                         </PISAliq>
                     </PIS>
                     <COFINS>
                         <COFINSAliq>
-                            <CST>CST do COFINS: XX</CST>
-                            <vBC>59.7</vBC>
-                            <pCOFINS>12</pCOFINS>
-                            <vCOFINS>59.7</vCOFINS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
                         </COFINSAliq>
                     </COFINS>
                 </imposto>
@@ -106,15 +106,15 @@
             <det>
                 <nItem>2</nItem>
                 <prod>
-                    <cProd>26</cProd>
-                    <cEAN>EAN: </cEAN>
-                    <xProd>Teclado Padrao</xProd>
-                    <NCM>NCM: </NCM>
+                    <cProd>2</cProd>
+                    <cEAN>2</cEAN>
+                    <xProd>Smart Tv Box Aquario Stv-3000 AV HDMI</xProd>
+                    <NCM>00000000</NCM>
                     <CFOP>CFOP: </CFOP>
-                    <uCom>UN: </uCom>
-                    <qCom>2</qCom>
-                    <vUnCom>39.9</vUnCom>
-                    <vProd>79.8</vProd>
+                    <uCom>PC</uCom>
+                    <qCom>1</qCom>
+                    <vUnCom>350.00</vUnCom>
+                    <vProd>350.00</vProd>
                     <cEANTrib>EAN Tributável: </cEANTrib>
                     <uTrib>Unidade Tributável: </uTrib>
                     <qTrib>Quantidade Tributável: </qTrib>
@@ -124,28 +124,28 @@
                 <imposto>
                     <ICMS>
                         <ICMS00>
-                            <orig>Origem do ICMS: </orig>
+                            <orig>Origem do ICMS</orig>
                             <CST>CST:</CST>
                             <modBC>Modalidade de BC:</modBC>
-                            <vBC>Valor da BC do ICMS:</vBC>
-                            <pICMS>Alíquota do ICMS:</pICMS>
-                            <vICMS>Valor do ICMS:</vICMS>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
                         </ICMS00>
                     </ICMS>
                     <PIS>
                         <PISAliq>
-                            <CST>CST do PIS: </CST>
-                            <vBC>Valor da BC do PIS: </vBC>
-                            <pPIS>Alíquota do PIS: </pPIS>
-                            <vPIS>Valor do PIS: </vPIS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
                         </PISAliq>
                     </PIS>
                     <COFINS>
                         <COFINSAliq>
-                            <CST>CST do COFINS: </CST>
-                            <vBC>Valor da BC do COFINS: </vBC>
-                            <pCOFINS>Alíquota do COFINS: </pCOFINS>
-                            <vCOFINS>Valor do COFINS: </vCOFINS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
                         </COFINSAliq>
                     </COFINS>
                 </imposto>
@@ -153,15 +153,15 @@
             <det>
                 <nItem>3</nItem>
                 <prod>
-                    <cProd>45</cProd>
-                    <cEAN>EAN: </cEAN>
-                    <xProd>Roteador Wireles 300mbps</xProd>
-                    <NCM>NCM: </NCM>
+                    <cProd>3</cProd>
+                    <cEAN>3</cEAN>
+                    <xProd>Fonte CPU PowerX ATX 300W</xProd>
+                    <NCM>00000000</NCM>
                     <CFOP>CFOP: </CFOP>
-                    <uCom>UN: </uCom>
-                    <qCom>2</qCom>
-                    <vUnCom>180</vUnCom>
-                    <vProd>360</vProd>
+                    <uCom>PC</uCom>
+                    <qCom>1</qCom>
+                    <vUnCom>129.90</vUnCom>
+                    <vProd>129.90</vProd>
                     <cEANTrib>EAN Tributável: </cEANTrib>
                     <uTrib>Unidade Tributável: </uTrib>
                     <qTrib>Quantidade Tributável: </qTrib>
@@ -171,38 +171,86 @@
                 <imposto>
                     <ICMS>
                         <ICMS00>
-                            <orig>Origem do ICMS: </orig>
+                            <orig>Origem do ICMS</orig>
                             <CST>CST:</CST>
                             <modBC>Modalidade de BC:</modBC>
-                            <vBC>Valor da BC do ICMS:</vBC>
-                            <pICMS>Alíquota do ICMS:</pICMS>
-                            <vICMS>Valor do ICMS:</vICMS>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
                         </ICMS00>
                     </ICMS>
                     <PIS>
                         <PISAliq>
-                            <CST>CST do PIS: </CST>
-                            <vBC>Valor da BC do PIS: </vBC>
-                            <pPIS>Alíquota do PIS: </pPIS>
-                            <vPIS>Valor do PIS: </vPIS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
                         </PISAliq>
                     </PIS>
                     <COFINS>
                         <COFINSAliq>
-                            <CST>CST do COFINS: </CST>
-                            <vBC>Valor da BC do COFINS: </vBC>
-                            <pCOFINS>Alíquota do COFINS: </pCOFINS>
-                            <vCOFINS>Valor do COFINS: </vCOFINS>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>4</nItem>
+                <prod>
+                    <cProd>4</cProd>
+                    <cEAN>4</cEAN>
+                    <xProd>Teclado Multilaser TC193 PT Abnt2</xProd>
+                    <NCM>00000000</NCM>
+                    <CFOP>CFOP: </CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1</qCom>
+                    <vUnCom>29.00</vUnCom>
+                    <vProd>29.00</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS</orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
                         </COFINSAliq>
                     </COFINS>
                 </imposto>
             </det>
             <total>
                 <ICMSTot>
-                    <vBC>10.00</vBC>
-                    <vICMS>1.80</vICMS>
-                    <vProd>10.00</vProd>
-                    <vNF>10.00</vNF>
+                    <vBC>562.90</vBC>
+                    <vICMS>56.8</vICMS>
+                    <vProd>530.90</vProd>
+                    <vNF>530.90</vNF>
+                    <CNF>562.90</CNF>
                 </ICMSTot>
             </total>
             <transp>
