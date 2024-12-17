@@ -1,0 +1,244 @@
+{
+  "nfeProc": {
+    "xmlns": "http://www.portalfiscal.inf.br/nfe",
+    "versao": "4.00",
+    "NFe": {
+      "infNFe": {
+        "versao": "4.00",
+        "Id": "NFe35140630290882000182550010000000011000000010",
+        "chNFe": "?",
+        "ide": {
+          "cUF": "35",
+          "cNF": "00000001",
+          "natOp": "VENDA",
+          "mod": "55",
+          "serie": "001",
+          "nNF": "000000001",
+          "dhEmi": "2024-12-16T21:33:56+00:00",
+          "dhSaiEnt": "2024-12-16T21:33:56+00:00",
+          "idDest": "1",
+          "cMunFG": "4125506",
+          "tpAmb": "2",
+          "tpNF": "000000001",
+          "tpEmis": "2"
+        },
+        "emit": {
+          "CNPJ": "18069383000110",
+          "xNome": "Ademir Souza de Almeida",
+          "enderEmit": {
+            "xLgr": "Rua Paraiba",
+            "nro": "200",
+            "xBairro": "Centro",
+            "cMun": "4102505",
+            "xMun": "Barbosa Ferraz",
+            "UF": "PR",
+            "CEP": "86960000",
+            "cPais": "1058",
+            "xPais": "Brasil"
+          },
+          "IE": "Isento",
+          "CRT": "3"
+        },
+        "dest": {
+          "CNPJ": "18069383000199",
+          "xNome": "Jose Amaro da Silva",
+          "enderDest": {
+            "xLgr": "Comprador de teste",
+            "nro": "300",
+            "xBairro": "Primavera",
+            "cMun": "4102505",
+            "xMun": "Barbosa Ferraz",
+            "UF": "PR",
+            "CEP": "86960000",
+            "cPais": "1058",
+            "xPais": "Brasil"
+          },
+          "indIEDest": "1",
+          "IE": "Isento"
+        },
+        "det": [
+          {
+            "nItem": "1",
+            "prod": {
+              "cProd": "23",
+              "cEAN": "EAN: ",
+              "xProd": "Mouse Optico com Scroll",
+              "NCM": "NCM: ",
+              "CFOP": "CFOP: ",
+              "uCom": "UN: ",
+              "qCom": 3,
+              "vUnCom": 19.9,
+              "vProd": 59.7,
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS: XX",
+                  "CST": "CST: XX ",
+                  "modBC": "Modalidade de BC: XX",
+                  "vBC": 59.7,
+                  "pICMS": 12,
+                  "vICMS": 59.7
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": "CST do PIS: XX",
+                  "vBC": 59.7,
+                  "pPIS": 12,
+                  "vPIS": 59.7
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": "CST do COFINS: XX",
+                  "vBC": 59.7,
+                  "pCOFINS": 12,
+                  "vCOFINS": 59.7
+                }
+              }
+            }
+          },
+          {
+            "nItem": "2",
+            "prod": {
+              "cProd": "26",
+              "cEAN": "EAN: ",
+              "xProd": "Teclado Padrao",
+              "NCM": "NCM: ",
+              "CFOP": "CFOP: ",
+              "uCom": "UN: ",
+              "qCom": 2,
+              "vUnCom": 39.9,
+              "vProd": 79.8,
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS: ",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": "Valor da BC do ICMS:",
+                  "pICMS": "Alíquota do ICMS:",
+                  "vICMS": "Valor do ICMS:"
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": "CST do PIS: ",
+                  "vBC": "Valor da BC do PIS: ",
+                  "pPIS": "Alíquota do PIS: ",
+                  "vPIS": "Valor do PIS: "
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": "CST do COFINS: ",
+                  "vBC": "Valor da BC do COFINS: ",
+                  "pCOFINS": "Alíquota do COFINS: ",
+                  "vCOFINS": "Valor do COFINS: "
+                }
+              }
+            }
+          },
+          {
+            "nItem": "3",
+            "prod": {
+              "cProd": "45",
+              "cEAN": "EAN: ",
+              "xProd": "Roteador Wireles 300mbps",
+              "NCM": "NCM: ",
+              "CFOP": "CFOP: ",
+              "uCom": "UN: ",
+              "qCom": 2,
+              "vUnCom": 180,
+              "vProd": 360,
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS: ",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": "Valor da BC do ICMS:",
+                  "pICMS": "Alíquota do ICMS:",
+                  "vICMS": "Valor do ICMS:"
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": "CST do PIS: ",
+                  "vBC": "Valor da BC do PIS: ",
+                  "pPIS": "Alíquota do PIS: ",
+                  "vPIS": "Valor do PIS: "
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": "CST do COFINS: ",
+                  "vBC": "Valor da BC do COFINS: ",
+                  "pCOFINS": "Alíquota do COFINS: ",
+                  "vCOFINS": "Valor do COFINS: "
+                }
+              }
+            }
+          }
+        ],
+        "total": {
+          "ICMSTot": {
+            "vBC": "10.00",
+            "vICMS": "1.80",
+            "vProd": "10.00",
+            "vNF": "10.00"
+          }
+        },
+        "transp": {
+          "modFrete": "0"
+        }
+      },
+      "Signature": {
+        "SignedInfo": {
+          "CanonicalizationMethod": {
+            "Algorithm": "http://www.w3.org/TR/2001/REC-xml-c14n-20010315"
+          },
+          "SignatureMethod": {
+            "Algorithm": "http://www.w3.org/2000/09/xmldsig#rsa-sha1"
+          },
+          "Reference": {
+            "URI": "#NFe35180383795740000178550010000000011000000016",
+            "Transforms": {
+              "Transform": {
+                "Algorithm": "http://www.w3.org/2000/09/xmldsig#enveloped-signature"
+              }
+            },
+            "DigestMethod": {
+              "Algorithm": "http://www.w3.org/2000/09/xmldsig#sha1"
+            },
+            "DigestValue": "abc123"
+          }
+        },
+        "SignatureValue": "signature-value",
+        "KeyInfo": {
+          "X509Data": {
+            "X509Certificate": "certificate-value"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nfeProc>
+    <xmlns>http://www.portalfiscal.inf.br/nfe</xmlns>
+    <versao>4.00</versao>
+    <NFe>
+        <infNFe>
+            <versao>4.00</versao>
+            <Id>NFe35140630290882000182550010000000011000000010</Id>
+            <chNFe>35122418069383000110550010000000092000000015</chNFe>
+            <ide>
+                <cUF>35</cUF>
+                <cNF>00000001</cNF>
+                <natOp>VENDA</natOp>
+                <mod>55</mod>
+                <serie>001</serie>
+                <nNF>000000009</nNF>
+                <dhEmi>2024-12-17T13:35:43+00:00</dhEmi>
+                <dhSaiEnt>2024-12-17T13:35:43+00:00</dhSaiEnt>
+                <idDest>1</idDest>
+                <cMunFG>4125506</cMunFG>
+                <tpAmb>2</tpAmb>
+                <tpNF>000000001</tpNF>
+                <tpEmis>2</tpEmis>
+            </ide>
+            <emit>
+                <CNPJ>18069383000110</CNPJ>
+                <xNome>Filial 01</xNome>
+                <enderEmit>
+                    <xLgr>Av. Castro Alves  Nº1241 - centro</xLgr>
+                    <nro>200</nro>
+                    <xBairro>Centro</xBairro>
+                    <cMun>4102505</cMun>
+                    <xMun>Barbosa Ferraz</xMun>
+                    <UF>PR</UF>
+                    <CEP>86960000</CEP>
+                    <cPais>1058</cPais>
+                    <xPais>Brasil</xPais>
+                </enderEmit>
+                <IE>Isento</IE>
+                <CRT>3</CRT>
+            </emit>
+            <dest>
+                <CNPJ>0</CNPJ>
+                <xNome>José da Silva</xNome>
+                <enderDest>
+                    <xLgr>Rua Castro Alves</xLgr>
+                    <nro>1330</nro>
+                    <xBairro>Centro</xBairro>
+                    <cMun>4102505</cMun>
+                    <xMun>Barbosa Ferraz</xMun>
+                    <UF>PR</UF>
+                    <CEP>86960000</CEP>
+                    <cPais>1058</cPais>
+                    <xPais>Brasil</xPais>
+                </enderDest>
+                <indIEDest>1</indIEDest>
+                <IE>Isento</IE>
+            </dest>
+            <det>
+                <nItem>1</nItem>
+                <prod>
+                    <cProd>23</cProd>
+                    <cEAN>EAN: </cEAN>
+                    <xProd>Mouse Optico com Scroll</xProd>
+                    <NCM>NCM: </NCM>
+                    <CFOP>CFOP: </CFOP>
+                    <uCom>UN: </uCom>
+                    <qCom>3</qCom>
+                    <vUnCom>19.9</vUnCom>
+                    <vProd>59.7</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS: XX</orig>
+                            <CST>CST: XX </CST>
+                            <modBC>Modalidade de BC: XX</modBC>
+                            <vBC>59.7</vBC>
+                            <pICMS>12</pICMS>
+                            <vICMS>59.7</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>CST do PIS: XX</CST>
+                            <vBC>59.7</vBC>
+                            <pPIS>12</pPIS>
+                            <vPIS>59.7</vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>CST do COFINS: XX</CST>
+                            <vBC>59.7</vBC>
+                            <pCOFINS>12</pCOFINS>
+                            <vCOFINS>59.7</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>2</nItem>
+                <prod>
+                    <cProd>26</cProd>
+                    <cEAN>EAN: </cEAN>
+                    <xProd>Teclado Padrao</xProd>
+                    <NCM>NCM: </NCM>
+                    <CFOP>CFOP: </CFOP>
+                    <uCom>UN: </uCom>
+                    <qCom>2</qCom>
+                    <vUnCom>39.9</vUnCom>
+                    <vProd>79.8</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS: </orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>Valor da BC do ICMS:</vBC>
+                            <pICMS>Alíquota do ICMS:</pICMS>
+                            <vICMS>Valor do ICMS:</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>CST do PIS: </CST>
+                            <vBC>Valor da BC do PIS: </vBC>
+                            <pPIS>Alíquota do PIS: </pPIS>
+                            <vPIS>Valor do PIS: </vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>CST do COFINS: </CST>
+                            <vBC>Valor da BC do COFINS: </vBC>
+                            <pCOFINS>Alíquota do COFINS: </pCOFINS>
+                            <vCOFINS>Valor do COFINS: </vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>3</nItem>
+                <prod>
+                    <cProd>45</cProd>
+                    <cEAN>EAN: </cEAN>
+                    <xProd>Roteador Wireles 300mbps</xProd>
+                    <NCM>NCM: </NCM>
+                    <CFOP>CFOP: </CFOP>
+                    <uCom>UN: </uCom>
+                    <qCom>2</qCom>
+                    <vUnCom>180</vUnCom>
+                    <vProd>360</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS: </orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>Valor da BC do ICMS:</vBC>
+                            <pICMS>Alíquota do ICMS:</pICMS>
+                            <vICMS>Valor do ICMS:</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>CST do PIS: </CST>
+                            <vBC>Valor da BC do PIS: </vBC>
+                            <pPIS>Alíquota do PIS: </pPIS>
+                            <vPIS>Valor do PIS: </vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>CST do COFINS: </CST>
+                            <vBC>Valor da BC do COFINS: </vBC>
+                            <pCOFINS>Alíquota do COFINS: </pCOFINS>
+                            <vCOFINS>Valor do COFINS: </vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <total>
+                <ICMSTot>
+                    <vBC>10.00</vBC>
+                    <vICMS>1.80</vICMS>
+                    <vProd>10.00</vProd>
+                    <vNF>10.00</vNF>
+                </ICMSTot>
+            </total>
+            <transp>
+                <modFrete>0</modFrete>
+            </transp>
+        </infNFe>
+        <Signature>
+            <SignedInfo>
+                <CanonicalizationMethod>
+                    <Algorithm>http://www.w3.org/TR/2001/REC-xml-c14n-20010315</Algorithm>
+                </CanonicalizationMethod>
+                <SignatureMethod>
+                    <Algorithm>http://www.w3.org/2000/09/xmldsig#rsa-sha1</Algorithm>
+                </SignatureMethod>
+                <Reference>
+                    <URI>#NFe35180383795740000178550010000000011000000016</URI>
+                    <Transforms>
+                        <Transform>
+                            <Algorithm>http://www.w3.org/2000/09/xmldsig#enveloped-signature</Algorithm>
+                        </Transform>
+                    </Transforms>
+                    <DigestMethod>
+                        <Algorithm>http://www.w3.org/2000/09/xmldsig#sha1</Algorithm>
+                    </DigestMethod>
+                    <DigestValue>abc123</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>signature-value</SignatureValue>
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>certificate-value</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+    </NFe>
+</nfeProc>
