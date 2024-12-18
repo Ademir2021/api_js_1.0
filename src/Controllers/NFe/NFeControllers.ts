@@ -4,9 +4,9 @@ import { INFe } from "../../Interfaces/NFe/NFe";
 import { NFeServices } from "../../Services/NFe/NFeServices";
 
 class NFeControllers {
-    async findNFe(request: Request, response: Response) {
+    async handleNFe(request: Request, response: Response) {
         const res: INFe = new NFe(1, 1, 1, 8, [], 10.00, 2.00, 8.00)
-        const resp = await new NFeServices().findNota(res)
+        const resp = await new NFeServices().handleNota(res)
         // console.log(resp)
         return response.json(resp)
     }

@@ -15,7 +15,7 @@ class AutorizaNFe {
 
         const url = 'https://nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4?wsdl';
 
-        const pfx = fs.readFileSync('certificados/CLAUDIA CAROLINE ALVES_26907136000173.pfx'); // Carregar o certificado .pfx
+        const pfx = fs.readFileSync('certificados/certificado_teste_99999999999999.pfx'); // Carregar o certificado .pfx
 
         const pfxAsn1 = forge.asn1.fromDer(pfx.toString('binary')); // Descriptografar o .pfx para obter a chave privada e o certificado
         const p12 = forge.pkcs12.pkcs12FromAsn1(pfxAsn1, '123abc');  //senha do certificado

@@ -14,8 +14,8 @@
                 <mod>55</mod>
                 <serie>001</serie>
                 <nNF>000000001</nNF>
-                <dhEmi>2024-12-17T19:28:55+00:00</dhEmi>
-                <dhSaiEnt>2024-12-17T19:28:55+00:00</dhSaiEnt>
+                <dhEmi>2024-12-18T12:15:22+00:00</dhEmi>
+                <dhSaiEnt>2024-12-18T12:15:22+00:00</dhSaiEnt>
                 <idDest>1</idDest>
                 <cMunFG>4125506</cMunFG>
                 <tpAmb>2</tpAmb>
@@ -27,7 +27,7 @@
                 <xNome>Filial 01</xNome>
                 <enderEmit>
                     <xLgr>Av. Castro Alves  Nº1241 - centro</xLgr>
-                    <nro>200</nro>
+                    <nro>1241</nro>
                     <xBairro>Centro</xBairro>
                     <cMun>4102505</cMun>
                     <xMun>Barbosa Ferraz</xMun>
@@ -36,8 +36,8 @@
                     <cPais>1058</cPais>
                     <xPais>Brasil</xPais>
                 </enderEmit>
-                <IE>Isento</IE>
-                <CRT>3</CRT>
+                <IE>isento</IE>
+                <CRT>isento</CRT>
             </emit>
             <dest>
                 <CNPJ>05731303000106</CNPJ>
@@ -46,12 +46,12 @@
                     <xLgr>Av Arquiteto Nildo Ribeiro da Rocha</xLgr>
                     <nro>1723</nro>
                     <xBairro>Vila Marumby</xBairro>
-                    <cMun>4102505</cMun>
-                    <xMun>Barbosa Ferraz</xMun>
-                    <UF>PR</UF>
-                    <CEP>86960000</CEP>
                     <cPais>1058</cPais>
                     <xPais>Brasil</xPais>
+                    <cMun>undefined</cMun>
+                    <UF>undefined</UF>
+                    <xMun>undefined</xMun>
+                    <CEP>undefined</CEP>
                 </enderDest>
                 <indIEDest>9098872750</indIEDest>
                 <IE>9098872750</IE>
@@ -246,8 +246,8 @@
             </det>
             <total>
                 <ICMSTot>
-                    <vBC>562.90</vBC>
                     <vICMS>56.8</vICMS>
+                    <vBC>562.90</vBC>
                     <vProd>530.90</vProd>
                     <vNF>530.90</vNF>
                     <CNF>562.90</CNF>

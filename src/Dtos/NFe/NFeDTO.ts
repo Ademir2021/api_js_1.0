@@ -7,12 +7,28 @@ import { HandleNFe } from "./handleNFe/handleNFe";
 import { GeraItemsNFe } from './gera_items_nfe';
 
 class NFeDTO {
-    async findNota(NFe: INFe) {
-        const nota = await new NFeDAO().selectOne(NFeDAO.tbl_notas, NFe.id_nota, "id_sale")
-        const filial = await new NFeDAO().selectOne(NFeDAO.tbl_filiais, NFe.fk_name_filial, "id_filial")
-        // const user = await new NFeDAO().selectOne(NFeDAO.tbl_users, NFe.fk_name_user, 'id')
-        const person = await new NFeDAO().selectOne(NFeDAO.tbl_persons, NFe.fk_name_pers, 'id_person')
+
+    private async findCEP(id: number) {
+        const cep = await new NFeDAO().selectOne(NFeDAO.tbl_ceps, id, 'id_cep')
+        return cep
+    };
+    private async findCity(id: number) {
+        const city = await new NFeDAO().selectOne(NFeDAO.tbl_cities, id, 'id_city')
+        return city
+    }
+
+    async handleNota(NFe: INFe) {
+        const nota_ = await new NFeDAO().selectOne(NFeDAO.tbl_notas, NFe.id_nota, "id_sale")
+        const nota = nota_[0]
+        const filial_ = await new NFeDAO().selectOne(NFeDAO.tbl_filiais, NFe.fk_name_filial, "id_filial")
+        const filial = filial_[0]
+        const person_ = await new NFeDAO().selectOne(NFeDAO.tbl_persons, NFe.fk_name_pers, 'id_person')
+        const person = person_[0]
         const items = await new NFeDAO().selectOne(NFeDAO.tbl_items_nota, NFe.id_nota, 'fk_sale')
+
+        //Funções
+        const cep = await this.findCEP(person.fk_cep)
+        const city = await this.findCity(cep.code_city)
 
         // IDE
         const ide = jsonNFe.nfeProc.NFe.infNFe.ide
@@ -21,22 +37,22 @@ class NFeDTO {
         ide.natOp = "VENDA"
         ide.mod = "55"
         ide.serie = "001"
-        ide.nNF = "00000000" + nota[0].id_sale
+        ide.nNF = "00000000" + nota.id_sale
         const dt = new HandleNFe().formatDateNFe()
         ide.dhEmi = dt
         ide.dhSaiEnt = dt
         ide.idDest = '1'
         ide.cMunFG = '4125506'
-        ide.tpAmb = '2'
+        ide.tpAmb = '2' // 1 Produção - 2 Homologação
         ide.tpNF = "000000001"
         ide.tpEmis = '2'
 
         // Dados do Emitente
         const emit = jsonNFe.nfeProc.NFe.infNFe.emit
-        emit.CNPJ = filial[0].cnpj
-        emit.xNome = filial[0].name_filial
-        emit.enderEmit.xLgr = filial[0].address
-        emit.enderEmit.nro = '200'
+        emit.CNPJ = filial.cnpj
+        emit.xNome = filial.name_filial
+        emit.enderEmit.xLgr = filial.address
+        emit.enderEmit.nro = '1241'
         emit.enderEmit.xBairro = 'Centro'
         emit.enderEmit.cMun = '4102505'
         emit.enderEmit.xMun = 'Barbosa Ferraz'
@@ -44,35 +60,36 @@ class NFeDTO {
         emit.enderEmit.UF = 'PR'
         emit.enderEmit.cPais = '1058'
         emit.enderEmit.xPais = 'Brasil'
-        emit.IE = 'Isento'
-        emit.CRT = '3'
+        emit.IE = filial.inscric
+        emit.CRT = filial.inscric
 
         // Dados do Destinatário
         const dest = jsonNFe.nfeProc.NFe.infNFe.dest
-        dest.CNPJ = person[0].cnpj
-        dest.xNome = person[0].name_pers
-        dest.enderDest.xLgr = person[0].address_pers
-        dest.enderDest.nro = person[0].num_address
-        dest.enderDest.xBairro = person[0].bairro_pers
-        dest.enderDest.cMun = '4102505'
-        dest.enderDest.xMun = 'Barbosa Ferraz'
-        dest.enderDest.CEP = '86960000'
+        dest.CNPJ = person.cnpj
+        dest.xNome = person.name_pers
+        dest.enderDest.xLgr = person.address_pers
+        dest.enderDest.nro = person.num_address
+        dest.enderDest.xBairro = person.bairro_pers
+        dest.enderDest.cMun = city.code_ibge
+        dest.enderDest.UF = city.uf
+        dest.enderDest.xMun = city.name_city
+        dest.enderDest.CEP = cep.num_cep
         dest.enderDest.cPais = '1058'
         dest.enderDest.xPais = 'Brasil'
-        dest.indIEDest = person[0].inscricao
-        dest.IE = person[0].inscricao
+        dest.indIEDest = person.inscricao
+        dest.IE = person.inscricao
 
         const total = jsonNFe.nfeProc.NFe.infNFe.total
-        total.ICMSTot.vBC = nota[0].total_sale
+        total.ICMSTot.vBC = nota.total_sale
         total.ICMSTot.vICMS = 56.80
-        total.ICMSTot.vProd = nota[0].val_rec
-        total.ICMSTot.vNF = nota[0].val_rec
-        total.ICMSTot.CNF = nota[0].total_sale
+        total.ICMSTot.vProd = nota.val_rec
+        total.ICMSTot.vNF = nota.val_rec
+        total.ICMSTot.CNF = nota.total_sale
 
         const geraItemsNFe = new GeraItemsNFe()
         const gerarItemsNFe = await geraItemsNFe.gerarItemsNFe(items)
         console.log(gerarItemsNFe)
-       
+
         const geraXMLNFe = new GeraXMLNFe()
         const gerarXMLNFe = geraXMLNFe.gerarXMLNFe()
         console.log(gerarXMLNFe)

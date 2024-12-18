@@ -15,7 +15,7 @@ class GeraItemsNFe {
     private async findUnMeds(id: number) {
         const un_meds = await new NFeDAO().selectOne(NFeDAO.tbl_un_meds, id, "id_un")
         return un_meds[0]
-    }
+    };
 
      /**
      * @description Gerar items para XML da NFe
