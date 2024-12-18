@@ -14,10 +14,10 @@
                 <mod>55</mod>
                 <serie>001</serie>
                 <nNF>000000001</nNF>
-                <dhEmi>2024-12-18T12:15:22+00:00</dhEmi>
-                <dhSaiEnt>2024-12-18T12:15:22+00:00</dhSaiEnt>
+                <dhEmi>2024-12-18T17:38:18+00:00</dhEmi>
+                <dhSaiEnt>2024-12-18T17:38:18+00:00</dhSaiEnt>
                 <idDest>1</idDest>
-                <cMunFG>4125506</cMunFG>
+                <cMunFG>4.102.505</cMunFG>
                 <tpAmb>2</tpAmb>
                 <tpNF>000000001</tpNF>
                 <tpEmis>2</tpEmis>
@@ -26,14 +26,14 @@
                 <CNPJ>18069383000110</CNPJ>
                 <xNome>Filial 01</xNome>
                 <enderEmit>
-                    <xLgr>Av. Castro Alves  Nº1241 - centro</xLgr>
+                    <xLgr>Av, Castro Alves</xLgr>
                     <nro>1241</nro>
                     <xBairro>Centro</xBairro>
-                    <cMun>4102505</cMun>
+                    <cMun>4.102.505</cMun>
                     <xMun>Barbosa Ferraz</xMun>
                     <UF>PR</UF>
-                    <CEP>86960000</CEP>
-                    <cPais>1058</cPais>
+                    <CEP>86.960-000</CEP>
+                    <cPais>1.058</cPais>
                     <xPais>Brasil</xPais>
                 </enderEmit>
                 <IE>isento</IE>
@@ -41,17 +41,18 @@
             </emit>
             <dest>
                 <CNPJ>05731303000106</CNPJ>
+                <CPF>0</CPF>
                 <xNome>Valle Antenas e Componetes Ltda</xNome>
                 <enderDest>
                     <xLgr>Av Arquiteto Nildo Ribeiro da Rocha</xLgr>
                     <nro>1723</nro>
                     <xBairro>Vila Marumby</xBairro>
-                    <cPais>1058</cPais>
+                    <cPais>1.058</cPais>
                     <xPais>Brasil</xPais>
-                    <cMun>undefined</cMun>
-                    <UF>undefined</UF>
-                    <xMun>undefined</xMun>
-                    <CEP>undefined</CEP>
+                    <cMun>0.0</cMun>
+                    <UF>PR</UF>
+                    <xMun>Maringá</xMun>
+                    <CEP>87.005-160</CEP>
                 </enderDest>
                 <indIEDest>9098872750</indIEDest>
                 <IE>9098872750</IE>

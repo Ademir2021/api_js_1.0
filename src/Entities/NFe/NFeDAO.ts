@@ -11,6 +11,7 @@ class NFeDAO extends DAO {
     public static tbl_un_meds = 'un_meds'
     public static tbl_ceps = 'ceps'
     public static tbl_cities = 'cities'
+    public static tbl_paises = 'paises' 
 }
 
 export { NFeDAO }

@@ -14,10 +14,10 @@
           "mod": "55",
           "serie": "001",
           "nNF": "000000001",
-          "dhEmi": "2024-12-18T12:15:22+00:00",
-          "dhSaiEnt": "2024-12-18T12:15:22+00:00",
+          "dhEmi": "2024-12-18T17:38:18+00:00",
+          "dhSaiEnt": "2024-12-18T17:38:18+00:00",
           "idDest": "1",
-          "cMunFG": "4125506",
+          "cMunFG": "4.102.505",
           "tpAmb": "2",
           "tpNF": "000000001",
           "tpEmis": "2"
@@ -26,14 +26,14 @@
           "CNPJ": "18069383000110",
           "xNome": "Filial 01",
           "enderEmit": {
-            "xLgr": "Av. Castro Alves  Nº1241 - centro",
+            "xLgr": "Av, Castro Alves",
             "nro": "1241",
             "xBairro": "Centro",
-            "cMun": "4102505",
+            "cMun": "4.102.505",
             "xMun": "Barbosa Ferraz",
             "UF": "PR",
-            "CEP": "86960000",
-            "cPais": "1058",
+            "CEP": "86.960-000",
+            "cPais": "1.058",
             "xPais": "Brasil"
           },
           "IE": "isento",
@@ -41,13 +41,18 @@
         },
         "dest": {
           "CNPJ": "05731303000106",
+          "CPF": "0",
           "xNome": "Valle Antenas e Componetes Ltda",
           "enderDest": {
             "xLgr": "Av Arquiteto Nildo Ribeiro da Rocha",
             "nro": "1723",
             "xBairro": "Vila Marumby",
-            "cPais": "1058",
-            "xPais": "Brasil"
+            "cPais": "1.058",
+            "xPais": "Brasil",
+            "cMun": "0.0",
+            "UF": "PR",
+            "xMun": "Maringá",
+            "CEP": "87.005-160"
           },
           "indIEDest": "9098872750",
           "IE": "9098872750"

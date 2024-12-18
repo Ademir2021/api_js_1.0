@@ -1,3 +1,7 @@
 /node_modules
 /build
+/certificaados
+/xml
+/json
+/xmlAssinada
 .env
