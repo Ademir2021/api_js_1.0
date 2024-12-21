@@ -136,6 +136,10 @@ class NFeDTO {
         const gerarXMLNFe = geraXMLNFe.gerarXMLNFe()
         console.log(gerarXMLNFe)
 
+        const geraNFe = new NFeDAO()
+        const gerarNFe = await geraNFe.gerarNFe(nota)
+        // console.log(gerarNFe)
+
         // const autorizaNFe = new AutorizaNFe()
         // const autorizarNFe = autorizaNFe.autorizarNFe()
         // console.log(autorizarNFe)

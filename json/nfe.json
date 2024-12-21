@@ -6,16 +6,16 @@
       "infNFe": {
         "versao": "4.00",
         "Id": "NFe35140630290882000182550010000000011000000010",
-        "chNFe": "35122418069383000110550010000000071000000071",
+        "chNFe": "35122418069383000110550010000000021000000024",
         "ide": {
           "cUF": "35",
-          "cNF": "00000008",
+          "cNF": "00000001",
           "natOp": "VENDA",
           "mod": "55",
           "serie": "001",
-          "nNF": "000000008",
-          "dhEmi": "2024-12-21T14:52:46+00:00",
-          "dhSaiEnt": "2024-12-21T14:52:46+00:00",
+          "nNF": "000000001",
+          "dhEmi": "2024-12-21T17:37:00+00:00",
+          "dhSaiEnt": "2024-12-21T17:37:00+00:00",
           "idDest": "1",
           "cMunFG": "4.102.505",
           "tpAmb": "2",
@@ -44,11 +44,11 @@
           "XFant": "Centro Informática"
         },
         "dest": {
-          "email": "centroserra@gmail.com",
+          "email": "email@test.com",
           "enderDest": {
-            "xLgr": "Rua Apinajes",
-            "nro": "495",
-            "xBairro": "Quebra Mola",
+            "xLgr": "Rua Castro Alves",
+            "nro": "1330",
+            "xBairro": "Centro",
             "cMun": "4.102.505",
             "UF": "PR",
             "xMun": "Barbosa Ferraz",
@@ -57,25 +57,166 @@
             "xPais": "Brasil"
           },
           "CNPJ": "0",
-          "CPF": "06873996963",
-          "xNome": "Reni Maria de Souza Bento",
-          "fone": "41984880351",
-          "indIEDest": "",
-          "IE": ""
+          "CPF": "12345678909",
+          "xNome": "José da Silva",
+          "fone": "44999999999",
+          "indIEDest": "0",
+          "IE": "0"
         },
         "det": [
           {
             "nItem": "1",
             "prod": {
-              "cProd": 15,
-              "cEAN": "15",
-              "xProd": "Kit Antena Parabólica c/Receptor Digital Century Midiabox B7 Sat HD Regional",
+              "cProd": 1,
+              "cEAN": "1",
+              "xProd": "Lnbf Universal Century Ku single",
+              "NCM": "85437014",
+              "CFOP": "5102",
+              "uCom": "PC",
+              "qCom": 3,
+              "vUnCom": "18.00",
+              "vProd": "54.00",
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
+                }
+              }
+            }
+          },
+          {
+            "nItem": "2",
+            "prod": {
+              "cProd": 2,
+              "cEAN": "2",
+              "xProd": "Smart Tv Box Aquario Stv-3000 AV HDMI",
               "NCM": "00000000",
               "CFOP": "5102",
-              "uCom": "KIT",
+              "uCom": "PC",
               "qCom": 1,
-              "vUnCom": "826.00",
-              "vProd": "826.00",
+              "vUnCom": "350.00",
+              "vProd": "350.00",
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
+                }
+              }
+            }
+          },
+          {
+            "nItem": "3",
+            "prod": {
+              "cProd": 3,
+              "cEAN": "3",
+              "xProd": "Fonte CPU PowerX ATX 300W",
+              "NCM": "00000000",
+              "CFOP": "5102",
+              "uCom": "PC",
+              "qCom": 1,
+              "vUnCom": "129.90",
+              "vProd": "129.90",
+              "cEANTrib": "EAN Tributável: ",
+              "uTrib": "Unidade Tributável: ",
+              "qTrib": "Quantidade Tributável: ",
+              "vUnTrib": "Valor Unitário Tributável: ",
+              "indTot": "Indicador de Total: "
+            },
+            "imposto": {
+              "ICMS": {
+                "ICMS00": {
+                  "orig": "Origem do ICMS",
+                  "CST": "CST:",
+                  "modBC": "Modalidade de BC:",
+                  "vBC": 90,
+                  "pICMS": "0.0000",
+                  "vICMS": 0
+                }
+              },
+              "PIS": {
+                "PISAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pPIS": "0.0000",
+                  "vPIS": 0
+                }
+              },
+              "COFINS": {
+                "COFINSAliq": {
+                  "CST": 99,
+                  "vBC": "0.0000",
+                  "pCOFINS": "0.0000",
+                  "vCOFINS": 0
+                }
+              }
+            }
+          },
+          {
+            "nItem": "4",
+            "prod": {
+              "cProd": 4,
+              "cEAN": "4",
+              "xProd": "Teclado Multilaser TC193 PT Abnt2",
+              "NCM": "00000000",
+              "CFOP": "5102",
+              "uCom": "UN",
+              "qCom": 1,
+              "vUnCom": "29.00",
+              "vProd": "29.00",
               "cEANTrib": "EAN Tributável: ",
               "uTrib": "Unidade Tributável: ",
               "qTrib": "Quantidade Tributável: ",
@@ -115,10 +256,10 @@
         "total": {
           "ICMSTot": {
             "vICMS": 56.8,
-            "vBC": "826.00",
-            "vProd": "772.56",
-            "vNF": "772.56",
-            "CNF": "826.00"
+            "vBC": "562.90",
+            "vProd": "530.90",
+            "vNF": "530.90",
+            "CNF": "562.90"
           }
         },
         "transp": {
