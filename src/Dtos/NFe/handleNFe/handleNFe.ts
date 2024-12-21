@@ -45,6 +45,18 @@ class HandleNFe {
         let digitoVerificador = (resto === 0 || resto === 1) ? 0 : 11 - resto;
         return digitoVerificador;
     };
+
+    formatnNF(id: number) {
+        let str7 = '0000000'
+        let str6 = '000000'
+        let str5 = '00000'
+        if (id < 10)
+            return str7 + id
+        else if (id < 100)
+            return str6 + id
+        else if (id < 1000)
+            return str5 + id
+    }
 };
 
 export { HandleNFe }

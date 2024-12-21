@@ -38,7 +38,11 @@ class NFeDTO {
         const filial = filial_[0]
         const person_ = await new NFeDAO().selectOne(NFeDAO.tbl_persons, NFe.fk_name_pers, 'id_person')
         const person = person_[0]
+        const user_ = await new NFeDAO().selectOne(NFeDAO.tbl_users, NFe.fk_name_user, 'id')
+        const user = user_[0]
         const items = await new NFeDAO().selectOne(NFeDAO.tbl_items_nota, NFe.id_nota, 'fk_sale')
+
+        let nNF_ = new HandleNFe().formatnNF(nota.id_sale)
 
         //Funções para dados de Emitente
         const filial_res = await this.findFilial(filial.fk_person)
@@ -55,12 +59,12 @@ class NFeDTO {
         // IDE
         const ide = jsonNFe.nfeProc.NFe.infNFe.ide
         ide.cUF = "35"
-        ide.cNF = '0000000' + nota.id_sale /*Código numérico que compõe a Chave
+        ide.cNF = nNF_ /*Código numérico que compõe a Chave
                                             de Acesso. Número aleatório gerado
                                             pelo emitente para cada NF-e.*/
         ide.mod = "55"
         ide.serie = "001"
-        ide.nNF = "00000000" + nota.id_sale // Número do documento fiscal
+        ide.nNF = '0' + nNF_ // Número do documento fiscal
         const dt = new HandleNFe().formatDateNFe()
         ide.dhEmi = dt
         ide.dhSaiEnt = dt
@@ -69,7 +73,7 @@ class NFeDTO {
         ide.cMunFG = city_filial.code_ibge
         ide.tpAmb = '2' // 1 Produção - 2 Homologação
         ide.tpNF = "000000001" // Tipo de Documento Fiscal (0 - entrada; 1- saída)
-        ide.tpEmis = '2' /* Forma de emissão da NF-e;
+        ide.tpEmis = '1' /* Forma de emissão da NF-e;
             1 - Normal;
             2 - Contingência FS
             3 - Regime Especial NFF (NT 2021.002)
@@ -83,6 +87,9 @@ class NFeDTO {
         const emit = jsonNFe.nfeProc.NFe.infNFe.emit
         emit.CNPJ = filial.cnpj
         emit.xNome = filial.name_filial
+        emit.xFant = person_filial.fantasia
+        emit.email = filial.email
+        emit.fone = person_filial.phone_pers
         emit.enderEmit.xLgr = person_filial.address_pers
         emit.enderEmit.nro = person_filial.num_address
         emit.enderEmit.xBairro = person_filial.bairro_pers
@@ -100,6 +107,8 @@ class NFeDTO {
         dest.CNPJ = person.cnpj
         dest.CPF = person.cpf_pers
         dest.xNome = person.name_pers
+        dest.email = user.username // email do destinatario
+        dest.fone = person.phone_pers
         dest.enderDest.xLgr = person.address_pers
         dest.enderDest.nro = person.num_address
         dest.enderDest.xBairro = person.bairro_pers

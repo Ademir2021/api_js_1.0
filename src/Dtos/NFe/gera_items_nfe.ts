@@ -43,7 +43,7 @@ class GeraItemsNFe {
                     "cEAN": product.bar_code, //'EAN: ',
                     "xProd": product.descric_product,
                     "NCM": product.ncm, //'NCM: ',
-                    "CFOP": 'CFOP: ',
+                    "CFOP": '5102', //'CFOP:5102  Usado para vendas de mercadorias adquiridas de terceiros no mesmo Estado',
                     "uCom": un_med.un_med, //'UN:',
                     "qCom": item.amount_product,
                     "vUnCom": item.val_product,

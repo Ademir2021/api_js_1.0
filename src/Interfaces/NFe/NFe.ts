@@ -9,6 +9,22 @@ export type INFe = {
     val_rec: number
     disc_sale: number
     total_sale: number
+    id_nfe?:number
+    doc_nfe?:string
+    situacao_nfe?:string
+    chave_nfe?:string
+    protocolo_nfe?:string
+}
+
+export type TNFe = {
+    id_sale: number
+    fk_name_filial:number
+    fk_name_user:number
+    fk_name_pers: number
+    items?: IProduct[]
+    val_rec: number
+    disc_sale: number
+    total_sale: number
 }
 
 export type IItems = [{
