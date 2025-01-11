@@ -34,8 +34,7 @@ class HandleNFe {
 
     dvNFe(chaveAcesso: any) {
         if (chaveAcesso.length !== 43) {
-            throw new Error("A chave de acesso deve ter 44 dígitos.");
-            console.log(chaveAcesso)
+            throw new Error("A chave de acesso deve ter 43 dígitos.");
         }
         const pesos = [4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
         let soma = 0;
