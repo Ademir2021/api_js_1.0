@@ -59,12 +59,12 @@ class NFeDTO {
         // IDE
         const ide = jsonNFe.nfeProc.NFe.infNFe.ide
         ide.cUF = "35"
-        ide.cNF = nNF_ /*Código numérico que compõe a Chave
+        ide.cNF =  nNF_ /*Código numérico que compõe a Chave
                                             de Acesso. Número aleatório gerado
                                             pelo emitente para cada NF-e.*/
         ide.mod = "55"
         ide.serie = "001"
-        ide.nNF = '0' + nNF_ // Número do documento fiscal
+        ide.nNF = nNF_ // Número do documento fiscal
         const dt = new HandleNFe().formatDateNFe()
         ide.dhEmi = dt
         ide.dhSaiEnt = dt
