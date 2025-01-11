@@ -17,11 +17,11 @@ class GeraItemsNFe {
         return un_meds[0]
     };
 
-     /**
-     * @description Gerar items para XML da NFe
-     * @param {*} items
-     * @returns String
-     */
+    /**
+    * @description Gerar items para XML da NFe
+    * @param {*} items
+    * @returns String
+    */
     async gerarItemsNFe(items: IItems) {
         jsonNFe.nfeProc.NFe.infNFe.det = []
         for (let item of items) {
