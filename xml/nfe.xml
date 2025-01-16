@@ -6,21 +6,21 @@
         <infNFe>
             <versao>4.00</versao>
             <Id>NFe35140630290882000182550010000000011000000010</Id>
-            <chNFe>35125180693830001105500100000000310000000035</chNFe>
+            <chNFe>35125180693830001105500100000001510000000157</chNFe>
             <ide>
                 <cUF>35</cUF>
-                <cNF>000000003</cNF>
                 <natOp>VENDA</natOp>
                 <mod>55</mod>
                 <serie>001</serie>
-                <nNF>000000003</nNF>
-                <dhEmi>2025-01-11T13:35:17+00:00</dhEmi>
-                <dhSaiEnt>2025-01-11T13:35:17+00:00</dhSaiEnt>
+                <dhEmi>2025-01-16T12:13:38+00:00</dhEmi>
+                <dhSaiEnt>2025-01-16T12:13:38+00:00</dhSaiEnt>
                 <idDest>1</idDest>
                 <cMunFG>4.102.505</cMunFG>
                 <tpAmb>2</tpAmb>
                 <tpNF>000000001</tpNF>
                 <tpEmis>1</tpEmis>
+                <cNF>000000015</cNF>
+                <nNF>000000015</nNF>
             </ide>
             <emit>
                 <CNPJ>18069383000110</CNPJ>
@@ -44,11 +44,11 @@
                 <XFant>Centro Informática</XFant>
             </emit>
             <dest>
-                <email>ritacelestino802@gmail.com</email>
+                <email>ademir_gre@hotmail.com</email>
                 <enderDest>
-                    <xLgr>Rua Rio Grande do Norte</xLgr>
-                    <nro>1634</nro>
-                    <xBairro>Vila Operaria</xBairro>
+                    <xLgr>Av Castro Alves</xLgr>
+                    <nro>1241</nro>
+                    <xBairro>Centro</xBairro>
                     <cMun>4.102.505</cMun>
                     <UF>PR</UF>
                     <xMun>Barbosa Ferraz</xMun>
@@ -57,24 +57,24 @@
                     <xPais>Brasil</xPais>
                 </enderDest>
                 <CNPJ>0</CNPJ>
-                <CPF>51651874972</CPF>
-                <xNome>Rita Celestino</xNome>
-                <fone>44997579794</fone>
+                <CPF>74276697972</CPF>
+                <xNome>Ademir Souza de Almeida</xNome>
+                <fone>44988521033</fone>
                 <indIEDest>0</indIEDest>
                 <IE>0</IE>
             </dest>
             <det>
                 <nItem>1</nItem>
                 <prod>
-                    <cProd>15</cProd>
-                    <cEAN>15</cEAN>
-                    <xProd>Kit Antena Parabólica c/Receptor Digital Century Midiabox B7 Sat HD Regional</xProd>
+                    <cProd>3</cProd>
+                    <cEAN>3</cEAN>
+                    <xProd>Fonte CPU PowerX ATX 300W</xProd>
                     <NCM>00000000</NCM>
                     <CFOP>5102</CFOP>
-                    <uCom>KIT</uCom>
+                    <uCom>PC</uCom>
                     <qCom>1</qCom>
-                    <vUnCom>826.00</vUnCom>
-                    <vProd>826.00</vProd>
+                    <vUnCom>150.00</vUnCom>
+                    <vProd>150.00</vProd>
                     <cEANTrib>EAN Tributável: </cEANTrib>
                     <uTrib>Unidade Tributável: </uTrib>
                     <qTrib>Quantidade Tributável: </qTrib>
@@ -113,10 +113,10 @@
             <total>
                 <ICMSTot>
                     <vICMS>56.8</vICMS>
-                    <vBC>826.00</vBC>
-                    <vProd>750.00</vProd>
-                    <vNF>750.00</vNF>
-                    <CNF>826.00</CNF>
+                    <vBC>150.00</vBC>
+                    <vProd>150.00</vProd>
+                    <vNF>150.00</vNF>
+                    <CNF>150.00</CNF>
                 </ICMSTot>
             </total>
             <transp>

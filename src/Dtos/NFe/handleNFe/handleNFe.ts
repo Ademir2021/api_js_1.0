@@ -34,7 +34,8 @@ class HandleNFe {
 
     dvNFe(chaveAcesso: any) {
         if (chaveAcesso.length !== 43) {
-            throw new Error("A chave de acesso deve ter 43 dígitos.");
+            // throw new Error("A chave de acesso deve ter 43 dígitos.");
+            return chaveAcesso
         }
         const pesos = [4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
         let soma = 0;
@@ -48,15 +49,15 @@ class HandleNFe {
 
     formatnNF(id: number) {
         let str8 = '00000000'
+        let str7 = '0000000'
         let str6 = '000000'
-        let str5 = '00000'
         if (id < 10)
             return str8 + id
-        else if (id < 100)
+        else if (id > 10 || id < 100)
+            return str7 + id
+        else if (id > 100 || id < 1000)
             return str6 + id
-        else if (id < 1000)
-            return str5 + id
-    }
+    } 
 };
 
 export { HandleNFe }
