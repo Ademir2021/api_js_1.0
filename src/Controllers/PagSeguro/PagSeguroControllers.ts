@@ -76,6 +76,7 @@ class PagSeguroControllers {
             // console.log("/**Iniciando response */")
              console.log(ress)
         } catch (err) {
+            // response.json(err)
             console.log("Error Occurred ! " + err)
         }
     };

@@ -138,7 +138,7 @@ class NFeDTO {
 
         const geraNFe = new NFeDAO()
         const gerarNFe = await geraNFe.gerarNFe(nota)
-        // console.log(gerarNFe)
+        console.log(gerarNFe)
 
         // const autorizaNFe = new AutorizaNFe()
         // const autorizarNFe = autorizaNFe.autorizarNFe()

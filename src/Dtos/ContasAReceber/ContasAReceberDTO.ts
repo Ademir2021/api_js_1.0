@@ -1,4 +1,5 @@
 import { ContaReceberDAO } from "../../Entities/ContaReceber/ContaReceberDAO";
+import { IContaAreceber } from "../../Interfaces/ContaReceber/ContaReceber";
 
 const table = ContaReceberDAO.table
 
@@ -11,6 +12,14 @@ class ContasAReceberDTO {
         const contas = await new ContaReceberDAO().select(table, "vencimento")
         return (contas)
     };
+    async insert(contaReceber:IContaAreceber){
+        const resp = new ContaReceberDAO().insert(contaReceber)
+        return resp;
+    };
+    async update(contaReceber:IContaAreceber){
+        const resp = new ContaReceberDAO().update(contaReceber)
+        return resp
+    };
     async listContasAReceberByLoggedInUser(id: number, privilege: number) {
         if (privilege == 2) {
             const contas = await this.findContasAReceberAdmin()
@@ -21,5 +30,4 @@ class ContasAReceberDTO {
         }
     };
 }
-
 export { ContasAReceberDTO }

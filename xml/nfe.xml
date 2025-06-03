@@ -6,32 +6,32 @@
         <infNFe>
             <versao>4.00</versao>
             <Id>NFe35140630290882000182550010000000011000000010</Id>
-            <chNFe>35125180693830001105500100000001510000000157</chNFe>
+            <chNFe>35525180693830001105500100000000610000000061</chNFe>
             <ide>
                 <cUF>35</cUF>
                 <natOp>VENDA</natOp>
                 <mod>55</mod>
                 <serie>001</serie>
-                <dhEmi>2025-01-16T12:13:38+00:00</dhEmi>
-                <dhSaiEnt>2025-01-16T12:13:38+00:00</dhSaiEnt>
+                <dhEmi>2025-05-08T17:55:44+00:00</dhEmi>
+                <dhSaiEnt>2025-05-08T17:55:44+00:00</dhSaiEnt>
                 <idDest>1</idDest>
                 <cMunFG>4.102.505</cMunFG>
                 <tpAmb>2</tpAmb>
                 <tpNF>000000001</tpNF>
                 <tpEmis>1</tpEmis>
-                <cNF>000000015</cNF>
-                <nNF>000000015</nNF>
+                <cNF>000000006</cNF>
+                <nNF>000000006</nNF>
             </ide>
             <emit>
                 <CNPJ>18069383000110</CNPJ>
                 <xNome>Ademir Souza de Almeida - 74276697972</xNome>
-                <xFant>Centro Informática</xFant>
+                <xFant>null</xFant>
                 <email>centroserra@gmail.com</email>
-                <fone>44988521033</fone>
+                <fone>44997579794</fone>
                 <enderEmit>
-                    <xLgr>Av, Castro Alves</xLgr>
-                    <nro>1241</nro>
-                    <xBairro>Centro</xBairro>
+                    <xLgr>Rua Rio Grande do Norte</xLgr>
+                    <nro>1634</nro>
+                    <xBairro>Vila Operaria</xBairro>
                     <cMun>4.102.505</cMun>
                     <xMun>Barbosa Ferraz</xMun>
                     <UF>PR</UF>
@@ -44,11 +44,11 @@
                 <XFant>Centro Informática</XFant>
             </emit>
             <dest>
-                <email>ademir_gre@hotmail.com</email>
+                <email>edersandrocouto@gmail.com</email>
                 <enderDest>
-                    <xLgr>Av Castro Alves</xLgr>
-                    <nro>1241</nro>
-                    <xBairro>Centro</xBairro>
+                    <xLgr>Rua Almirante Barrozo</xLgr>
+                    <nro>s\n</nro>
+                    <xBairro>Vila do Roque</xBairro>
                     <cMun>4.102.505</cMun>
                     <UF>PR</UF>
                     <xMun>Barbosa Ferraz</xMun>
@@ -57,24 +57,165 @@
                     <xPais>Brasil</xPais>
                 </enderDest>
                 <CNPJ>0</CNPJ>
-                <CPF>74276697972</CPF>
-                <xNome>Ademir Souza de Almeida</xNome>
-                <fone>44988521033</fone>
+                <CPF>03040374940</CPF>
+                <xNome>Eder Sandro do Couto</xNome>
+                <fone>44988140606</fone>
                 <indIEDest>0</indIEDest>
                 <IE>0</IE>
             </dest>
             <det>
                 <nItem>1</nItem>
                 <prod>
-                    <cProd>3</cProd>
-                    <cEAN>3</cEAN>
-                    <xProd>Fonte CPU PowerX ATX 300W</xProd>
-                    <NCM>00000000</NCM>
+                    <cProd>22</cProd>
+                    <cEAN>22</cEAN>
+                    <xProd>Receptor Digital Satelite Century B7 HDMI</xProd>
+                    <NCM>85287119</NCM>
                     <CFOP>5102</CFOP>
                     <uCom>PC</uCom>
                     <qCom>1</qCom>
-                    <vUnCom>150.00</vUnCom>
-                    <vProd>150.00</vProd>
+                    <vUnCom>500.00</vUnCom>
+                    <vProd>500.00</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS</orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>2</nItem>
+                <prod>
+                    <cProd>19</cProd>
+                    <cEAN>19</cEAN>
+                    <xProd>Conector F RG59 com anel</xProd>
+                    <NCM>00000000</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>2</qCom>
+                    <vUnCom>1.50</vUnCom>
+                    <vProd>3.00</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS</orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>3</nItem>
+                <prod>
+                    <cProd>37</cProd>
+                    <cEAN>37</cEAN>
+                    <xProd>LNBF Universal Ku 2 saídas</xProd>
+                    <NCM>00000000</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1</qCom>
+                    <vUnCom>36.00</vUnCom>
+                    <vProd>36.00</vProd>
+                    <cEANTrib>EAN Tributável: </cEANTrib>
+                    <uTrib>Unidade Tributável: </uTrib>
+                    <qTrib>Quantidade Tributável: </qTrib>
+                    <vUnTrib>Valor Unitário Tributável: </vUnTrib>
+                    <indTot>Indicador de Total: </indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>Origem do ICMS</orig>
+                            <CST>CST:</CST>
+                            <modBC>Modalidade de BC:</modBC>
+                            <vBC>90</vBC>
+                            <pICMS>0.0000</pICMS>
+                            <vICMS>0</vICMS>
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0</vPIS>
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>99</CST>
+                            <vBC>0.0000</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0</vCOFINS>
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det>
+                <nItem>4</nItem>
+                <prod>
+                    <cProd>75</cProd>
+                    <cEAN>75</cEAN>
+                    <xProd>Cabo Coaxial RG59 Macrocabos UN/MT</xProd>
+                    <NCM>00000</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>MTS</uCom>
+                    <qCom>16</qCom>
+                    <vUnCom>3.00</vUnCom>
+                    <vProd>48.00</vProd>
                     <cEANTrib>EAN Tributável: </cEANTrib>
                     <uTrib>Unidade Tributável: </uTrib>
                     <qTrib>Quantidade Tributável: </qTrib>
@@ -113,10 +254,10 @@
             <total>
                 <ICMSTot>
                     <vICMS>56.8</vICMS>
-                    <vBC>150.00</vBC>
-                    <vProd>150.00</vProd>
-                    <vNF>150.00</vNF>
-                    <CNF>150.00</CNF>
+                    <vBC>587.00</vBC>
+                    <vProd>560.74</vProd>
+                    <vNF>560.74</vNF>
+                    <CNF>587.00</CNF>
                 </ICMSTot>
             </total>
             <transp>

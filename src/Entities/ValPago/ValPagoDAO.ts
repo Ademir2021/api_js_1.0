@@ -3,9 +3,7 @@ import { postgreSQL } from "../../Providers/Storages/pg/postgreSQL";
 import { DAO } from "../DAO/DAO";
 
 class ValPagoDAO extends DAO {
-
     static table = 'vals_pagos'
-
     async insert(Vals: IValPago) {
         try {
             await postgreSQL.query('INSERT INTO ' + ValPagoDAO.table + '(fk_conta, fk_compra, fk_user, valor, data_recebimento, descricao, fk_person, fk_despesa) VALUES ('
@@ -23,5 +21,4 @@ class ValPagoDAO extends DAO {
         }
     };
 }
-
 export { ValPagoDAO }

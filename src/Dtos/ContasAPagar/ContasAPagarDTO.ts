@@ -1,4 +1,5 @@
 import { ContaPagarDAO } from "../../Entities/ContaPagar/ContaPagarDAO";
+import { IContaAPagar } from "../../Interfaces/ContaPagar/ContaPagar";
 
 const table = ContaPagarDAO.table
 
@@ -11,6 +12,14 @@ class ContasAPagarDTO {
         const contas = await new ContaPagarDAO().select(table, "vencimento")
         return (contas)
     };
+    async insert(contaPagar:IContaAPagar){
+        const res = new ContaPagarDAO().insert(contaPagar)
+        return res;
+    };
+    async update(contaPagar:IContaAPagar){
+        const res = new ContaPagarDAO().update(contaPagar)
+        return res;
+    };
     async listContasAPagarByLoggedInUser(id: number, privilege: number) {
         if (privilege == 2) {
             const contas = await this.findContasAPagarAdmin()
@@ -21,5 +30,4 @@ class ContasAPagarDTO {
         }
     };
 }
-
 export { ContasAPagarDTO }

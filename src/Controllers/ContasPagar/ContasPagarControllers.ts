@@ -2,12 +2,10 @@ import { Request, Response } from "express"
 import { DAO } from "../../Entities/DAO/DAO"
 import { IContaAPagar } from "../../Interfaces/ContaPagar/ContaPagar"
 import { ContasPagar } from "../../Entities/ContaPagar/ContaPagar"
-import { ContaPagarDAO } from "../../Entities/ContaPagar/ContaPagarDAO"
 import { IUser } from "../../Interfaces/User/User"
-import { ContasAPagarDTO } from "../../Dtos/ContasAPagar/ContasAPagarDTO"
+import { ContasAPagarServices } from "../../Services/ContasAPagar/ContasAPagarServices"
 
 class ContasPagarControllers extends DAO {
-
     async saveContasPagar(request: Request, response: Response) {
         const resp: IContaAPagar = <IContaAPagar>request.body
         const contaAPagar: ContasPagar = new ContasPagar(
@@ -30,10 +28,9 @@ class ContasPagarControllers extends DAO {
             resp.fk_beneficiario,
             resp.fk_despesa
         );
-        const insertConta = await new ContaPagarDAO().insert(contaAPagar)
+        const insertConta = await new ContasAPagarServices().insert(contaAPagar)
         response.json(insertConta)
     };
-
     async updateContasPagar(request: Request, response: Response) {
         const resp: IContaAPagar = <IContaAPagar>request.body
         const constaAPagar: ContasPagar = new ContasPagar(
@@ -56,13 +53,13 @@ class ContasPagarControllers extends DAO {
             resp.fk_beneficiario,
             resp.fk_despesa
         );
-        const updateConta = await new ContaPagarDAO().update(constaAPagar)
+        const updateConta = await new ContasAPagarServices().update(constaAPagar)
         return response.json(updateConta)
     };
     
     async findAllContasPagarList(request: Request, response: Response) {
         const { id, privilege }: IUser = <IUser>request.body[0]
-         const listConta = await new ContasAPagarDTO().listContasAPagarByLoggedInUser(id, privilege)
+         const listConta = await new ContasAPagarServices().listContasAPagarByLoggedInUser(id, privilege)
         response.json(listConta)
     };
 }
